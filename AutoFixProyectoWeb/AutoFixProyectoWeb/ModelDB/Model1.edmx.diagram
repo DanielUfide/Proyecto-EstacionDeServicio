@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ede122908ea941ba92c3d4c09d652e86" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="EL_CRUCEModel.CATEGORIA" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.COMENTARIOS_PROYECTO" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.COSTO" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_COSTO" Width="1.5" PointX="6.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_PROYECTO" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_SERVICIO" Width="1.5" PointX="1.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.HISTORIAL_ESTADOS" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.INVENTARIO" Width="1.5" PointX="9" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.PROVEEDOR" Width="1.5" PointX="4.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO_PIEZAS" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.ROLE_USUARIO" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.SERVICIO" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.TIPO_COSTO" Width="1.5" PointX="6.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.USUARIO" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.VEHICULO" Width="1.5" PointX="1.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_CATEGORIA_INVENTARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_PROVEEDOR_CATEGORIA" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_COMENTARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_USUARIO_COMENTARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_COSTO_PIEZAS" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_ESTADO_COSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_TIPO_COSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_ESTADO_HISTORIAL_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_ESTADO_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_HISTORIAL_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_INVENTARIO_PIEZAS" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_MECANICO_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_PIEZAS" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_VEHICULO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_USUARIO_ROLE" ManuallyRouted="false" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_VEHICULO_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

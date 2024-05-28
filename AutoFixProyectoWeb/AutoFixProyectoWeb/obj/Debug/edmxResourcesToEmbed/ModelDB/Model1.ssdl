@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROVEEDOR" Type="int" Nullable="false" />
+    <Property Name="CATEGORIA" Type="varchar" MaxLength="100" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="COMENTARIOS_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_COMENTARIO" />
+    </Key>
+    <Property Name="ID_COMENTARIO" Type="int" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="COMENTARIO" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="COSTO">
+    <Key>
+      <PropertyRef Name="ID_COSTO" />
+    </Key>
+    <Property Name="ID_COSTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TIPO_COSTO" Type="int" Nullable="false" />
+    <Property Name="ID_ESTADO_COSTO" Type="int" Nullable="false" />
+    <Property Name="MONTO_TOTAL" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO_COSTO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_COSTO" />
+    </Key>
+    <Property Name="ID_ESTADO_COSTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ESTADO_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO_SERVICIO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HISTORIAL_ESTADOS">
+    <Key>
+      <PropertyRef Name="ID_HISTORIAL_ESTADO" />
+    </Key>
+    <Property Name="ID_HISTORIAL_ESTADO" Type="int" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="INVENTARIO">
+    <Key>
+      <PropertyRef Name="ID_INVENTARIO" />
+    </Key>
+    <Property Name="ID_INVENTARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_CATEGORIA" Type="int" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" Nullable="false" />
+    <Property Name="PRECIO_COMPRA" Type="float" />
+    <Property Name="PRECIO_VENTA" Type="float" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ID_PROVEEDOR" />
+    </Key>
+    <Property Name="ID_PROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="255" />
+    <Property Name="CORREO" Type="varchar" MaxLength="50" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_VEHICULO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_ESTADO_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="ID_SERVICIO" Type="int" Nullable="false" />
+    <Property Name="ID_MECANICO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROYECTO_PIEZAS">
+    <Key>
+      <PropertyRef Name="ID_SOLICITUD" />
+    </Key>
+    <Property Name="ID_SOLICITUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="ID_INVENTARIO" Type="int" Nullable="false" />
+    <Property Name="ID_COSTO" Type="int" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROLE_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_ROLE" />
+    </Key>
+    <Property Name="ID_ROLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SERVICIO">
+    <Key>
+      <PropertyRef Name="ID_SERVICIO" />
+    </Key>
+    <Property Name="ID_SERVICIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERVICIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PRECIO" Type="float" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIPO_COSTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_COSTO" />
+    </Key>
+    <Property Name="ID_TIPO_COSTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTRASEÑA" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VEHICULO">
+    <Key>
+      <PropertyRef Name="PLACA" />
+    </Key>
+    <Property Name="PLACA" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MARCA" Type="varchar" MaxLength="10" />
+    <Property Name="MODELO" Type="varchar" MaxLength="10" />
+    <Property Name="CHASIS" Type="varchar" MaxLength="100" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CATEGORIA_INVENTARIO">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="INVENTARIO" Type="Self.INVENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Principal>
+      <Dependent Role="INVENTARIO">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COSTO_PIEZAS">
+    <End Role="COSTO" Type="Self.COSTO" Multiplicity="1" />
+    <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COSTO">
+        <PropertyRef Name="ID_COSTO" />
+      </Principal>
+      <Dependent Role="PROYECTO_PIEZAS">
+        <PropertyRef Name="ID_COSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_COSTO">
+    <End Role="ESTADO_COSTO" Type="Self.ESTADO_COSTO" Multiplicity="1" />
+    <End Role="COSTO" Type="Self.COSTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_COSTO">
+        <PropertyRef Name="ID_ESTADO_COSTO" />
+      </Principal>
+      <Dependent Role="COSTO">
+        <PropertyRef Name="ID_ESTADO_COSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_HISTORIAL_ESTADO">
+    <End Role="ESTADO_PROYECTO" Type="Self.ESTADO_PROYECTO" Multiplicity="1" />
+    <End Role="HISTORIAL_ESTADOS" Type="Self.HISTORIAL_ESTADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_PROYECTO">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="HISTORIAL_ESTADOS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_PROYECTO">
+    <End Role="ESTADO_PROYECTO" Type="Self.ESTADO_PROYECTO" Multiplicity="1" />
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_PROYECTO">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="PROYECTO">
+        <PropertyRef Name="ID_ESTADO_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INVENTARIO_PIEZAS">
+    <End Role="INVENTARIO" Type="Self.INVENTARIO" Multiplicity="1" />
+    <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVENTARIO">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Principal>
+      <Dependent Role="PROYECTO_PIEZAS">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MECANICO_PROYECTO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="PROYECTO">
+        <PropertyRef Name="ID_MECANICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_CATEGORIA">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Principal>
+      <Dependent Role="CATEGORIA">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_COMENTARIOS">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="COMENTARIOS_PROYECTO" Type="Self.COMENTARIOS_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="COMENTARIOS_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_HISTORIAL_ESTADO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="HISTORIAL_ESTADOS" Type="Self.HISTORIAL_ESTADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="HISTORIAL_ESTADOS">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_PIEZAS">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="PROYECTO_PIEZAS">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_VEHICULO">
+    <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="1" />
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VEHICULO">
+        <PropertyRef Name="PLACA" />
+      </Principal>
+      <Dependent Role="PROYECTO">
+        <PropertyRef Name="ID_VEHICULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_ESTADO">
+    <End Role="ESTADO_SERVICIO" Type="Self.ESTADO_SERVICIO" Multiplicity="1" />
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_SERVICIO">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="SERVICIO">
+        <PropertyRef Name="ID_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="1" />
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Principal>
+      <Dependent Role="PROYECTO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIPO_COSTO">
+    <End Role="TIPO_COSTO" Type="Self.TIPO_COSTO" Multiplicity="1" />
+    <End Role="COSTO" Type="Self.COSTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_COSTO">
+        <PropertyRef Name="ID_TIPO_COSTO" />
+      </Principal>
+      <Dependent Role="COSTO">
+        <PropertyRef Name="ID_TIPO_COSTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_COMENTARIOS">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="COMENTARIOS_PROYECTO" Type="Self.COMENTARIOS_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="COMENTARIOS_PROYECTO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ROLE">
+    <End Role="ROLE_USUARIO" Type="Self.ROLE_USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE_USUARIO">
+        <PropertyRef Name="ID_ROLE" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VEHICULO_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="VEHICULO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="EL_CRUCEModelStoreContainer">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMENTARIOS_PROYECTO" EntityType="Self.COMENTARIOS_PROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COSTO" EntityType="Self.COSTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROYECTO" EntityType="Self.PROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROYECTO_PIEZAS" EntityType="Self.PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLE_USUARIO" EntityType="Self.ROLE_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="INVENTARIO" EntitySet="INVENTARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COSTO_PIEZAS" Association="Self.FK_COSTO_PIEZAS">
+      <End Role="COSTO" EntitySet="COSTO" />
+      <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_COSTO" Association="Self.FK_ESTADO_COSTO">
+      <End Role="ESTADO_COSTO" EntitySet="ESTADO_COSTO" />
+      <End Role="COSTO" EntitySet="COSTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_HISTORIAL_ESTADO" Association="Self.FK_ESTADO_HISTORIAL_ESTADO">
+      <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
+      <End Role="HISTORIAL_ESTADOS" EntitySet="HISTORIAL_ESTADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_PROYECTO" Association="Self.FK_ESTADO_PROYECTO">
+      <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
+      <End Role="INVENTARIO" EntitySet="INVENTARIO" />
+      <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MECANICO_PROYECTO" Association="Self.FK_MECANICO_PROYECTO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_CATEGORIA" Association="Self.FK_PROVEEDOR_CATEGORIA">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_COMENTARIOS" Association="Self.FK_PROYECTO_COMENTARIOS">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="COMENTARIOS_PROYECTO" EntitySet="COMENTARIOS_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_HISTORIAL_ESTADO" Association="Self.FK_PROYECTO_HISTORIAL_ESTADO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="HISTORIAL_ESTADOS" EntitySet="HISTORIAL_ESTADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_PIEZAS" Association="Self.FK_PROYECTO_PIEZAS">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_VEHICULO" Association="Self.FK_PROYECTO_VEHICULO">
+      <End Role="VEHICULO" EntitySet="VEHICULO" />
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_ESTADO" Association="Self.FK_SERVICIO_ESTADO">
+      <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIPO_COSTO" Association="Self.FK_TIPO_COSTO">
+      <End Role="TIPO_COSTO" EntitySet="TIPO_COSTO" />
+      <End Role="COSTO" EntitySet="COSTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_COMENTARIOS" Association="Self.FK_USUARIO_COMENTARIOS">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="COMENTARIOS_PROYECTO" EntitySet="COMENTARIOS_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ROLE" Association="Self.FK_USUARIO_ROLE">
+      <End Role="ROLE_USUARIO" EntitySet="ROLE_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VEHICULO_USUARIO" Association="Self.FK_VEHICULO_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="VEHICULO" EntitySet="VEHICULO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
