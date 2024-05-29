@@ -40,7 +40,6 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<PROYECTO_PIEZAS> PROYECTO_PIEZAS { get; set; }
         public virtual DbSet<ROLE_USUARIO> ROLE_USUARIO { get; set; }
         public virtual DbSet<SERVICIO> SERVICIO { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TIPO_COSTO> TIPO_COSTO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<VEHICULO> VEHICULO { get; set; }
@@ -146,6 +145,19 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<VALIDAR_USUARIO_Result> VALIDAR_USUARIO(string iN_EMAIL, string iN_CONTRASENNA)
+        {
+            var iN_EMAILParameter = iN_EMAIL != null ?
+                new ObjectParameter("IN_EMAIL", iN_EMAIL) :
+                new ObjectParameter("IN_EMAIL", typeof(string));
+    
+            var iN_CONTRASENNAParameter = iN_CONTRASENNA != null ?
+                new ObjectParameter("IN_CONTRASENNA", iN_CONTRASENNA) :
+                new ObjectParameter("IN_CONTRASENNA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VALIDAR_USUARIO_Result>("VALIDAR_USUARIO", iN_EMAILParameter, iN_CONTRASENNAParameter);
         }
     }
 }

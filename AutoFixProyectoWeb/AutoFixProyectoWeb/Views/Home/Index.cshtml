@@ -49,23 +49,24 @@
                                     <p class="mb-0">Ingrese su correo y contraseña para ingresar</p>
                                 </div>
                                 <div class="card-body">
-                                    <form role="form">
-                                        <label>Correo</label>
-                                        <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
-                                        </div>
-                                        <label>Contraseña</label>
-                                        <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
-                                        </div>
-                                    </form>
+
+                                    <label>Correo</label>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" id="txtEmail">
+                                    </div>
+                                    <label>Contraseña</label>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" id="txtPassword">
+                                    </div>
+
+                                    <div class="alert alert-danger text-white" id="errorAlert" style="display:none">
+                                        <strong>Error:</strong> No fue posible validar la información del usuario, intente nuevamente.
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="button" class="btn bg-gradient-info w-100 mt-2 mb-0" onclick="validarUsuario()">Sign in</button>
+                                    </div>
+
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-sm mx-auto">
@@ -123,7 +124,7 @@
                     <p class="mb-0 text-secondary">
                         Copyright ©
                         <script>
-              document.write(new Date().getFullYear())
+                            document.write(new Date().getFullYear())
                         </script>
                     </p>
                 </div>
@@ -137,16 +138,23 @@
     <script src="~/Content/assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="~/Content/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!--   AJAX Code   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!--   Custom JS   -->
+    <script src="~/Content/assets/js/custom/usuarios.js"></script>
+
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 </body>
 
