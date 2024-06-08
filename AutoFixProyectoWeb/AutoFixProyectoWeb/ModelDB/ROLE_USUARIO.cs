@@ -17,14 +17,13 @@ namespace AutoFixProyectoWeb.ModelDB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ROLE_USUARIO()
         {
-            this.USUARIO1 = new HashSet<USUARIO>();
+            this.USUARIO = new HashSet<USUARIO>();
         }
     
         public int ID_ROLE { get; set; }
         public string ROLE { get; set; }
     
-        public virtual USUARIO USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO1 { get; set; }
+        public virtual ICollection<USUARIO> USUARIO { get; set; }
     }
 }

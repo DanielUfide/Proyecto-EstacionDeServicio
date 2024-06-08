@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,8 +58,14 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms" />
+    <Reference Include="System.Security.Cryptography.Encoding" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,8 +139,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VehiculosController.cs" />
     <Compile Include="Entities\RoleUsuarioEnt.cs" />
     <Compile Include="Entities\UsuarioEnt.cs" />
+    <Compile Include="Entities\VehiculoEnt.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,27 +200,16 @@
     <Compile Include="ModelDB\SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDB\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDB\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelDB\TIPO_COSTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\USUARIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\VALIDAR_USUARIO_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelDB\VEHICULO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VehiculoModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -222,6 +222,9 @@
     <Content Include="Content\assets\img\apple-icon.png" />
     <Content Include="Content\assets\img\bg1.jpg" />
     <Content Include="Content\assets\img\bruce-mars.jpg" />
+    <Content Include="Content\assets\img\cars\bmw.jpeg" />
+    <Content Include="Content\assets\img\cars\Porche GT3 RS.jpeg" />
+    <Content Include="Content\assets\img\cars\Suzuki Baleno.jpeg" />
     <Content Include="Content\assets\img\company\Estación1.jpg" />
     <Content Include="Content\assets\img\company\Estación2.jpg" />
     <Content Include="Content\assets\img\company\Estación3.jpg" />
@@ -306,6 +309,7 @@
     <Content Include="Content\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\assets\js\core\popper.min.js" />
     <Content Include="Content\assets\js\custom\usuarios.js" />
+    <Content Include="Content\assets\js\custom\vehiculos.js" />
     <Content Include="Content\assets\js\plugins\bootstrap-notify.js" />
     <Content Include="Content\assets\js\plugins\Chart.extension.js" />
     <Content Include="Content\assets\js\plugins\chartjs.min.js" />
@@ -323,8 +327,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="ModelDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ModelDB\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -519,6 +523,9 @@
     <Content Include="ModelDB\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\assets\img\cars\Hyundai Grand i10.webp" />
+    <Content Include="Content\assets\img\cars\Mercedes GLS.avif" />
+    <Content Include="Content\assets\img\illustrations\alert icon.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -544,10 +551,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Usuarios\" />
+    <Folder Include="Views\HomeControllerr\" />
+    <Folder Include="Views\Vehiculo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -598,7 +607,10 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.5\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

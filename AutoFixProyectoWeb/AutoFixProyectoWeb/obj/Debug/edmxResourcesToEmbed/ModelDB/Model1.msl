@@ -140,8 +140,8 @@
     <EntitySetMapping Name="USUARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
-          <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="CORREO" ColumnName="CORREO" />
           <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
@@ -157,6 +157,7 @@
           <ScalarProperty Name="MODELO" ColumnName="MODELO" />
           <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

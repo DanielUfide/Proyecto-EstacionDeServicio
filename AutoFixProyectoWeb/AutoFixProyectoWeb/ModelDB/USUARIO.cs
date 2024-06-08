@@ -23,11 +23,11 @@ namespace AutoFixProyectoWeb.ModelDB
         }
     
         public int ID_USUARIO { get; set; }
+        public int ID_ROLE { get; set; }
         public string NOMBRE { get; set; }
         public string CORREO { get; set; }
         public string CONTRASEÑA { get; set; }
         public string TELEFONO { get; set; }
-        public int ID_ROLE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMENTARIOS_PROYECTO> COMENTARIOS_PROYECTO { get; set; }
@@ -36,6 +36,5 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual ROLE_USUARIO ROLE_USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VEHICULO> VEHICULO { get; set; }
-        public virtual ROLE_USUARIO ROLE_USUARIO1 { get; set; }
     }
 }

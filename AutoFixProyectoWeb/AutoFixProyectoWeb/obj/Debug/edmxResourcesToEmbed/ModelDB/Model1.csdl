@@ -131,7 +131,6 @@
     <Property Name="ID_ROLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ROLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_USUARIO_ROLE" FromRole="ROLE_USUARIO" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="EL_CRUCEModel.FK_USUARIO_ROLE1" FromRole="ROLE_USUARIO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="SERVICIO">
     <Key>
@@ -158,6 +157,7 @@
       <PropertyRef Name="ID_USUARIO" />
     </Key>
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ROLE" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CORREO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CONTRASEÑA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -166,8 +166,6 @@
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="USUARIO" ToRole="PROYECTO" />
     <NavigationProperty Name="ROLE_USUARIO" Relationship="Self.FK_USUARIO_ROLE" FromRole="USUARIO" ToRole="ROLE_USUARIO" />
     <NavigationProperty Name="VEHICULO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="USUARIO" ToRole="VEHICULO" />
-    <Property Name="ID_ROLE" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ROLE_USUARIO1" Relationship="EL_CRUCEModel.FK_USUARIO_ROLE1" FromRole="USUARIO" ToRole="ROLE_USUARIO" />
   </EntityType>
   <EntityType Name="VEHICULO">
     <Key>
@@ -178,6 +176,7 @@
     <Property Name="MODELO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="CHASIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
   </EntityType>
@@ -375,13 +374,13 @@
   </Association>
   <Association Name="FK_USUARIO_ROLE">
     <End Role="ROLE_USUARIO" Type="Self.ROLE_USUARIO" Multiplicity="1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ROLE_USUARIO">
         <PropertyRef Name="ID_ROLE" />
       </Principal>
       <Dependent Role="USUARIO">
-        <PropertyRef Name="ID_USUARIO" />
+        <PropertyRef Name="ID_ROLE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -486,73 +485,5 @@
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
-    <AssociationSet Name="FK_USUARIO_ROLE1" Association="EL_CRUCEModel.FK_USUARIO_ROLE1">
-      <End Role="ROLE_USUARIO" EntitySet="ROLE_USUARIO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <FunctionImport Name="VALIDAR_USUARIO" ReturnType="Collection(EL_CRUCEModel.VALIDAR_USUARIO_Result)">
-      <Parameter Name="IN_EMAIL" Mode="In" Type="String" />
-      <Parameter Name="IN_CONTRASENNA" Mode="In" Type="String" />
-    </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <Association Name="FK_USUARIO_ROLE1">
-    <End Type="EL_CRUCEModel.ROLE_USUARIO" Role="ROLE_USUARIO" Multiplicity="1" />
-    <End Type="EL_CRUCEModel.USUARIO" Role="USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ROLE_USUARIO">
-        <PropertyRef Name="ID_ROLE" />
-      </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="ID_ROLE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <ComplexType Name="VALIDAR_USUARIO_Result">
-    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="CORREO" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="TELEFONO" Nullable="false" MaxLength="20" />
-    <Property Type="Int32" Name="ID_ROLE" Nullable="false" />
-    <Property Type="String" Name="ROLE" Nullable="false" MaxLength="255" />
-  </ComplexType>
 </Schema>

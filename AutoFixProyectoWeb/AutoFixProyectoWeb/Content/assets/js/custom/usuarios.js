@@ -3,7 +3,8 @@
     var correoUsuario = document.getElementById('txtEmail').value;
     var contraseñaUsuario = document.getElementById('txtPassword').value;
 
-    $.ajax({
+    $.ajax(
+        {
         url: "/Usuarios/validarUsuarioController",
         type: "POST",
         data: {
@@ -11,6 +12,7 @@
             "contraseña": contraseñaUsuario
 
         },
+        
         dataType: "json",
         success: function (data) {
 

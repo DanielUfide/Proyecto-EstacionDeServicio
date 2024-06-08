@@ -25,6 +25,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public string MODELO { get; set; }
         public string CHASIS { get; set; }
         public int ID_USUARIO { get; set; }
+        public bool ESTADO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROYECTO> PROYECTO { get; set; }
