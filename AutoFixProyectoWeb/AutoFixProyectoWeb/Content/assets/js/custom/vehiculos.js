@@ -5,7 +5,8 @@
 
 function consultarTodos()
 {
-    
+    //Pendiente modificar traer vehiculos por usuario o por admin 
+    //Puede ser con el rol guardado en el modelo o en el cookie 
     $.ajax(
         {
             url: "/Vehiculos/getTodosVehiculoController",
@@ -40,11 +41,15 @@ function consultarPorPlaca(event)
             },
             success: function (data) {
 
+                var modal = $('#actualizarVehiculo');
+               // modal.find('#txtPlaca').prop('readonly', true);
+                modal.modal('show');
+
                 console.log(data);
-                /*document.getElementById('txtPlaca').value = data.placa;
-                document.getElementById('txtModelo').value = data.modelo;
-                document.getElementById('txtChasis').value = data.chasis;
-                document.getElementById('txtMarca').value = data.marca;*/
+                modal.find('#txtPlaca').val(data.placa);
+                modal.find('#txtModelo').val(data.modelo);
+                modal.find('#txtChasis').val(data.chasis);
+                modal.find('#txtMarca').val(data.marca);
             },
             error: function (xhr, status, error) {
                 console.log(error);
@@ -93,7 +98,7 @@ function guardarVehiculo() {
                 "modelo": modelo,
                 "chasis": chasis,
                 "marca": marca,
-                "id_usuario": id_usuario,
+                "id_usuario": id_usuario, //Este id tiene que cargarse de la sesion de usuario o cookie o del modelo
                 "estado": true
             },
 
@@ -114,10 +119,12 @@ function guardarVehiculo() {
 
 function actualizarVehiculo()
 {
-    var placa = document.getElementById('txtEmail').value;
-    var modelo = document.getElementById('txtPassword').value;
-    var chasis = document.getElementById('txtEmail').value;
-    var marca = document.getElementById('txtPassword').value;
+    console.log("test actualizar");
+    var modal = $('#actualizarVehiculo');
+    var placa = modal.find('#txtPlaca').val();
+    var modelo = modal.find('#txtModelo').val();
+    var chasis = modal.find('#txtChasis').val();
+    var marca = modal.find('#txtMarca').val();
 
     $.ajax(
         {
@@ -127,19 +134,19 @@ function actualizarVehiculo()
                 "placa": placa,
                 "modelo": modelo,
                 "chasis": chasis,
-                "marca": marca
+                "marca": marca,
+                "id_usuario": 1 //Este id tiene que cargarse de la sesion de usuario o cookie o del modelo
 
             },
 
             dataType: "json",
             success: function (data) {
-
-                document.getElementById('errorAlert').style.display = "none";
-
+                console.log(data);
+                consultarTodos();
             },
             error: function (xhr, status, error) {
                 // Handle errors here
-                document.getElementById('errorAlert').style.display = "";
+                
             }
         })
 

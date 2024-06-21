@@ -178,8 +178,6 @@ C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\A
 C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.dll
 C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.pdb
-C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.AssemblyReference.cache
-C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\AutoFixProyectoWeb.dll.config
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\AutoFixProyectoWeb.dll
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\AutoFixProyectoWeb.pdb
@@ -265,6 +263,8 @@ C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CopyComplete
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.dll
 C:\Users\Usuario\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.pdb
