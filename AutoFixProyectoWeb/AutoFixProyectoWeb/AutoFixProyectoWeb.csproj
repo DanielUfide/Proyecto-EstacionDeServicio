@@ -557,8 +557,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Inventario\ConsultaInventario.cshtml" />
-    <Content Include="Views\Inventario\RegistrarInventario.cshtml" />
-    <Content Include="Views\Inventario\ActualizarInventario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
