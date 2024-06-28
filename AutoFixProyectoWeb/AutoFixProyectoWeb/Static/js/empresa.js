@@ -1,1 +1,0 @@
-﻿$("#first-row").parents(".card").removeClass("card");
