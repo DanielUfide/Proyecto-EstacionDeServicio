@@ -1,0 +1,337 @@
+﻿.btn-primary {
+    background-color: #811515;
+    border-color: #811515;
+}
+
+    .btn-primary:hover {
+        background-color: #8e2c2f;
+        border-color: #8e2c2f;
+    }
+    .btn-primary:focus {
+        background-color: #8e2c2f;
+        border-color: #8e2c2f;
+        box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+    }
+    .btn-primary:active {
+        background-color: #661e21;
+        border-color: #661e21;
+    }
+        .btn-primary:active:focus {
+            box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+        }
+.btn:active:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.btn:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.btn-secondary {
+    background-color: #404040;
+    border-color: #404040;
+}
+
+.page-item.active .page-link {
+    background-color: #8e2c2f;
+    border-color: #8e2c2f;
+}
+.page-link:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.page-item:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.page-link:active:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.page-item:active:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+
+a {
+    color: #811515;
+}
+    a:hover {
+        color: #8e2c2f;
+    }
+
+    a:focus {
+        color: #8e2c2f;
+    }
+
+    a:active {
+        color: #661e21;
+    }
+
+.twitter-bs-wizard .twitter-bs-wizard-nav .nav-link.active .step-number {
+    background-color: #811515;
+    color: #fff;
+}
+
+.sticky-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.btn-right {
+    float: right;
+    display: inline-block;
+    padding: 0.47rem 0.75rem;
+}
+.twitter-bs-wizard .twitter-bs-wizard-pager-link li.finish {
+    float: right;
+}
+
+.table-responsive{
+    overflow-x: hidden;
+}
+
+.form-check-input:checked {
+    background-color: #811515;
+    border-color: #811515;
+}
+.form-check-input:focus {
+    border-color: #8e2c2f;
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+.form-check-input:active:focus {
+    box-shadow: 0 0 0 0.15rem rgb(217 111 111 / 50%);
+}
+
+.img-actualizar {
+    width:83.3px;
+    height:83.3px;
+}
+
+.striked-off-price{
+    font-weight:600;
+    font-size:0.8rem;
+    color: red;
+}
+
+.removed-icon button[data-bs-toggle="collapse"].collapsed::after {
+    content: "";
+}
+
+.removed-icon button[data-bs-toggle="collapse"]::after {
+    content: "";
+    display: block;
+    font-family: "Material Design Icons";
+    font-size: 16px;
+    position: absolute;
+    right: 20px;
+    font-weight: 500;
+    top: 50%;
+    background-image: none;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#btn-remover-filtro{
+    padding: initial;
+}
+
+.irs--round .irs-bar, .irs--round .irs-from, .irs--round .irs-single, .irs--round .irs-to {
+    background: #8e2c2f !important;
+}
+.irs--round .irs-handle {
+    border: 2px solid #8e2c2f;
+}
+.product-carrito{
+    justify-content: center;
+    display: flex;
+}
+.product-box {
+    display: grid;
+    grid-template-rows: [ row1-start ] 60% [ row1-end ] 30% [ third-line ] 10% [ last-line ];
+}
+.product-img {
+    height: 100%;
+}
+.btn-agregar-carrito {
+    /*    padding: .2rem .75rem;
+*/ 
+    width: 100px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.btn-agregar-carrito:active {
+    transform: scale(.9);
+}
+.cart_button .mdi-cart {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.cart_button .mdi-cart-outline {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.cart_button .mdi-package-variant-closed {
+    position: absolute;
+    top: -20%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.cart_button .agregar-carrito {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: white;
+    top: 50%;
+    left: 60%;
+}
+.cart_button .agregado {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: white;
+    top: 50%;
+    left: 50%;
+}
+.agregar-carrito {
+    opacity: 1;
+}
+.agregado {
+    opacity: 0;
+}
+.cart_button.clicked .mdi-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+.cart_button.clicked .mdi-package-variant-closed {
+    animation: box 1.5s ease-in-out forwards;
+}
+.cart_button.clicked .agregar-carrito {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+.cart_button.clicked .mdi-cart-outline {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+.cart_button.clicked .agregado {
+    animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart{
+    0%{
+        left: -10%;
+    }
+    40%, 60% {
+        left: 50%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+@keyframes box {
+    0%, 40% {
+        top: -20%;
+    }
+
+    60% {
+        top: 35%;
+        left: 52%;
+    }
+
+    100% {
+        top: 35%;
+        left: 125%;
+    }
+}
+@keyframes txt1 {
+    0% {
+        opacity: 1;
+    }
+
+    20%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes txt2 {
+    0%, 80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.product-cart-touchspin {
+    width: 120px;
+}
+
+.product-cart-touchspin .input-group-btn .btn {
+    color: #811515 !important;
+}
+
+.bootstrap-touchspin-injected input{
+    text-align: center;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: #811515;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+
+.avatar-md {
+    object-fit: contain;
+
+}
+
+.bg-success {
+    background-color: #198754 !important;
+}
+.bg-warning {
+    background-color: #e3ac38 !important;
+}
+.bg-primary {
+    background-color: #2537c4 !important;
+}
+.auth-form-group-custom .auti-custom-input-icon {
+    font-size: 20px;
+    color: #811515;
+}
+
+.authentication-bg .bg-overlay {
+    background: linear-gradient(90deg, rgba(129, 21, 21, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.bg-overlay {
+    opacity: 1;
+}
+
+.product-img .descuento-ribbon {
+    top: 13%;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #8e2c2f !important;
+    background-color: #fbeeee;
+}

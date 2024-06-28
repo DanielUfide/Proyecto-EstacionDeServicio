@@ -67,6 +67,7 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>

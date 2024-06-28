@@ -138,9 +138,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
     <Compile Include="Entities\RoleUsuarioEnt.cs" />
+    <Compile Include="Entities\InventarioEnt.cs" />
     <Compile Include="Entities\UsuarioEnt.cs" />
     <Compile Include="Entities\VehiculoEnt.cs" />
     <Compile Include="Global.asax.cs">
@@ -209,6 +211,7 @@
     <Compile Include="ModelDB\VEHICULO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\VehiculoModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -309,6 +312,7 @@
     <Content Include="Content\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\assets\js\core\popper.min.js" />
     <Content Include="Content\assets\js\custom\usuarios.js" />
+    <Content Include="Content\assets\js\custom\inventario.js" />
     <Content Include="Content\assets\js\custom\vehiculos.js" />
     <Content Include="Content\assets\js\plugins\bootstrap-notify.js" />
     <Content Include="Content\assets\js\plugins\Chart.extension.js" />
@@ -516,6 +520,9 @@
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities-extend.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_variables.scss" />
+    <Content Include="Content\assets\img\cars\Hyundai Grand i10.webp" />
+    <Content Include="Content\assets\img\cars\Mercedes GLS.avif" />
+    <Content Include="Content\assets\img\illustrations\alert icon.webp" />
     <EntityDeploy Include="ModelDB\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -523,9 +530,6 @@
     <Content Include="ModelDB\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\assets\img\cars\Hyundai Grand i10.webp" />
-    <Content Include="Content\assets\img\cars\Mercedes GLS.avif" />
-    <Content Include="Content\assets\img\illustrations\alert icon.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -537,6 +541,31 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Static\css\app.min.css" />
+    <Content Include="Static\css\bootstrap.min.css" />
+    <Content Include="Static\css\datatables.min.css" />
+    <Content Include="Static\css\detallepedido.css" />
+    <Content Include="Static\css\global.min.css" />
+    <Content Include="Static\css\icons.min.css" />
+    <Content Include="Static\css\ion.rangeSlider.min.css" />
+    <Content Include="Static\css\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Static\css\select2.min.css" />
+    <Content Include="Static\js\app.js" />
+    <Content Include="Static\js\bootstrap.bundle.min.js" />
+    <Content Include="Static\js\carrito.js" />
+    <Content Include="Static\js\chat.js" />
+    <Content Include="Static\js\datatables.min.js" />
+    <Content Include="Static\js\empresa.js" />
+    <Content Include="Static\js\ion.rangeSlider.min.js" />
+    <Content Include="Static\js\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Static\js\metisMenu.min.js" />
+    <Content Include="Static\js\pedido.js" />
+    <Content Include="Static\js\registrar-producto.js" />
+    <Content Include="Static\js\registrar-usuario.js" />
+    <Content Include="Static\js\select2.min.js" />
+    <Content Include="Static\js\simplebar.min.js" />
+    <Content Include="Static\js\tienda.js" />
+    <Content Include="Static\js\waves.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -552,6 +581,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Inventario\ConsultaInventario.cshtml" />
+    <Content Include="Views\Inventario\RegistrarInventario.cshtml" />
+    <Content Include="Views\Inventario\ActualizarInventario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

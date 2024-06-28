@@ -80,6 +80,7 @@
     <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="Double" />
     <Property Name="PRECIO_VENTA" Type="Double" />
+    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
   </EntityType>
