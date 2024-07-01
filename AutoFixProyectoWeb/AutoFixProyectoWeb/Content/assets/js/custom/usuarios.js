@@ -1,4 +1,5 @@
-﻿function validarUsuario() {
+﻿//Function to validate if the user is already in the system (Log in)
+function validarUsuario() {
 
     var correoUsuario = document.getElementById('txtEmail').value;
     var contraseñaUsuario = document.getElementById('txtPassword').value;

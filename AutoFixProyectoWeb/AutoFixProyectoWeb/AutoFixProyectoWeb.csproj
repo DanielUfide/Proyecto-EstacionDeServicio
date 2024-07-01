@@ -305,6 +305,7 @@
     <Content Include="Content\assets\js\core\bootstrap.bundle.min.js" />
     <Content Include="Content\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\assets\js\core\popper.min.js" />
+    <Content Include="Content\assets\js\custom\crearUsuario.js" />
     <Content Include="Content\assets\js\custom\usuarios.js" />
     <Content Include="Content\assets\js\plugins\bootstrap-notify.js" />
     <Content Include="Content\assets\js\plugins\Chart.extension.js" />
@@ -544,10 +545,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuarios\CrearUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

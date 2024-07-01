@@ -22,6 +22,11 @@ namespace AutoFixProyectoWeb.Controllers
             return View();
         }
 
+        public ActionResult CrearUsuario()
+        {
+            return View(); 
+        }
+
         [HttpPost]
         public JsonResult validarUsuarioController(string correo, string contraseña)
         {

@@ -46,5 +46,32 @@ namespace AutoFixProyectoWeb.Models
 
             }
         }
+
+        public UsuarioEnt crearUsuario (UsuarioEnt usuario)
+        {
+            using(var conexion = new El_Cruce_Entities())
+            {
+                USUARIO usuarioDB = new USUARIO
+                {
+                    ID_ROLE = usuario.role.id_role,
+                    NOMBRE = usuario.nombre,
+                    CORREO = usuario.correo,
+                    CONTRASEÑA = usuario.contraseña,
+                    TELEFONO = usuario.telefono
+                };
+
+                conexion.USUARIO.Add(usuarioDB);
+                var result = conexion.SaveChanges();
+                
+                if (result == 1)
+                {
+                    return usuario;
+
+                } else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }
