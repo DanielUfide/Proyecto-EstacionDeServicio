@@ -128,8 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Entities\ProyectoEnt.cs" />
     <Compile Include="Entities\RoleUsuarioEnt.cs" />
     <Compile Include="Entities\UsuarioEnt.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,10 +141,16 @@
     <Compile Include="ModelDB\CATEGORIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\COMENTARIOS_DE_PROYECTO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB\COMENTARIOS_PROYECTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\COSTO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\ESTADOS_PROYECTO_DE_CLIENTE_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\ESTADO_COSTO.cs">
@@ -180,6 +189,9 @@
     <Compile Include="ModelDB\PROYECTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\PROYECTOS_DE_CLIENTE_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB\PROYECTO_PIEZAS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -195,9 +207,6 @@
     <Compile Include="ModelDB\sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelDB\TIPO_COSTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -207,8 +216,20 @@
     <Compile Include="ModelDB\VEHICULO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\VEHICULOS_DE_CLIENTE_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\MecanicoModel.cs" />
+    <Compile Include="Models\ProyectoModel.cs" />
+    <Compile Include="Models\ServicioModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CustomAuthorizeAttribute .cs" />
+    <Compile Include="Utils\GlobalAccess.cs" />
+    <Compile Include="ViewModels\ClienteView\ClienteProfileVM.cs" />
+    <Compile Include="ViewModels\ClienteView\ProyectoCreateVM.cs" />
+    <Compile Include="ViewModels\ProyectoView\ProyectoClienteVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\nucleo-icons.css" />
@@ -261,6 +282,7 @@
     <Content Include="Content\assets\img\kal-visuals-square.jpg" />
     <Content Include="Content\assets\img\logo-ct-dark.png" />
     <Content Include="Content\assets\img\logo-ct.png" />
+    <Content Include="Content\assets\img\logos\El cruce logo.jpg" />
     <Content Include="Content\assets\img\logos\mastercard.png" />
     <Content Include="Content\assets\img\logos\visa.png" />
     <Content Include="Content\assets\img\marie.jpg" />
@@ -545,6 +567,17 @@
     <Content Include="Views\Usuarios\CrearUsuario.cshtml" />
     <Content Include="Views\Usuarios\perfil.cshtml" />
     <Content Include="Views\Usuarios\restablecerContraseña.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Partials\ClienteProfile_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\MensajesList_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\ProyectoCreate_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\ProyectosList_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\VehiculosList_partial.cshtml" />
+    <Content Include="Views\Proyecto\Partials\ClienteProfile_partial.cshtml" />
+    <Content Include="Views\Proyecto\Partials\ComentariosList_partial.cshtml" />
+    <Content Include="Views\Proyecto\Partials\CostosList_partial.cshtml" />
+    <Content Include="Views\Proyecto\Partials\EstadosList_partial.cshtml" />
+    <Content Include="Views\Proyecto\ProyectoCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

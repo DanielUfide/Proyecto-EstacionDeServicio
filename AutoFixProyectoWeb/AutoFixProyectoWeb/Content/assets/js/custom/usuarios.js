@@ -17,7 +17,13 @@ function validarUsuario() {
         dataType: "json",
         success: function (data) {
 
-             window.location.href = '/usuarios/perfil'
+            console.log(data)
+            document.getElementById('errorAlert').style.display = "none";
+
+            if (data.role.id_role == 1) location.href = "/admin"
+            if (data.role.id_role == 2) location.href = "/mecanico"
+            if (data.role.id_role == 3) location.href = "/cliente"
+
 
         },
         error: function (xhr, status, error) {

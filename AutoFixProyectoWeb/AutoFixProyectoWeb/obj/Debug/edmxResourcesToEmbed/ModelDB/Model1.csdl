@@ -145,16 +145,6 @@
     <NavigationProperty Name="ESTADO_SERVICIO" Relationship="Self.FK_SERVICIO_ESTADO" FromRole="SERVICIO" ToRole="ESTADO_SERVICIO" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_SERVICIO_PROYECTO" FromRole="SERVICIO" ToRole="PROYECTO" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TIPO_COSTO">
     <Key>
       <PropertyRef Name="ID_TIPO_COSTO" />
@@ -422,7 +412,6 @@
     <EntitySet Name="PROYECTO_PIEZAS" EntityType="Self.PROYECTO_PIEZAS" />
     <EntitySet Name="ROLE_USUARIO" EntityType="Self.ROLE_USUARIO" />
     <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" />
@@ -528,6 +517,18 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="COMENTARIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result)">
+      <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
+      <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
+      <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -539,5 +540,32 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ID_ROL_USUARIO" Nullable="false" />
+    <Property Type="String" Name="ROL_USUARIO" Nullable="false" MaxLength="255" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+    <Property Type="String" Name="COMENTARIO" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="ESTADOS_PROYECTO_DE_CLIENTE_Result">
+    <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="PROYECTOS_DE_CLIENTE_Result">
+    <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
+    <Property Type="String" Name="ID_VEHICULO" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="ID_ESTADO_PROYECTO" Nullable="false" />
+    <Property Type="Int32" Name="ID_SERVICIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+    <Property Type="String" Name="DESCRIPCION_SERVICIO" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="VEHICULOS_DE_CLIENTE_Result">
+    <Property Type="String" Name="PLACA" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MARCA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MODELO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CHASIS" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="ESTADO" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
   </ComplexType>
 </Schema>

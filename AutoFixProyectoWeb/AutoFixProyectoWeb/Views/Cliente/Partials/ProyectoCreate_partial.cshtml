@@ -1,0 +1,61 @@
+﻿@model AutoFixProyectoWeb.ViewModels.ClienteView.ProyectoCreateVM
+@{
+    ViewBag.Title = "ProyectoCreate_partial";
+}
+
+<!-- Modal Crear Proyecto -->
+<div class="modal modal-lg fade" id="agregarProyecto" tabindex="-1" aria-labelledby="agregarProyecto"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarProyectoLabel">Agregar Proyecto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Create", "Proyecto", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <label>Seleccione el Automovil</label>
+                    <select name="idVehiculo" class="form-control">
+                        <option selected hidden>Seleccione Vehiculo</option>
+                        @foreach (var vehiculo in @Model.vehiculos)
+                        {
+                            <option value="@vehiculo.PLACA">@vehiculo.PLACA</option>
+
+                        }
+
+                    </select>
+                    <label class="mt-xl-4">Agregar Tipo de Servicio</label>
+                    <select name="idServicio" class="form-control">
+                        <option selected hidden>Seleccione el Servicio</option>
+                        @foreach (var servicio in @Model.servicios)
+                        {
+                            <option value="@servicio.ID_SERVICIO">@servicio.SERVICIO1</option>
+
+                        }
+                    </select>
+                    <label class="mt-xl-4">Seleccione el Mecanico</label>
+                    <select name="idMecanico" class="form-control">
+                        <option selected hidden>Seleccione Vehiculo</option>
+                        @foreach (var mecanico in @Model.mecanicos)
+                        {
+                            <option value="@mecanico.ID_USUARIO">@mecanico.NOMBRE</option>
+
+                        }
+
+                    </select>
+                    <label for="txtComentario" class="mt-xl-4">Comentario</label>
+                    <textarea name="comentario" id="txtComentario" cols="30" rows="4" placeholder="Agregar comentario"
+                              class="form-control"></textarea>
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" value="Abrir Proyecto" class="btn bg-gradient-dark">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

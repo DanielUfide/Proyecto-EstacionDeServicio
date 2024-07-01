@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Costos_partial";
+}
+
+<div class="col-12 col-xl-4">
+    <div class="card h-100">
+        <div class="card-header pb-0 px-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="mb-0">Costos del Proyecto</h6>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end align-items-center">
+                    <a data-bs-toggle="modal" data-bs-target="#formularioCostos">
+                        <i class="fas fa-plus text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top"
+                           title="Agregar Costo"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-4 p-3">
+            <ul class="list-group">
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-1 text-dark text-sm">Costo Base</h6>
+                            <span class="text-xs">27 Marzo 2024</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+                        + ₡ 120,000
+                    </div>
+                </li>
+            </ul>
+            <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Pendiente Aprobación del Cliente</h6>
+            <ul class="list-group">
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-1 text-dark text-sm">Creative Tim</h6>
+                            <span class="text-xs">26 March 2020, at 08:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+                        + $ 2,500
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Formulario Costos -->
+<div class="modal modal-lg fade" id="formularioCostos" tabindex="-1" aria-labelledby="formularioCostos"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Manejo de Costos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <label for="txtEstado">Tipo</label>
+                    <select name="txtEstado" id="txtEstado" aria-placeholder="Indique el role del usuario"
+                            class="form-control" required>
+                        <option value="1">Agregar Costo</option>
+                        <option value="1">Agregar Repuesto</option>
+                        <option value="2">Agregar Descuento</option>
+                    </select>
+                    <label for="txtComentario">Descripción del Costo / Descuento</label>
+                    <input type="text" name="txtComentario" id="txtComentario" class="form-control">
+                    <input type="checkbox" name="txtUserApproval" id="txtUserApproval" class="mt-xl-3">
+                    <label class="form-check-label" for="txtUserApproval">Aprobación del Usuario Requerida</label>
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" value="Actualizar Estado" class="btn bg-gradient-dark">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

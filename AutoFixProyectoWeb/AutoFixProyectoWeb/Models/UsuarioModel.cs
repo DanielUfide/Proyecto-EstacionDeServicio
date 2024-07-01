@@ -29,6 +29,7 @@ namespace AutoFixProyectoWeb.Models
 
                     UsuarioEnt UsuarioFinal = new UsuarioEnt
                     {
+                        id_usuario = usuarioDB.ID_USUARIO,
                         nombre = usuarioDB.NOMBRE,
                         correo = usuarioDB.CORREO,
                         telefono = usuarioDB.TELEFONO,
@@ -42,6 +43,8 @@ namespace AutoFixProyectoWeb.Models
                     HttpContext.Current.Session["UserName"] = UsuarioFinal.nombre;
                     HttpContext.Current.Session["UserRole"] = UsuarioFinal.role.id_role;
                     HttpContext.Current.Session["correo"] = UsuarioFinal.correo;
+
+                    HttpContext.Current.Session["UsuarioActual"] = UsuarioFinal;
 
                     return UsuarioFinal;
                 } else

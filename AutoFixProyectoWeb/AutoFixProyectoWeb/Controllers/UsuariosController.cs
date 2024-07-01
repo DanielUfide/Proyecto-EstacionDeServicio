@@ -84,5 +84,13 @@ namespace AutoFixProyectoWeb.Controllers
             return Json(result);
         }
 
+        [HttpGet]
+        public ActionResult cerrarSession()
+        {
+            Session.Clear();
+            Session.Abandon();
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
