@@ -10,17 +10,10 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class COMENTARIOS_PROYECTO
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int ID_COMENTARIO { get; set; }
-        public int ID_USUARIO { get; set; }
-        public int ID_PROYECTO { get; set; }
-        public string COMENTARIO { get; set; }
-        public Nullable<System.DateTime> FECHA { get; set; }
-    
-        public virtual PROYECTO PROYECTO { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

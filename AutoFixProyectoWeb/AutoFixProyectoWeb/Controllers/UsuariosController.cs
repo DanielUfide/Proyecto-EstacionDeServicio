@@ -27,6 +27,15 @@ namespace AutoFixProyectoWeb.Controllers
             return View(); 
         }
 
+        public ActionResult perfil() {
+            return View();
+        }
+
+        public ActionResult restablecerContraseña()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult validarUsuarioController(string correo, string contraseña)
         {
@@ -40,5 +49,40 @@ namespace AutoFixProyectoWeb.Controllers
 
             return Json(result); 
         }
+
+        [HttpPost]
+        public JsonResult crearUsuarioController(int roleUsuario, string nombre, string correo, string contraseña, string telefono)
+        {
+            UsuarioEnt usuario = new UsuarioEnt
+            {
+                nombre = nombre,
+                correo = correo,
+                contraseña = contraseña,
+                telefono = telefono,
+                role = new RoleUsuarioEnt
+                {
+                    id_role = roleUsuario,
+                }
+            };
+
+            var result = usuariosModel.crearUsuario(usuario);
+
+            return Json(result);
+
+        }
+
+        [HttpPost]
+        public JsonResult restaurarContraseñaController(string correo)
+        {
+            UsuarioEnt usuario = new UsuarioEnt
+            {
+                correo = correo,
+            }; 
+
+            var result  = usuariosModel.restaurarContraseña(usuario);
+
+            return Json(result);
+        }
+
     }
 }

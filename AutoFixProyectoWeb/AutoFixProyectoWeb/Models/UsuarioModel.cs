@@ -4,6 +4,7 @@ using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
@@ -38,6 +39,10 @@ namespace AutoFixProyectoWeb.Models
                         }
                     };
 
+                    HttpContext.Current.Session["UserName"] = UsuarioFinal.nombre;
+                    HttpContext.Current.Session["UserRole"] = UsuarioFinal.role.id_role;
+                    HttpContext.Current.Session["correo"] = UsuarioFinal.correo;
+
                     return UsuarioFinal;
                 } else
                 {
@@ -57,7 +62,8 @@ namespace AutoFixProyectoWeb.Models
                     NOMBRE = usuario.nombre,
                     CORREO = usuario.correo,
                     CONTRASEÑA = usuario.contraseña,
-                    TELEFONO = usuario.telefono
+                    TELEFONO = usuario.telefono,
+                    ESTADO_CONTRASEÑA = true
                 };
 
                 conexion.USUARIO.Add(usuarioDB);
@@ -65,6 +71,9 @@ namespace AutoFixProyectoWeb.Models
                 
                 if (result == 1)
                 {
+                    HttpContext.Current.Session["UserName"] = usuario.nombre;
+                    HttpContext.Current.Session["UserRole"] = usuario.role.id_role;
+                    HttpContext.Current.Session["correo"] = usuario.correo;
                     return usuario;
 
                 } else
@@ -73,5 +82,51 @@ namespace AutoFixProyectoWeb.Models
                 }
             }
         }
+
+        public int restaurarContraseña(UsuarioEnt usuario)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                Random rnd = new Random();
+                USUARIO usuarioModificar = (from x in conexion.USUARIO where x.CORREO == usuario.correo select x).FirstOrDefault();
+
+                if (usuarioModificar == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    usuarioModificar.ESTADO_CONTRASEÑA = false;
+                    usuarioModificar.CONTRASEÑA = usuario.correo.Substring(0,3) + rnd.Next(1,500).ToString();
+
+                    return conexion.SaveChanges(); 
+
+                }
+
+            }
+        }
+
+        public void correoRestaurarContraseña(UsuarioEnt entidad)
+        {
+
+            MailMessage msg = new MailMessage();
+
+            msg.To.Add(new MailAddress(entidad.correo, entidad.correo));
+            msg.From = new MailAddress("cmorales40146@ufide.ac.cr", "Cambio Contraseña");
+            msg.Subject = "Recuoperación de Contraseña";
+            msg.Body = "Our system detected a request to change the password of your user, to log in again, proceed to change your password" + entidad.contraseña; 
+            msg.IsBodyHtml = true;
+
+            SmtpClient client = new SmtpClient();
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("cmorales40146@ufide.ac.cr", "contraseña");
+            client.Port = 587;
+            client.Host = "smtp.office365.com";
+            client.DeliveryMethod = SmtpDeliveryMethod.Network; 
+            client.EnableSsl= true;
+            client.Send(msg);
+
+        }
+
     }
 }

@@ -69,12 +69,12 @@
     <EntitySetMapping Name="INVENTARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.INVENTARIO">
         <MappingFragment StoreEntitySet="INVENTARIO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
           <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
           <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
           <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
           <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -130,6 +130,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TIPO_COSTO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.TIPO_COSTO">
         <MappingFragment StoreEntitySet="TIPO_COSTO">
@@ -141,6 +152,7 @@
     <EntitySetMapping Name="USUARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
@@ -153,14 +165,38 @@
     <EntitySetMapping Name="VEHICULO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.VEHICULO">
         <MappingFragment StoreEntitySet="VEHICULO">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="PLACA" ColumnName="PLACA" />
           <ScalarProperty Name="MARCA" ColumnName="MARCA" />
           <ScalarProperty Name="MODELO" ColumnName="MODELO" />
           <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EL_CRUCEModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EL_CRUCEModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EL_CRUCEModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EL_CRUCEModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EL_CRUCEModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EL_CRUCEModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EL_CRUCEModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EL_CRUCEModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EL_CRUCEModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

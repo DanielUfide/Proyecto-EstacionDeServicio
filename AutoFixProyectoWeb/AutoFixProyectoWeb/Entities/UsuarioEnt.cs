@@ -15,5 +15,7 @@ namespace AutoFixProyectoWeb.Entities
         public string contraseña { get; set; }
         public string telefono { get; set; }
 
+        public bool estado_contraseña { get; set; }
+
     }
 }

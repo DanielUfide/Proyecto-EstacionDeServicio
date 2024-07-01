@@ -71,7 +71,11 @@
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-sm mx-auto">
                                         ¿No tiene una cuenta?
-                                        <a href="javascript:;" class="text-info text-gradient font-weight-bold">Crear Usuario</a>
+                                        <a href="@Url.Action("CrearUsuario","Usuarios")" class="text-info text-gradient font-weight-bold">Crear Usuario</a>
+                                    </p>
+                                    <p class="mb-4 text-sm mx-auto">
+                                        ¿Olvido su contraseña?
+                                        <a href="@Url.Action("restablecerContraseña","Usuarios")" class="text-info text-gradient font-weight-bold">Restablecer Contraseña</a>
                                     </p>
                                 </div>
                             </div>

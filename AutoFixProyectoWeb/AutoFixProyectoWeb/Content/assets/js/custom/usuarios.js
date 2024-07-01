@@ -17,7 +17,7 @@ function validarUsuario() {
         dataType: "json",
         success: function (data) {
 
-            document.getElementById('errorAlert').style.display = "none"; 
+             window.location.href = '/usuarios/perfil'
 
         },
         error: function (xhr, status, error) {

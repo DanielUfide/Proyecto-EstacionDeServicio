@@ -12,18 +12,12 @@ namespace AutoFixProyectoWeb.ModelDB
     using System;
     using System.Collections.Generic;
     
-    public partial class ROLE_USUARIO
+    public partial class sysdiagrams
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ROLE_USUARIO()
-        {
-            this.USUARIO = new HashSet<USUARIO>();
-        }
-    
-        public int ID_ROLE { get; set; }
-        public string ROLE { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

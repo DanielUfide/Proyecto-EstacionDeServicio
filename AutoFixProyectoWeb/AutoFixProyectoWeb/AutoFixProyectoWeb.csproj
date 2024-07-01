@@ -204,9 +204,6 @@
     <Compile Include="ModelDB\USUARIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\VALIDAR_USUARIO_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelDB\VEHICULO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -324,8 +321,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="ModelDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ModelDB\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -546,6 +543,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuarios\CrearUsuario.cshtml" />
+    <Content Include="Views\Usuarios\perfil.cshtml" />
+    <Content Include="Views\Usuarios\restablecerContraseña.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
