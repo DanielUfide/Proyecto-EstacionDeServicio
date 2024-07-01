@@ -74,6 +74,7 @@
           <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
           <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
           <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -140,8 +141,8 @@
     <EntitySetMapping Name="USUARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
-          <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="CORREO" ColumnName="CORREO" />
           <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
@@ -157,6 +158,7 @@
           <ScalarProperty Name="MODELO" ColumnName="MODELO" />
           <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

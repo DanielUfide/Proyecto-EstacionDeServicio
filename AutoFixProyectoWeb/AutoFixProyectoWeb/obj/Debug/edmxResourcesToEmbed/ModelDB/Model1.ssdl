@@ -67,6 +67,7 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -142,6 +143,7 @@
     <Property Name="MODELO" Type="varchar" MaxLength="10" />
     <Property Name="CHASIS" Type="varchar" MaxLength="100" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="ESTADO" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_CATEGORIA_INVENTARIO">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />

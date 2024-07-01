@@ -4,7 +4,8 @@ function validarUsuario() {
     var correoUsuario = document.getElementById('txtEmail').value;
     var contraseñaUsuario = document.getElementById('txtPassword').value;
 
-    $.ajax({
+    $.ajax(
+        {
         url: "/Usuarios/validarUsuarioController",
         type: "POST",
         data: {
@@ -12,6 +13,7 @@ function validarUsuario() {
             "contraseña": contraseñaUsuario
 
         },
+        
         dataType: "json",
         success: function (data) {
 
