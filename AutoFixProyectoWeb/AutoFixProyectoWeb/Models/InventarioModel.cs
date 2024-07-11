@@ -35,7 +35,7 @@ namespace AutoFixProyectoWeb.Models
         }
 
         public InventarioEnt getInventarioPorIDModel(InventarioEnt inventario)
-        {
+        { 
             using (var conexion = new El_Cruce_Entities())
             {
 

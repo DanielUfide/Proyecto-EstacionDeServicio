@@ -15,7 +15,7 @@
     <Key>
       <PropertyRef Name="ID_COMENTARIO" />
     </Key>
-    <Property Name="ID_COMENTARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_COMENTARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
     <Property Name="COMENTARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -64,7 +64,7 @@
     <Key>
       <PropertyRef Name="ID_HISTORIAL_ESTADO" />
     </Key>
-    <Property Name="ID_HISTORIAL_ESTADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_HISTORIAL_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
     <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
     <Property Name="FECHA" Type="DateTime" Precision="3" />
@@ -80,9 +80,9 @@
     <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="Double" />
     <Property Name="PRECIO_VENTA" Type="Double" />
+    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
-    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -163,11 +163,11 @@
     <Property Name="CORREO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CONTRASEÑA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
     <NavigationProperty Name="COMENTARIOS_PROYECTO" Relationship="Self.FK_USUARIO_COMENTARIOS" FromRole="USUARIO" ToRole="COMENTARIOS_PROYECTO" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="USUARIO" ToRole="PROYECTO" />
     <NavigationProperty Name="ROLE_USUARIO" Relationship="Self.FK_USUARIO_ROLE" FromRole="USUARIO" ToRole="ROLE_USUARIO" />
     <NavigationProperty Name="VEHICULO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="USUARIO" ToRole="VEHICULO" />
-    <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
   </EntityType>
   <EntityType Name="VEHICULO">
     <Key>
@@ -177,10 +177,10 @@
     <Property Name="MARCA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="MODELO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="CHASIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
-    <Property Name="ESTADO" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_CATEGORIA_INVENTARIO">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -487,36 +487,6 @@
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
     <FunctionImport Name="COMENTARIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result)">
       <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -530,17 +500,6 @@
       <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="ID_ROL_USUARIO" Nullable="false" />
