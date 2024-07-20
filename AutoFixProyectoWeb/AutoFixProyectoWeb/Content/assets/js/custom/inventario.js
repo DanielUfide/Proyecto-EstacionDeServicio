@@ -26,9 +26,8 @@ function consultarTodos()
 
 function consultarPorID(event)
 {
-    var item = event.target.closest('.list-group-item');
-    var id_inventario = item.querySelector('.text-sm').textContent;
-   
+    var item = event.target.closest('.seccion-editar');
+    var id_inventario = item.querySelector('.idInventario').textContent;
     
     $.ajax(
         {
@@ -59,25 +58,14 @@ function consultarPorID(event)
         })
 }
 
-function inventarioLista(inventario)
-{
-    return `<li class="list-group-item border-0 d-flex align-items-center px-0 mb-2" ><div class="d-flex align-items-start flex-column justify-content-center"><h6 class="mb-0 text-sm">${inventario.id_inventario}</h6><p class="mb-0 text-xs">${inventario.id_categoria} ${inventario.nombre}</p></div><a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">View</a></li >`;
-}
 
 function cargarLista(inventario)
 {
-    var listaInventario = document.getElementById('listaInventario').querySelector('ul');
-    listaInventario.innerHTML = '';
 
-    inventario.forEach(function (inventario) {
-        var item = inventarioLista(inventario);
-        listaInventario.innerHTML = listaInventario.innerHTML + item;
-    });
-
-    var btnActualizar = document.querySelectorAll('.btn-link');
+    var btnActualizar = document.querySelectorAll('.btn-editar');
     btnActualizar.forEach(function (button) {
         button.addEventListener('click', consultarPorID)
-    })
+    });
 
 }
 

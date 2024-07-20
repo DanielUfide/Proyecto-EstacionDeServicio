@@ -17,7 +17,8 @@ namespace AutoFixProyectoWeb.Controllers
 
         public ActionResult ConsultaInventario()
         {
-            return View();
+            var result = inventarioModel.getInventarioModel();
+            return View(result);
         }
 
         [HttpPost]
