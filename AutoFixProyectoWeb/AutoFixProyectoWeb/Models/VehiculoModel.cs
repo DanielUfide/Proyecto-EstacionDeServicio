@@ -49,6 +49,8 @@ namespace AutoFixProyectoWeb.Models
                                        where x.PLACA == vehiculo.placa
                                        select x).FirstOrDefault();
 
+                if (vehiculoDB == null) return null;
+
                 VehiculoEnt Vehiculo = new VehiculoEnt
                 {
                     placa = vehiculoDB.PLACA,

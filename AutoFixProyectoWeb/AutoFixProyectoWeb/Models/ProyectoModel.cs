@@ -24,7 +24,8 @@ namespace AutoFixProyectoWeb.Models
                     ID_VEHICULO = proyectoEnt.idVehiculo,
                     ID_ESTADO_PROYECTO = idEstadoProyecto,
                     ID_SERVICIO = proyectoEnt.idServicio,
-                    ID_MECANICO = proyectoEnt.idMecanico
+                    ID_MECANICO = proyectoEnt.idMecanico,
+                    FECHA = proyectoEnt.fecha
 
                 };
 

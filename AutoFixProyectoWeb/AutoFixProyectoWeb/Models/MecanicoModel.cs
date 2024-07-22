@@ -17,5 +17,15 @@ namespace AutoFixProyectoWeb.Models
                 return mecanicos;
             }
         }
+
+        public List<PROYECTOS_DE_MECANICO_Result> getProyectosMecanico(int idMecanico)
+        {
+            using (var coneccion = new El_Cruce_Entities())
+            {
+                List<PROYECTOS_DE_MECANICO_Result> proyectos = coneccion.PROYECTOS_DE_MECANICO(idMecanico).ToList();
+
+                return proyectos;
+            }
+        }
     }
 }

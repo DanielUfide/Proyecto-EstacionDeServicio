@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_PROYECTO" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_SERVICIO" Width="1.5" PointX="1.5" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.HISTORIAL_ESTADOS" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EL_CRUCEModel.INVENTARIO" Width="1.5" PointX="9" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.INVENTARIO" Width="1.5" PointX="9" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.PROVEEDOR" Width="1.5" PointX="4.5" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO_PIEZAS" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />

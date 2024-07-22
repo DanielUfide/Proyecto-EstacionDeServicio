@@ -1,0 +1,47 @@
+﻿@model List<AutoFixProyectoWeb.ModelDB.HISTORIAL_DE_VEHICULO_Result>
+
+
+<div class="table-responsive p-0">
+    <table class="table align-items-center mb-0">
+        <thead>
+            <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Servicio</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Precio</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                    Mecanico
+                </th>
+              
+                <th class="text-secondary opacity-7"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hist in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="d-flex px-2 py-1">
+                            <div class="d-flex flex-column justify-content-center">
+                                <h6 class="mb-0 text-sm">@hist.SERVICIO</h6>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="text-xs text-secondary mb-0">@hist.DESCRIPCION</p>
+                    </td>
+                    <td>
+                        <p class="text-xs text-secondary mb-0">@hist.PRECIO</p>
+                    </td>
+                    <td>
+                        <p class="text-xs text-secondary mb-0">@hist.FECHA</p>
+                    </td>
+                    <td>
+                        <p class="text-xs text-secondary mb-0">@hist.MECANICO</p>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -67,7 +67,7 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
-    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -88,6 +88,7 @@
     <Property Name="ID_ESTADO_PROYECTO" Type="int" Nullable="false" />
     <Property Name="ID_SERVICIO" Type="int" Nullable="false" />
     <Property Name="ID_MECANICO" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
   </EntityType>
   <EntityType Name="PROYECTO_PIEZAS">
     <Key>
@@ -368,8 +369,14 @@
   <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
+  <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PLACA" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="PROYECTOS_DE_MECANICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_MECANICO" Type="int" Mode="In" />
   </Function>
   <Function Name="VEHICULOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_USUARIO" Type="int" Mode="In" />

@@ -72,7 +72,7 @@
           <Property Name="CANTIDAD" Type="int" Nullable="false" />
           <Property Name="PRECIO_COMPRA" Type="float" />
           <Property Name="PRECIO_VENTA" Type="float" />
-          <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -93,6 +93,7 @@
           <Property Name="ID_ESTADO_PROYECTO" Type="int" Nullable="false" />
           <Property Name="ID_SERVICIO" Type="int" Nullable="false" />
           <Property Name="ID_MECANICO" Type="int" Nullable="false" />
+          <Property Name="FECHA" Type="datetime" />
         </EntityType>
         <EntityType Name="PROYECTO_PIEZAS">
           <Key>
@@ -373,8 +374,14 @@
         <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
         </Function>
+        <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PLACA" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="PROYECTOS_DE_MECANICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_MECANICO" Type="int" Mode="In" />
         </Function>
         <Function Name="VEHICULOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
@@ -555,7 +562,7 @@
           <Property Name="PRECIO_VENTA" Type="Double" />
           <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
-          <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" Unicode="false" FixedLength="false" MaxLength="100" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -584,6 +591,7 @@
           <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_PROYECTO_PIEZAS" FromRole="PROYECTO" ToRole="PROYECTO_PIEZAS" />
           <NavigationProperty Name="VEHICULO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="PROYECTO" ToRole="VEHICULO" />
           <NavigationProperty Name="SERVICIO" Relationship="Self.FK_SERVICIO_PROYECTO" FromRole="PROYECTO" ToRole="SERVICIO" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="PROYECTO_PIEZAS">
           <Key>
@@ -1002,6 +1010,15 @@
           <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
           <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="PROYECTOS_DE_MECANICO" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result)">
+          <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PROYECTOS_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_VEHICULO_Result)">
+            <Parameter Name="PLACA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
+          <Parameter Name="PLACA" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1040,6 +1057,38 @@
           <Property Type="String" Name="CHASIS" Nullable="true" MaxLength="100" />
           <Property Type="Boolean" Name="ESTADO" Nullable="false" />
           <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="PROYECTOS_DE_MECANICO_Result">
+          <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
+          <Property Type="String" Name="ID_VEHICULO" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="ID_ESTADO_PROYECTO" Nullable="false" />
+          <Property Type="Int32" Name="ID_SERVICIO" Nullable="false" />
+          <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+          <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="PROYECTOS_DE_VEHICULO_Result">
+          <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
+          <Property Type="String" Name="ID_VEHICULO" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="ID_ESTADO_PROYECTO" Nullable="false" />
+          <Property Type="Int32" Name="ID_SERVICIO" Nullable="false" />
+          <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ID_SERVICIO1" Nullable="false" />
+          <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="PRECIO" Nullable="false" />
+          <Property Type="Int32" Name="ID_ESTADO" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
+          <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+          <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="PRECIO" Nullable="false" />
+          <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1138,6 +1187,7 @@
           <EntitySetMapping Name="PROYECTO">
             <EntityTypeMapping TypeName="EL_CRUCEModel.PROYECTO">
               <MappingFragment StoreEntitySet="PROYECTO">
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
                 <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
                 <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
                 <ScalarProperty Name="ID_ESTADO_PROYECTO" ColumnName="ID_ESTADO_PROYECTO" />
@@ -1249,6 +1299,33 @@
                 <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROYECTOS_DE_MECANICO" FunctionName="EL_CRUCEModel.Store.PROYECTOS_DE_MECANICO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result">
+                <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+                <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
+                <ScalarProperty Name="ID_ESTADO_PROYECTO" ColumnName="ID_ESTADO_PROYECTO" />
+                <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
+                <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HISTORIAL_DE_VEHICULO" FunctionName="EL_CRUCEModel.Store.HISTORIAL_DE_VEHICULO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result">
+                <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+                <ScalarProperty Name="MECANICO" ColumnName="MECANICO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

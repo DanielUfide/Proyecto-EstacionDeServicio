@@ -69,12 +69,12 @@
     <EntitySetMapping Name="INVENTARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.INVENTARIO">
         <MappingFragment StoreEntitySet="INVENTARIO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
           <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
           <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
           <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
           <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,6 +92,7 @@
     <EntitySetMapping Name="PROYECTO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.PROYECTO">
         <MappingFragment StoreEntitySet="PROYECTO">
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
           <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
           <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
           <ScalarProperty Name="ID_ESTADO_PROYECTO" ColumnName="ID_ESTADO_PROYECTO" />
@@ -141,24 +142,24 @@
     <EntitySetMapping Name="USUARIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="CORREO" ColumnName="CORREO" />
           <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
           <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
-          <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VEHICULO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.VEHICULO">
         <MappingFragment StoreEntitySet="VEHICULO">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="PLACA" ColumnName="PLACA" />
           <ScalarProperty Name="MARCA" ColumnName="MARCA" />
           <ScalarProperty Name="MODELO" ColumnName="MODELO" />
           <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -203,6 +204,33 @@
           <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PROYECTOS_DE_MECANICO" FunctionName="EL_CRUCEModel.Store.PROYECTOS_DE_MECANICO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result">
+          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+          <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
+          <ScalarProperty Name="ID_ESTADO_PROYECTO" ColumnName="ID_ESTADO_PROYECTO" />
+          <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
+          <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HISTORIAL_DE_VEHICULO" FunctionName="EL_CRUCEModel.Store.HISTORIAL_DE_VEHICULO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result">
+          <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="MECANICO" ColumnName="MECANICO" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
