@@ -79,6 +79,10 @@ function guardarInventario() {
     var precio_venta = document.getElementById('txtPrecioVenta').value;
     var id_usuario = 1;
 
+    if (id_inventario === '' || id_categoria === '' || nombre === '' || cantidad === '' || precio_compra === '' || precio_venta === '') {
+        alert('Por favor complete todos los campos.');
+        return;
+    }
     $.ajax(
         {
             url: "/Inventario/guardarInventarioController",
@@ -97,18 +101,46 @@ function guardarInventario() {
             dataType: "json",
             success: function (data) {
 
-                consultarTodos();
-                document.getElementById('errorAlert').style.display = "none";
+                location.reload();
+               // consultarTodos();
+               // document.getElementById('errorAlert').style.display = "none";
 
             },
             error: function (xhr, status, error) {
                 // Handle errors here
                 
-                document.getElementById('errorAlert').style.display = "";
+               // document.getElementById('errorAlert').style.display = "";
             }
         })
 }
 
+$(document).on('click', '.btn-eliminar', function () {
+    var idInventario = $(this).data("id-inventario");
+    $('#idInventarioEliminar').val(idInventario);
+});
+function eliminarInventario() {
+    var id_inventario = $('#idInventarioEliminar').val();
+    $.ajax(
+        {
+            url: "/Inventario/eliminarInventarioController",
+            type: "POST",
+            data: {
+                "id_inventario": id_inventario
+            },
+
+            dataType: "json",
+            success: function (data) {
+
+                location.reload();
+
+            },
+            error: function (xhr, status, error) {
+                // Handle errors here
+
+                // document.getElementById('errorAlert').style.display = "";
+            }
+        })
+}
 function actualizarInventario()
 {
     console.log("test actualizar");
@@ -119,6 +151,10 @@ function actualizarInventario()
     var cantidad = modal.find('#txtCantidad').val();
     var precio_compra = modal.find('#txtPrecioCompra').val();
     var precio_venta = modal.find('#txtPrecioVenta').val();
+    if (id_inventario === '' || id_categoria === '' || nombre === '' || cantidad === '' || precio_compra === '' || precio_venta === '') {
+        alert('Por favor complete todos los campos.');
+        return;
+    }
     $.ajax(
         {
             url: "/Inventario/actualizarInventarioController",
@@ -136,8 +172,7 @@ function actualizarInventario()
 
             dataType: "json",
             success: function (data) {
-                console.log(data);
-                consultarTodos();
+                location.reload();
             },
             error: function (xhr, status, error) {
                 // Handle errors here

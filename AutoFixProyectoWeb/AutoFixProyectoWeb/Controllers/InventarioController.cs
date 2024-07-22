@@ -74,6 +74,14 @@ namespace AutoFixProyectoWeb.Controllers
             var result = inventarioModel.getInventarioModel();
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public JsonResult eliminarInventarioController(int id_inventario)
+        {
+         
+            var result = inventarioModel.eliminarInventarioModel(id_inventario);
+
+            return Json(result);
+        }
 
     }
 }

@@ -24,7 +24,7 @@ namespace AutoFixProyectoWeb.Models
                     PRECIO_VENTA = inventario.precio_venta
                 };
 
-    conexion.INVENTARIO.Add(newInventario);
+                conexion.INVENTARIO.Add(newInventario);
 
                 conexion.SaveChanges();
 
@@ -111,6 +111,25 @@ namespace AutoFixProyectoWeb.Models
             }
 
         }
+        public bool eliminarInventarioModel(int id_inventario)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                INVENTARIO inventarioDB = (from x in conexion.INVENTARIO
+                                           where x.ID_INVENTARIO == id_inventario
+                                           select x).FirstOrDefault();
 
+                if (inventarioDB != null)
+                {
+                    conexion.INVENTARIO.Remove(inventarioDB); 
+                    conexion.SaveChanges(); 
+                }
+
+                return true;
+            }
+
+        }
     }
 }
+    
+   
