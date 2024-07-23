@@ -48,6 +48,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ESTADO_PROYECTO_PIEZAS">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.ESTADO_PROYECTO_PIEZAS">
+        <MappingFragment StoreEntitySet="ESTADO_PROYECTO_PIEZAS">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ESTADO_SERVICIO">
       <EntityTypeMapping TypeName="EL_CRUCEModel.ESTADO_SERVICIO">
         <MappingFragment StoreEntitySet="ESTADO_SERVICIO">
@@ -108,6 +116,7 @@
           <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
           <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
           <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

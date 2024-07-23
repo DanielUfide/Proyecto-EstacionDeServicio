@@ -52,6 +52,14 @@
     <NavigationProperty Name="HISTORIAL_ESTADOS" Relationship="Self.FK_ESTADO_HISTORIAL_ESTADO" FromRole="ESTADO_PROYECTO" ToRole="HISTORIAL_ESTADOS" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_ESTADO_PROYECTO" FromRole="ESTADO_PROYECTO" ToRole="PROYECTO" />
   </EntityType>
+  <EntityType Name="ESTADO_PROYECTO_PIEZAS">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_ESTADO_PROYECTO_PIEZAS" FromRole="ESTADO_PROYECTO_PIEZAS" ToRole="PROYECTO_PIEZAS" />
+  </EntityType>
   <EntityType Name="ESTADO_SERVICIO">
     <Key>
       <PropertyRef Name="ID_ESTADO" />
@@ -121,7 +129,9 @@
     <Property Name="ID_INVENTARIO" Type="Int32" Nullable="false" />
     <Property Name="ID_COSTO" Type="Int32" Nullable="false" />
     <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="COSTO" Relationship="Self.FK_COSTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="COSTO" />
+    <NavigationProperty Name="ESTADO_PROYECTO_PIEZAS" Relationship="Self.FK_ESTADO_PROYECTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="ESTADO_PROYECTO_PIEZAS" />
     <NavigationProperty Name="INVENTARIO" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="INVENTARIO" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="PROYECTO" />
   </EntityType>
@@ -290,6 +300,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ESTADO_PROYECTO_PIEZAS">
+    <End Role="ESTADO_PROYECTO_PIEZAS" Type="Self.ESTADO_PROYECTO_PIEZAS" Multiplicity="1" />
+    <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_PROYECTO_PIEZAS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="PROYECTO_PIEZAS">
+        <PropertyRef Name="ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SERVICIO_ESTADO">
     <End Role="ESTADO_SERVICIO" Type="Self.ESTADO_SERVICIO" Multiplicity="1" />
     <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="*" />
@@ -404,6 +426,7 @@
     <EntitySet Name="COSTO" EntityType="Self.COSTO" />
     <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" />
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" />
+    <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" />
@@ -450,6 +473,10 @@
     <AssociationSet Name="FK_ESTADO_PROYECTO" Association="Self.FK_ESTADO_PROYECTO">
       <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_PROYECTO_PIEZAS" Association="Self.FK_ESTADO_PROYECTO_PIEZAS">
+      <End Role="ESTADO_PROYECTO_PIEZAS" EntitySet="ESTADO_PROYECTO_PIEZAS" />
+      <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
     </AssociationSet>
     <AssociationSet Name="FK_SERVICIO_ESTADO" Association="Self.FK_SERVICIO_ESTADO">
       <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />

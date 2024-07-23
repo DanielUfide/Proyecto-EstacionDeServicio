@@ -14,5 +14,6 @@ namespace AutoFixProyectoWeb.ViewModels
         public List<VEHICULOS_DE_CLIENTE_Result> vehiculos { get; set; }
         public List<PROYECTOS_DE_CLIENTE_Result> proyectos{ get; set; }
         public ProyectoCreateVM proyectoCreateVM { get; set; }
+        public MecanicoVM mecanicoVM { get; set; }
     }
 }

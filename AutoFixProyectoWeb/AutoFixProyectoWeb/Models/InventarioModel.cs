@@ -112,5 +112,15 @@ namespace AutoFixProyectoWeb.Models
 
         }
 
+        public List<INVENTARIO> getInventario()
+        {
+            using (var coneccion = new El_Cruce_Entities())
+            {
+                List<INVENTARIO> inventario = coneccion.INVENTARIO.ToList();
+
+                return inventario;
+            }
+        }
+
     }
 }

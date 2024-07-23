@@ -42,6 +42,13 @@
     <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ESTADO" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="ESTADO_PROYECTO_PIEZAS">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="ESTADO_SERVICIO">
     <Key>
       <PropertyRef Name="ID_ESTADO" />
@@ -98,6 +105,7 @@
     <Property Name="ID_INVENTARIO" Type="int" Nullable="false" />
     <Property Name="ID_COSTO" Type="int" Nullable="false" />
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
+    <Property Name="ESTADO" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ROLE_USUARIO">
     <Key>
@@ -203,6 +211,18 @@
       </Principal>
       <Dependent Role="PROYECTO">
         <PropertyRef Name="ID_ESTADO_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_PROYECTO_PIEZAS">
+    <End Role="ESTADO_PROYECTO_PIEZAS" Type="Self.ESTADO_PROYECTO_PIEZAS" Multiplicity="1" />
+    <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_PROYECTO_PIEZAS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="PROYECTO_PIEZAS">
+        <PropertyRef Name="ESTADO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -380,6 +400,7 @@
     <EntitySet Name="COSTO" EntityType="Self.COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
@@ -410,6 +431,10 @@
     <AssociationSet Name="FK_ESTADO_PROYECTO" Association="Self.FK_ESTADO_PROYECTO">
       <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_PROYECTO_PIEZAS" Association="Self.FK_ESTADO_PROYECTO_PIEZAS">
+      <End Role="ESTADO_PROYECTO_PIEZAS" EntitySet="ESTADO_PROYECTO_PIEZAS" />
+      <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
     </AssociationSet>
     <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />

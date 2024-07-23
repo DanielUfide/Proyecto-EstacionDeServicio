@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CATEGORIA">
           <Key>
             <PropertyRef Name="ID_CATEGORIA" />
@@ -46,6 +46,13 @@
           </Key>
           <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ESTADO" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADO_PROYECTO_PIEZAS">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="ESTADO_SERVICIO">
           <Key>
@@ -103,6 +110,7 @@
           <Property Name="ID_INVENTARIO" Type="int" Nullable="false" />
           <Property Name="ID_COSTO" Type="int" Nullable="false" />
           <Property Name="CANTIDAD" Type="int" Nullable="false" />
+          <Property Name="ESTADO" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ROLE_USUARIO">
           <Key>
@@ -208,6 +216,18 @@
             </Principal>
             <Dependent Role="PROYECTO">
               <PropertyRef Name="ID_ESTADO_PROYECTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ESTADO_PROYECTO_PIEZAS">
+          <End Role="ESTADO_PROYECTO_PIEZAS" Type="Self.ESTADO_PROYECTO_PIEZAS" Multiplicity="1" />
+          <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_PROYECTO_PIEZAS">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="PROYECTO_PIEZAS">
+              <PropertyRef Name="ESTADO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -385,6 +405,7 @@
           <EntitySet Name="COSTO" EntityType="Self.COSTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
@@ -415,6 +436,10 @@
           <AssociationSet Name="FK_ESTADO_PROYECTO" Association="Self.FK_ESTADO_PROYECTO">
             <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
             <End Role="PROYECTO" EntitySet="PROYECTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ESTADO_PROYECTO_PIEZAS" Association="Self.FK_ESTADO_PROYECTO_PIEZAS">
+            <End Role="ESTADO_PROYECTO_PIEZAS" EntitySet="ESTADO_PROYECTO_PIEZAS" />
+            <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
           </AssociationSet>
           <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
             <End Role="INVENTARIO" EntitySet="INVENTARIO" />
@@ -469,7 +494,8 @@
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EL_CRUCEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -488,7 +514,7 @@
           <Key>
             <PropertyRef Name="ID_COMENTARIO" />
           </Key>
-          <Property Name="ID_COMENTARIO" Type="Int32" Nullable="false" />
+          <Property Name="ID_COMENTARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
           <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
           <Property Name="COMENTARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -525,6 +551,14 @@
           <NavigationProperty Name="HISTORIAL_ESTADOS" Relationship="Self.FK_ESTADO_HISTORIAL_ESTADO" FromRole="ESTADO_PROYECTO" ToRole="HISTORIAL_ESTADOS" />
           <NavigationProperty Name="PROYECTO" Relationship="Self.FK_ESTADO_PROYECTO" FromRole="ESTADO_PROYECTO" ToRole="PROYECTO" />
         </EntityType>
+        <EntityType Name="ESTADO_PROYECTO_PIEZAS">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_ESTADO_PROYECTO_PIEZAS" FromRole="ESTADO_PROYECTO_PIEZAS" ToRole="PROYECTO_PIEZAS" />
+        </EntityType>
         <EntityType Name="ESTADO_SERVICIO">
           <Key>
             <PropertyRef Name="ID_ESTADO" />
@@ -537,7 +571,7 @@
           <Key>
             <PropertyRef Name="ID_HISTORIAL_ESTADO" />
           </Key>
-          <Property Name="ID_HISTORIAL_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="ID_HISTORIAL_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
           <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
           <Property Name="FECHA" Type="DateTime" Precision="3" />
@@ -553,9 +587,9 @@
           <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
           <Property Name="PRECIO_COMPRA" Type="Double" />
           <Property Name="PRECIO_VENTA" Type="Double" />
+          <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
-          <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -594,7 +628,9 @@
           <Property Name="ID_INVENTARIO" Type="Int32" Nullable="false" />
           <Property Name="ID_COSTO" Type="Int32" Nullable="false" />
           <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="COSTO" Relationship="Self.FK_COSTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="COSTO" />
+          <NavigationProperty Name="ESTADO_PROYECTO_PIEZAS" Relationship="Self.FK_ESTADO_PROYECTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="ESTADO_PROYECTO_PIEZAS" />
           <NavigationProperty Name="INVENTARIO" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="INVENTARIO" />
           <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_PIEZAS" FromRole="PROYECTO_PIEZAS" ToRole="PROYECTO" />
         </EntityType>
@@ -636,11 +672,11 @@
           <Property Name="CORREO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CONTRASEÑA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
           <NavigationProperty Name="COMENTARIOS_PROYECTO" Relationship="Self.FK_USUARIO_COMENTARIOS" FromRole="USUARIO" ToRole="COMENTARIOS_PROYECTO" />
           <NavigationProperty Name="PROYECTO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="USUARIO" ToRole="PROYECTO" />
           <NavigationProperty Name="ROLE_USUARIO" Relationship="Self.FK_USUARIO_ROLE" FromRole="USUARIO" ToRole="ROLE_USUARIO" />
           <NavigationProperty Name="VEHICULO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="USUARIO" ToRole="VEHICULO" />
-          <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
         </EntityType>
         <EntityType Name="VEHICULO">
           <Key>
@@ -650,10 +686,10 @@
           <Property Name="MARCA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="MODELO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="CHASIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
-          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_CATEGORIA_INVENTARIO">
           <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -760,6 +796,18 @@
             </Principal>
             <Dependent Role="PROYECTO">
               <PropertyRef Name="ID_ESTADO_PROYECTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ESTADO_PROYECTO_PIEZAS">
+          <End Role="ESTADO_PROYECTO_PIEZAS" Type="Self.ESTADO_PROYECTO_PIEZAS" Multiplicity="1" />
+          <End Role="PROYECTO_PIEZAS" Type="Self.PROYECTO_PIEZAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_PROYECTO_PIEZAS">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="PROYECTO_PIEZAS">
+              <PropertyRef Name="ESTADO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -877,6 +925,7 @@
           <EntitySet Name="COSTO" EntityType="Self.COSTO" />
           <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" />
           <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" />
+          <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" />
           <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" />
           <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" />
           <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" />
@@ -924,6 +973,10 @@
             <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
             <End Role="PROYECTO" EntitySet="PROYECTO" />
           </AssociationSet>
+          <AssociationSet Name="FK_ESTADO_PROYECTO_PIEZAS" Association="Self.FK_ESTADO_PROYECTO_PIEZAS">
+            <End Role="ESTADO_PROYECTO_PIEZAS" EntitySet="ESTADO_PROYECTO_PIEZAS" />
+            <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
+          </AssociationSet>
           <AssociationSet Name="FK_SERVICIO_ESTADO" Association="Self.FK_SERVICIO_ESTADO">
             <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />
             <End Role="SERVICIO" EntitySet="SERVICIO" />
@@ -960,60 +1013,19 @@
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EL_CRUCEModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="COMENTARIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result)">
-          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
-          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
-          <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
+            <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
-          <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
           <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="ID_ROL_USUARIO" Nullable="false" />
@@ -1094,6 +1106,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ESTADO_PROYECTO_PIEZAS">
+            <EntityTypeMapping TypeName="EL_CRUCEModel.ESTADO_PROYECTO_PIEZAS">
+              <MappingFragment StoreEntitySet="ESTADO_PROYECTO_PIEZAS">
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ESTADO_SERVICIO">
             <EntityTypeMapping TypeName="EL_CRUCEModel.ESTADO_SERVICIO">
               <MappingFragment StoreEntitySet="ESTADO_SERVICIO">
@@ -1115,12 +1135,12 @@
           <EntitySetMapping Name="INVENTARIO">
             <EntityTypeMapping TypeName="EL_CRUCEModel.INVENTARIO">
               <MappingFragment StoreEntitySet="INVENTARIO">
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
                 <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
                 <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
                 <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
                 <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1154,6 +1174,7 @@
                 <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
                 <ScalarProperty Name="ID_COSTO" ColumnName="ID_COSTO" />
                 <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1187,24 +1208,24 @@
           <EntitySetMapping Name="USUARIO">
             <EntityTypeMapping TypeName="EL_CRUCEModel.USUARIO">
               <MappingFragment StoreEntitySet="USUARIO">
-                <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
                 <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="CORREO" ColumnName="CORREO" />
                 <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
                 <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VEHICULO">
             <EntityTypeMapping TypeName="EL_CRUCEModel.VEHICULO">
               <MappingFragment StoreEntitySet="VEHICULO">
-                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
                 <ScalarProperty Name="PLACA" ColumnName="PLACA" />
                 <ScalarProperty Name="MARCA" ColumnName="MARCA" />
                 <ScalarProperty Name="MODELO" ColumnName="MODELO" />
                 <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1252,7 +1273,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

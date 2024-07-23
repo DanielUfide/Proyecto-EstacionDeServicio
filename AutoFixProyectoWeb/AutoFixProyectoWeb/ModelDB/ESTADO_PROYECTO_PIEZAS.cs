@@ -12,23 +12,18 @@ namespace AutoFixProyectoWeb.ModelDB
     using System;
     using System.Collections.Generic;
     
-    public partial class VEHICULO
+    public partial class ESTADO_PROYECTO_PIEZAS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public VEHICULO()
+        public ESTADO_PROYECTO_PIEZAS()
         {
-            this.PROYECTO = new HashSet<PROYECTO>();
+            this.PROYECTO_PIEZAS = new HashSet<PROYECTO_PIEZAS>();
         }
     
-        public string PLACA { get; set; }
-        public string MARCA { get; set; }
-        public string MODELO { get; set; }
-        public string CHASIS { get; set; }
-        public bool ESTADO { get; set; }
-        public int ID_USUARIO { get; set; }
+        public int ID_ESTADO { get; set; }
+        public string ESTADO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROYECTO> PROYECTO { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
+        public virtual ICollection<PROYECTO_PIEZAS> PROYECTO_PIEZAS { get; set; }
     }
 }
