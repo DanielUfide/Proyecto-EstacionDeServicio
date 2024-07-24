@@ -590,6 +590,7 @@
     <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
     <Content Include="Views\Mecanico\Index.cshtml" />
+    <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
