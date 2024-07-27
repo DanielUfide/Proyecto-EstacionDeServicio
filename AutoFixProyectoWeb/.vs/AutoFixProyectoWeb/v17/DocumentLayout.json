@@ -1,73 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|c:\\users\\maric\\documents\\github\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|c:\\users\\usuario\\documents\\github\\proyecto-estaciondeservicio-main\\autofixproyectoweb\\autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\content\\assets\\js\\custom\\inventario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\content\\assets\\js\\custom\\inventario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\UI Final\\pages\\inventarios.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\inventario\\consultainventario - copy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\inventario\\consultainventario - copy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\inventario\\consultainventario - copy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\modeldb\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\modeldb\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\entities\\proyectoent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\entities\\proyectoent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\modeldb\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\modeldb\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\proyecto\\proyectocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\proyecto\\proyectocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:AutoFixProyectoWeb\\Models\\VehiculoModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\InventarioEnt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:AutoFixProyectoWeb\\Entities\\InventarioEnt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -77,215 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "INVENTARIO.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\INVENTARIO.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ModelDB\\INVENTARIO.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\INVENTARIO.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ModelDB\\INVENTARIO.cs",
-              "ViewState": "AQIAAAMAAAAY/////z8lwBgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T02:42:34.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConsultaInventario - Copy.cshtml",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
-              "ViewState": "AQIAALgAAACIzMzMzMwnwL8AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T02:57:03.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "inventarios.html",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\UI Final\\pages\\inventarios.html",
-              "RelativeDocumentMoniker": "..\\UI Final\\pages\\inventarios.html",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\UI Final\\pages\\inventarios.html",
-              "RelativeToolTip": "..\\UI Final\\pages\\inventarios.html",
-              "ViewState": "AQIAABgCAADAZmZmZuYcwBkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-07-09T02:19:32.834Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConsultaInventario.cshtml",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
-              "ViewState": "AQIAAHUCAADw//////8cwIECAAA+AAAA",
+              "Title": "Piezas.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIBAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-09T02:08:28.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Web.config",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Web.config",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Web.config",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Web.config",
-              "ViewState": "AQIAAAAAAACAMzMzM3MvwEkAAAC9AQAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-07-09T02:36:57.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InventarioModel.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "ViewState": "AQIAAGwAAACA//////8jwHgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T04:28:25.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "inventario.js",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\inventario.js",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\inventario.js",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\inventario.js",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\inventario.js",
-              "ViewState": "AQIAAHMAAAAAMTMzM7MhwHsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-18T03:50:37.083Z",
+              "WhenOpened": "2024-07-26T23:59:03.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "InventarioController.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\InventarioController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\InventarioController.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\InventarioController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\InventarioController.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAABwEsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T03:31:29.307Z",
+              "Title": "ProyectosList_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T23:56:35.318Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\Model1.edmx",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ModelDB\\Model1.edmx",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ModelDB\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-07-10T03:28:21.427Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProyectoEnt.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:28:59.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\App_Start\\RouteConfig.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\App_Start\\RouteConfig.cs",
-              "ViewState": "AQIAAAMAAABAzczMzIwjwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T02:32:22.101Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "vehiculos.js",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
-              "ViewState": "AQIAADIAAAAAAAAAAADgvz0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-28T03:29:49.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "VehiculoModel.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAqwEwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T03:10:56.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAI0AAAAAgGZmZmb0vzsAAAAqAAAA",
+              "DocumentIndex": 4,
+              "Title": "ConsultaInventario.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-09T02:29:12.812Z"
+              "WhenOpened": "2024-07-26T23:56:14.268Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
-              "ViewState": "AQIAAL4BAAAAQAAAAAABwNMBAAANAAAA",
+              "DocumentIndex": 3,
+              "Title": "ConsultaInventario - Copy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
+              "ViewState": "AQIAAAsBAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-09T02:29:26.723Z"
+              "WhenOpened": "2024-07-26T23:56:11.814Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProyectoCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
-              "ViewState": "AQIAAIoAAAAALzMzM3MvwKsAAAAMAAAA",
+              "DocumentIndex": 1,
+              "Title": "Calendario.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio-main\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-09T02:29:59.701Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "InventarioEnt.cs",
-              "DocumentMoniker": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\InventarioEnt.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Entities\\InventarioEnt.cs",
-              "ToolTip": "C:\\Users\\maric\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\InventarioEnt.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Entities\\InventarioEnt.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T03:21:01.875Z"
+              "WhenOpened": "2024-07-26T23:56:03.526Z",
+              "EditorCaption": ""
             }
           ]
         }
