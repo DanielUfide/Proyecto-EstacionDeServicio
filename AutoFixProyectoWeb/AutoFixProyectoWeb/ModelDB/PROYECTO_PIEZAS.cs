@@ -25,7 +25,14 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual ESTADO_PROYECTO_PIEZAS ESTADO_PROYECTO_PIEZAS { get; set; }
         public virtual INVENTARIO INVENTARIO { get; set; }
         public virtual PROYECTO PROYECTO { get; set; }
+<<<<<<< Updated upstream
         public string ID_VEHICULO { get; set; }
         public string NOMBRE_INVENTARIO { get; set; }
+=======
+        public string ID_VEHICULO { get; internal set; }
+        public string NOMBRE_INVENTARIO { get; internal set; }
+
+        public string ESTADO_DESCRIPCION { get; internal set; }
+>>>>>>> Stashed changes
     }
 }

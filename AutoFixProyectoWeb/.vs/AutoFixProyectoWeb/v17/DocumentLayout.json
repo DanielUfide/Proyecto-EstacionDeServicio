@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -21,12 +22,21 @@
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\mecanicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\mecanicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\mecanicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\mecanicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,12 +59,17 @@
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\content\\assets\\js\\core\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\content\\assets\\js\\core\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -65,12 +80,17 @@
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\clienteview\\mecanicovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\clienteview\\mecanicovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -93,16 +113,96 @@
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\clienteview\\clienteprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\clienteview\\clienteprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\proyectomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\proyectomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|c:\\users\\usuario\\documents\\github\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\proyecto\\proyectocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\proyecto\\proyectocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|c:\\users\\usuario\\documents\\github\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\modeldb\\proyecto_piezas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\modeldb\\proyecto_piezas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\proyectoview\\proyectoclientevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\proyectoview\\proyectoclientevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\content\\assets\\js\\custom\\vehiculos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\content\\assets\\js\\custom\\vehiculos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\vehiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\vehiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\entities\\proyectoent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\entities\\proyectoent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\vehiculomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\vehiculomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\vehiculoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\entities\\proyecto_piezasent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\entities\\proyecto_piezasent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\clienteview\\clienteprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\clienteview\\clienteprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\content\\assets\\js\\custom\\usuarios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\content\\assets\\js\\custom\\usuarios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\content\\assets\\js\\custom\\crearusuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\content\\assets\\js\\custom\\crearusuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\partials\\proyectoedit_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\proyectoedit_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\proyecto\\partials\\comentarioslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\proyecto\\partials\\comentarioslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -115,10 +215,13 @@
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+=======
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\inventario\\consultainventario - copy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\inventario\\consultainventario - copy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:AutoFixProyectoWeb\\Models\\VehiculoModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -140,6 +243,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\InventarioEnt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:AutoFixProyectoWeb\\Entities\\InventarioEnt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\inventario\\consultainventario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -149,6 +260,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 9,
           "Children": [
             {
@@ -160,12 +272,129 @@
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
               "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAuAAAA",
+=======
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProyectoController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
+              "ViewState": "AQIAABoAAAAAk5mZmZkfwCcAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:23:27.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
+              "ViewState": "AQIAAF4AAACAZmZmZiYgwFMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:15:02.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProyectoModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\ProyectoModel.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\ProyectoModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\ProyectoModel.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\ProyectoModel.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAADwv2kAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:59:28.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAABIAAAAIzszMzMwOwBoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:15:12.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsuarioModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\UsuarioModel.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\UsuarioModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\UsuarioModel.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\UsuarioModel.cs",
+              "ViewState": "AQIAAAYAAAAwMzMzM3MgwCEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T02:39:45.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MecanicoModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAawFYAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T03:56:02.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProyectoCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Proyecto\\ProyectoCliente.cshtml",
+              "ViewState": "AQIAANEBAAAAaGZmZmYqwOoBAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:21:17.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MecanicoController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
+              "ViewState": "AQIAADMAAACAZmZmZoYwwEEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T02:42:52.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Piezas.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
+              "ViewState": "AQIAAE8BAACAmZmZmRkRwGMBAABVAAAA",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-19T02:06:51.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 22,
               "Title": "ClienteProfileVM.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\ClienteProfileVM.cs",
@@ -429,15 +658,142 @@
               "ViewState": "AQIAABsAAABAMzMzM3MvwDEAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-19T02:08:49.182Z"
+=======
+              "DocumentIndex": 6,
+              "Title": "MecanicoVM.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAswBMAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T03:18:37.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calendario.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T23:56:03.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VehiculosController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\VehiculosController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\VehiculosController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\VehiculosController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\VehiculosController.cs",
+              "ViewState": "AQIAAEIAAAAgMzMzM7MwwBQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T03:50:59.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "vehiculos.js",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\vehiculos.js",
+              "ViewState": "AQIAAJwAAAAAMzMzM3MkwKoAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-02T03:26:22.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PROYECTO_PIEZAS.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
+              "ViewState": "AQIAAAoAAAAAzczMzMwAwA4AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T22:21:26.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProyectoClienteVM.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ProyectoView\\ProyectoClienteVM.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\ProyectoView\\ProyectoClienteVM.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ProyectoView\\ProyectoClienteVM.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\ProyectoView\\ProyectoClienteVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:28:58.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProyectoEdit_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoEdit_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoEdit_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoEdit_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoEdit_partial.cshtml",
+              "ViewState": "AQIAAA8AAAAAAQAAAIApwCkAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T02:49:53.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ProyectosList_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectosList_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectosList_partial.cshtml",
+              "ViewState": "AQIAAGoAAAAANjMzMzMLwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T02:56:56.848Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
+<<<<<<< Updated upstream
+=======
+              "Title": "VehiculosList_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:44:14.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Usuarios\\Index.cshtml",
+              "ViewState": "AQIAAL0BAAAAAAAAAAAhwJoBAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:44:18.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+>>>>>>> Stashed changes
               "Title": "ProyectoEnt.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
               "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
               "RelativeToolTip": "AutoFixProyectoWeb\\Entities\\ProyectoEnt.cs",
+<<<<<<< Updated upstream
               "ViewState": "AQIAAAAAAAAAAAAAAAAswAkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T03:28:59.451Z"
@@ -453,6 +809,131 @@
               "ViewState": "AQIAAAUAAAAAAAAAAAAnwBMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-19T02:21:22.359Z"
+=======
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T05:55:10.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProyectoCreate_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
+              "ViewState": "AQIAAA8AAAAwMzMzM5MwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T06:12:16.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VehiculoModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "ViewState": "AQIAAHUAAAAAZ2ZmZiYtwHsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:59:30.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Proyecto_PiezasEnt.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\Proyecto_PiezasEnt.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Entities\\Proyecto_PiezasEnt.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Entities\\Proyecto_PiezasEnt.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Entities\\Proyecto_PiezasEnt.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:57:46.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UsuariosController - Copia.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\UsuariosController - Copia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T05:17:32.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ClienteProfileVM.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\ClienteProfileVM.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\ClienteProfileVM.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\ClienteProfileVM.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\ClienteProfileVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T04:16:40.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "crearUsuario.js",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\crearUsuario.js",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\crearUsuario.js",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\crearUsuario.js",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\crearUsuario.js",
+              "ViewState": "AQIAAAkAAACgmZmZmRkmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-02T03:26:10.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ComentariosList_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\Partials\\ComentariosList_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Proyecto\\Partials\\ComentariosList_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Proyecto\\Partials\\ComentariosList_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Proyecto\\Partials\\ComentariosList_partial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T02:47:04.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "usuarios.js",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\usuarios.js",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\usuarios.js",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Content\\assets\\js\\custom\\usuarios.js",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Content\\assets\\js\\custom\\usuarios.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-02T03:26:15.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ProyectosList_partial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T23:56:35.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ConsultaInventario.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T23:56:14.268Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -462,6 +943,7 @@
               "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
               "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Inventario\\ConsultaInventario - Copy.cshtml",
+<<<<<<< Updated upstream
               "ViewState": "AQIAAKUAAAAALTMzM5MwwMIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-10T02:57:03.66Z"
@@ -572,6 +1054,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T03:21:01.875Z"
+=======
+              "ViewState": "AQIAAAsBAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T23:56:11.814Z"
+>>>>>>> Stashed changes
             }
           ]
         }

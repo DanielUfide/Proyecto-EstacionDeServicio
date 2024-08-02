@@ -28,7 +28,7 @@ namespace AutoFixProyectoWeb.Controllers
 
             string placaVehiculos = string.Join(",", vehiculosCliente.Select(v => v.PLACA));
             List<PROYECTOS_DE_CLIENTE_Result> proyectosCliente = clienteModel.getProyectosCliente(placaVehiculos);
-
+            List<PROYECTO_PIEZAS> solicitudesPendientes = mecanicoModel.getProyectoPiezasUsuarioPendientes(usuarioActual.id_usuario);
             List<SERVICIO> servicios = servicioModel.getServicios();
             List<USUARIO> mecanicos = mecanicoModel.getMecanicos();
 
@@ -37,6 +37,7 @@ namespace AutoFixProyectoWeb.Controllers
                 perfil = usuarioActual, 
                 vehiculos = vehiculosCliente, 
                 proyectos = proyectosCliente,
+                solicitudesPendientes = solicitudesPendientes,
                 proyectoCreateVM = new ProyectoCreateVM()
                 {
                     vehiculos = vehiculosCliente,

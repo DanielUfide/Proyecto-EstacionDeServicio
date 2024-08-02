@@ -587,10 +587,20 @@
     <Content Include="Views\Inventario\ConsultaInventario.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Inventario\ConsultaInventario - Copy.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
     <Content Include="Views\Mecanico\Index.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
+=======
+    <Content Include="Views\Mecanico\Calendario.cshtml" />
+    <Content Include="Views\Admin\Historial.cshtml" />
+    <Content Include="Views\Admin\Partials\HistorialList_partial.cshtml" />
+    <Content Include="Views\Mecanico\Piezas.cshtml" />
+    <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
+    <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
+    <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

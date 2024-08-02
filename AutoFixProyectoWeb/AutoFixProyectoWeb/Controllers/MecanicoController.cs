@@ -29,7 +29,7 @@ namespace AutoFixProyectoWeb.Controllers
             UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
 
             proyectoPiezas.idCosto = 1;
-            proyectoPiezas.estado = 1;
+            proyectoPiezas.estado = 3;
             mecanicoModel.guardarProyectoPiezasModel(proyectoPiezas);
 
             return RedirectToAction("Index", "Mecanico");
@@ -45,6 +45,11 @@ namespace AutoFixProyectoWeb.Controllers
             string placaVehiculos = string.Join(",", vehiculosCliente.Select(v => v.PLACA));
             List<PROYECTOS_DE_CLIENTE_Result> proyectosCliente = clienteModel.getProyectosCliente(placaVehiculos);
             List<PROYECTO_PIEZAS> proyectos = mecanicoModel.getProyectoPiezas();
+
+            List<PROYECTO_PIEZAS> solicitudesAprobadas = mecanicoModel.getProyectoPiezasUsuarioAprobadasM(usuarioActual.id_usuario);
+            List<PROYECTO_PIEZAS> solicitudesRehazadas = mecanicoModel.getProyectoPiezasUsuarioRechazadasM(usuarioActual.id_usuario);
+            List<PROYECTO_PIEZAS> solicitudesPendientes = mecanicoModel.getProyectoPiezasUsuarioPendientesM(usuarioActual.id_usuario);
+
             List<SERVICIO> servicios = servicioModel.getServicios();
             List<USUARIO> mecanicos = mecanicoModel.getMecanicos();
             List<INVENTARIO> inventario = inventarioModel.getInventario();
@@ -67,7 +72,11 @@ namespace AutoFixProyectoWeb.Controllers
                 vehiculos = vehiculosCliente,
                 proyectos = proyectos,
                 inventario = inventario,
-                proyecto = proyecto
+                proyecto = proyecto,
+                solicitudesAprobadas = solicitudesAprobadas,
+                solicitudesRechazadas = solicitudesRehazadas,
+                solicitudesPendientes = solicitudesPendientes,
+                test = "prueba123"
                 /*mecanicoVM = new MecanicoVM()
                 {
                     vehiculos = vehiculosCliente,

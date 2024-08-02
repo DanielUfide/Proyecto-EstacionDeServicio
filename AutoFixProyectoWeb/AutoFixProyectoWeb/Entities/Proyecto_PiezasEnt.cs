@@ -12,5 +12,6 @@ namespace AutoFixProyectoWeb.Entities
         public int idCosto { get; set; }
         public int cantidad { get; set; }
         public int estado { get; set; }
+        public int idSolicitud { get; set; }
     }
 }
