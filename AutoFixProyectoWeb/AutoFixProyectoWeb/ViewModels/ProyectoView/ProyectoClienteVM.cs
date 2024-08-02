@@ -13,5 +13,7 @@ namespace AutoFixProyectoWeb.ViewModels.ProyectoView
         public UsuarioEnt perfil { get; set; }
         public List<ESTADOS_PROYECTO_DE_CLIENTE_Result> estados { get; set; }
         public List<COMENTARIOS_DE_PROYECTO_Result> comentarios { get; set; }
+        public List<PROYECTO_PIEZAS> solicitudesPendientes { get; set; }
+        public List<PROYECTO_PIEZAS> solicitudesHistorial { get; set; }
     }
 }

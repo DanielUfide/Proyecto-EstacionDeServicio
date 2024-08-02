@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="47230b9257ea44c3be8f287bb0174c37" Name="Diagram1">
-        <EntityTypeShape EntityType="EL_CRUCEModel.CATEGORIA" Width="1.5" PointX="6.75" PointY="16.875" IsExpanded="true" />
+      <Diagram DiagramId="bac76808b753477bbbd26bc2da83ea89" Name="Diagram1">
+        <EntityTypeShape EntityType="EL_CRUCEModel.CATEGORIA" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.COMENTARIOS_PROYECTO" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.COSTO" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_COSTO" Width="1.5" PointX="6.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_PROYECTO" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_PROYECTO_PIEZAS" Width="1.5" PointX="8.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.ESTADO_SERVICIO" Width="1.5" PointX="1.5" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.HISTORIAL_ESTADOS" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EL_CRUCEModel.INVENTARIO" Width="1.5" PointX="9" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EL_CRUCEModel.PROVEEDOR" Width="1.5" PointX="4.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.INVENTARIO" Width="1.5" PointX="9" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.PROVEEDOR" Width="1.5" PointX="4.5" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.PROYECTO_PIEZAS" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.ROLE_USUARIO" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
