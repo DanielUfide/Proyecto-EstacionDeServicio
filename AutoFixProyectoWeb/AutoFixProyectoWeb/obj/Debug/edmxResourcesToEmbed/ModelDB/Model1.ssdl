@@ -42,13 +42,6 @@
     <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ESTADO" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="ESTADO_PROYECTO_PIEZAS">
-    <Key>
-      <PropertyRef Name="ID_ESTADO" />
-    </Key>
-    <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
-  </EntityType>
   <EntityType Name="ESTADO_SERVICIO">
     <Key>
       <PropertyRef Name="ID_ESTADO" />
@@ -74,7 +67,7 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
-    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -106,7 +99,6 @@
     <Property Name="ID_INVENTARIO" Type="int" Nullable="false" />
     <Property Name="ID_COSTO" Type="int" Nullable="false" />
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
-    <Property Name="ESTADO" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ROLE_USUARIO">
     <Key>
@@ -395,7 +387,6 @@
     <EntitySet Name="COSTO" EntityType="Self.COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_COSTO" EntityType="Self.ESTADO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />

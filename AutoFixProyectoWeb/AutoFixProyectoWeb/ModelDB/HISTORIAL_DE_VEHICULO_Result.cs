@@ -13,8 +13,8 @@ namespace AutoFixProyectoWeb.ModelDB
     
     public partial class HISTORIAL_DE_VEHICULO_Result
     {
-        public Nullable<System.DateTime> FECHA { get; set; }
         public int ID_MECANICO { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
         public string SERVICIO { get; set; }
         public string DESCRIPCION { get; set; }
         public double PRECIO { get; set; }

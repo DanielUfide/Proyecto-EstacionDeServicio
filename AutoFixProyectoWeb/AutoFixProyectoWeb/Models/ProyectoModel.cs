@@ -76,15 +76,5 @@ namespace AutoFixProyectoWeb.Models
                 return comentarios;
             }
         }
-
-        public List<PROYECTO> getProyectos()
-        {
-            using (var conexion = new El_Cruce_Entities())
-            {
-                List<PROYECTO> proyecto = conexion.PROYECTO.ToList();
-
-                return proyecto;
-            }
-        }
     }
 }
