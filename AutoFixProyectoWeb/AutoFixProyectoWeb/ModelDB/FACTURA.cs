@@ -18,6 +18,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public string DETALLE { get; set; }
         public double MONTO { get; set; }
         public int ID_USUARIO { get; set; }
+        public string METODO_PAGO { get; set; }
     
         public virtual USUARIO USUARIO { get; set; }
     }

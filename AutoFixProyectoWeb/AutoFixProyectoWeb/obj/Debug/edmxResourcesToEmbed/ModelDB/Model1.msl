@@ -64,6 +64,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FACTURA">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="HISTORIAL_ESTADOS">
       <EntityTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_ESTADOS">
         <MappingFragment StoreEntitySet="HISTORIAL_ESTADOS">

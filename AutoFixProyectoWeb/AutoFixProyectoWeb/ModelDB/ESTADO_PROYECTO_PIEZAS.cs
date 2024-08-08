@@ -12,17 +12,9 @@ namespace AutoFixProyectoWeb.ModelDB
     using System;
     using System.Collections.Generic;
     
-    public partial class PROYECTO_PIEZAS
+    public partial class ESTADO_PROYECTO_PIEZAS
     {
-        public int ID_SOLICITUD { get; set; }
-        public int ID_PROYECTO { get; set; }
-        public int ID_INVENTARIO { get; set; }
-        public int ID_COSTO { get; set; }
-        public int CANTIDAD { get; set; }
-        public int ESTADO { get; set; }
-    
-        public virtual COSTO COSTO { get; set; }
-        public virtual INVENTARIO INVENTARIO { get; set; }
-        public virtual PROYECTO PROYECTO { get; set; }
+        public int ID_ESTADO { get; set; }
+        public string ESTADO { get; set; }
     }
 }

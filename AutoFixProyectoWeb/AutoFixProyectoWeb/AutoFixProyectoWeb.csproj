@@ -167,6 +167,9 @@
     <Compile Include="ModelDB\ESTADO_PROYECTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\ESTADO_PROYECTO_PIEZAS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -342,6 +345,7 @@
     <Content Include="Content\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\assets\js\core\popper.min.js" />
     <Content Include="Content\assets\js\custom\crearUsuario.js" />
+    <Content Include="Content\assets\js\custom\factura.js" />
     <Content Include="Content\assets\js\custom\inventario.js" />
     <Content Include="Content\assets\js\custom\usuarios.js" />
     <Content Include="Content\assets\js\custom\vehiculos.js" />
@@ -621,6 +625,7 @@
     <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
+    <Content Include="Views\Mecanico\Facturacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

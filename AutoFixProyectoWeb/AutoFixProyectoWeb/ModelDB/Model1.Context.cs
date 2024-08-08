@@ -32,6 +32,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<COSTO> COSTO { get; set; }
         public virtual DbSet<ESTADO_COSTO> ESTADO_COSTO { get; set; }
         public virtual DbSet<ESTADO_PROYECTO> ESTADO_PROYECTO { get; set; }
+        public virtual DbSet<ESTADO_PROYECTO_PIEZAS> ESTADO_PROYECTO_PIEZAS { get; set; }
         public virtual DbSet<ESTADO_SERVICIO> ESTADO_SERVICIO { get; set; }
         public virtual DbSet<FACTURA> FACTURA { get; set; }
         public virtual DbSet<HISTORIAL_ESTADOS> HISTORIAL_ESTADOS { get; set; }
