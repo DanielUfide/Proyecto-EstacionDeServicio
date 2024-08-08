@@ -130,11 +130,13 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\FacturacionController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\MecanicoController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
+    <Compile Include="Entities\FacturaEnt.cs" />
     <Compile Include="Entities\Proyecto_PiezasEnt.cs" />
     <Compile Include="Entities\InventarioEnt.cs" />
     <Compile Include="Entities\ProyectoEnt.cs" />
@@ -165,10 +167,10 @@
     <Compile Include="ModelDB\ESTADO_PROYECTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\ESTADO_PROYECTO_PIEZAS.cs">
+    <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
+    <Compile Include="ModelDB\FACTURA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_DE_VEHICULO_Result.cs">
@@ -230,6 +232,7 @@
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\FacturacionModel.cs" />
     <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\MecanicoModel.cs" />
     <Compile Include="Models\ProyectoModel.cs" />
@@ -368,16 +371,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ModelDB\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelDB\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\assets\css\soft-ui-dashboard.css.map" />
     <Content Include="Content\assets\fonts\nucleo-icons.eot" />
     <Content Include="Content\assets\fonts\nucleo-icons.ttf" />
@@ -557,12 +550,15 @@
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities-extend.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_variables.scss" />
-    <EntityDeploy Include="ModelDB\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModelDB\Model1.edmx.diagram">
+    <Content Include="ModelDB\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDB\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -570,6 +566,13 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="ModelDB\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelDB\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -611,7 +614,6 @@
     <Content Include="Views\Proyecto\ProyectoCliente.cshtml" />
     <Content Include="Views\Inventario\ConsultaInventario.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
-    <Content Include="Views\Inventario\ConsultaInventario - Copy.cshtml" />
     <Content Include="Views\Mecanico\Calendario.cshtml" />
     <Content Include="Views\Admin\Historial.cshtml" />
     <Content Include="Views\Admin\Partials\HistorialList_partial.cshtml" />
