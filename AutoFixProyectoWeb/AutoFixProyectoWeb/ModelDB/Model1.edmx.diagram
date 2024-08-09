@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="61f0f017a1b54c799b3d9b516f9da901" Name="Diagram1">
+      <Diagram DiagramId="5718bf8306e24618b1ede90cd7ad48ef" Name="Diagram1">
         <EntityTypeShape EntityType="EL_CRUCEModel.CATEGORIA" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.COMENTARIOS_PROYECTO" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EL_CRUCEModel.COSTO" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
