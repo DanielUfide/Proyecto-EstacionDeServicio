@@ -75,7 +75,8 @@
     <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MONTO" Type="Double" Nullable="false" />
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
-    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CANCELADO" Type="Boolean" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_FACTURA_USER" FromRole="FACTURA" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">

@@ -19,6 +19,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public double MONTO { get; set; }
         public int ID_USUARIO { get; set; }
         public string METODO_PAGO { get; set; }
+        public Nullable<bool> CANCELADO { get; set; }
     
         public virtual USUARIO USUARIO { get; set; }
     }

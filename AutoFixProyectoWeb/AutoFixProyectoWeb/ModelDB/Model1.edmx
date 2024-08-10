@@ -69,7 +69,8 @@
           <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="MONTO" Type="float" Nullable="false" />
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-          <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" />
+          <Property Name="CANCELADO" Type="bit" />
         </EntityType>
         <EntityType Name="HISTORIAL_ESTADOS">
           <Key>
@@ -592,7 +593,8 @@
           <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MONTO" Type="Double" Nullable="false" />
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
-          <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CANCELADO" Type="Boolean" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_FACTURA_USER" FromRole="FACTURA" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="HISTORIAL_ESTADOS">
@@ -1186,6 +1188,7 @@
                 <ScalarProperty Name="MONTO" ColumnName="MONTO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
                 <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+                <ScalarProperty Name="CANCELADO" ColumnName="CANCELADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

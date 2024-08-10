@@ -15,6 +15,7 @@ namespace AutoFixProyectoWeb.Controllers
 
         FacturacionModel facturaModel = new FacturacionModel();
 
+        [HttpGet]
         public ActionResult ConsultaFactura()
         {
             var result = facturaModel.getFacturacionModel();
@@ -22,7 +23,7 @@ namespace AutoFixProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public JsonResult guardarController(int id_factura, int id_usuario, string detalle, double monto)
+        public JsonResult guardarFacturaController(int id_factura, int id_usuario, string detalle, double monto)
         {
             FacturaEnt factura = new FacturaEnt
             {
@@ -60,7 +61,7 @@ namespace AutoFixProyectoWeb.Controllers
                 id_factura = id_factura
             };
 
-            var result = facturaModel.addFacturacionModel(factura);
+            var result = facturaModel.getFacturaPorIDModel(factura);
             return Json(result);
         }
         [HttpGet]

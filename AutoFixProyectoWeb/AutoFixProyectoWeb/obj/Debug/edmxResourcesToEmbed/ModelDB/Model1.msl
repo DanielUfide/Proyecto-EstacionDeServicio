@@ -72,6 +72,7 @@
           <ScalarProperty Name="MONTO" ColumnName="MONTO" />
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+          <ScalarProperty Name="CANCELADO" ColumnName="CANCELADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

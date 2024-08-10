@@ -17,7 +17,7 @@
     <link href="/Content/assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bb44dac6ab.js" crossorigin="anonymous"></script>
     <link href="/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/Content/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
@@ -176,6 +176,31 @@
                             </svg>
                         </div>
                         <span class="nav-link-text ms-1">Inventario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Facturacion/ConsultaFactura">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>document</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(154.000000, 300.000000)">
+                                                <path class="color-background opacity-6"
+                                                      d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z">
+                                                </path>
+                                                <path class="color-background"
+                                                      d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Facturas</span>
                     </a>
                 </li>
             </ul>
@@ -456,16 +481,16 @@
                                         <p class="text-xs text-secondary mb-0">@item.monto</p>
                                     </td>
                                     <td class="align-middle seccion-editar">
-                                        <!--  <h6 class="idFactura" hidden>@item.id_usuario</h6>  -->
+                                        <h6 class="idFactura" hidden>@item.id_factura</h6>  
                                     <a class=" font-weight-bold text-xs btn-editar btn-link" data-toggle="tooltip"
                                        data-original-title="Editar" data-bs-toggle="modal" data-bs-target="#actualizarFactura" style="color: #cb0c9f">
                                         Editar
                                     </a>
                                 </td>
                                         <td class="align-middle seccion-eliminar">
-                                            <h6 class="idInventario" hidden>@item.id_factura</h6>
+                                            <h6 class="idFactura" hidden>@item.id_factura</h6>
                                             <a class=" font-weight-bold text-xs btn-eliminar btn-eliminar btn-link" data-toggle="tooltip"
-                                               data-id-inventario="@item.id_factura" data-original-title="Eliminar" data-bs-toggle="modal" data-bs-target="#eliminarInventario" style="color: #cb0c9f">
+                                               data-id-factura="@item.id_factura" data-original-title="Eliminar" data-bs-toggle="modal" data-bs-target="#eliminarFactura" style="color: #cb0c9f">
                                                 Eliminar
                                             </a>
                                         </td>
@@ -480,46 +505,6 @@
         </div>
 
 
-
-        <!-- Modal Agregar Factura-->
-        <div class="modal modal-lg fade" id="agregarFactura" tabindex="-1" aria-labelledby="agregarFactura"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="agregarFactura">Agregar Factura</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form action="">
-
-                            <label for="txtIDFactura">Factura ID</label>
-                            <input type="text" name="txtIDFactura" id="txtIDFactura" class="form-control">
-
-                            <label for="txtIDUsuario" class="mt-xl-3">ID Usuario</label>
-                            <input type="text" name="txtIDUsuario" id="txtIDUsuario" class="form-control">
-
-                            <label for="txtDetalle" class="mt-xl-3">Indique los detalles de la factura</label>
-                            <input type="text" name="txtDetalle" id="txtDetalle"
-                                   class="txtDetalle form-control">
-
-                            <label for="txtMonto" class="mt-xl-3">Indique monto total de la factura</label>
-                            <input type="text" name="txtMonto" id="txtMonto" class="form-control">
-
-                            <div class="row mt-xl-3 justify-content-center text-center">
-                                <div class="col-md-12">
-                                    <input type="submit" value="Guardar factura" class="btn bg-gradient-dark">
-                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal Agregar Categoría
     <div class="modal modal-lg fade" id="agregarCategoria" tabindex="-1" aria-labelledby="agregarCategoria"
@@ -559,7 +544,7 @@
         </div>
         -->
         </div>
-    <!-- Modal Agregar Inventario -->
+    <!-- Modal Agregar factura -->
         <div class="modal modal-lg fade" id="agregarFactura" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -590,7 +575,7 @@
             </div>
         </div>
 
-        <!-- Modal  editar Inventario-->
+        <!-- Modal  editar factura-->
         <div class="modal modal-lg fade" id="actualizarFactura" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

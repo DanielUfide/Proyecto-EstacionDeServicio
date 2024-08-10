@@ -625,7 +625,7 @@
     <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
-    <Content Include="Views\Mecanico\Facturacion.cshtml" />
+    <Content Include="Views\Facturacion\ConsultaFactura.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

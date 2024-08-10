@@ -9,7 +9,7 @@ function consultarTodos()
     //Puede ser con el rol guardado en el modelo o en el cookie 
     $.ajax(
         {
-            url: "/Mecanico/getFacturaController",
+            url: "/Facturacion/getFacturaController",
             type: "GET",
             dataType: "json",
             success: function (data) {
@@ -27,11 +27,11 @@ function consultarTodos()
 function consultarPorID(event)
 {
     var item = event.target.closest('.seccion-editar');
-    var id_inventario = item.querySelector('.idFactura').textContent;
+    var id_factura = item.querySelector('.idFactura').textContent;
     
     $.ajax(
         {
-            url: "/Mecanico/getFacturaPorIDModel",
+            url: "/Facturacion/getFacturaPorIDModel",
             type: "POST",
             dataType: "json",
             data: {
@@ -81,7 +81,7 @@ function guardarFactura() {
     }
     $.ajax(
         {
-            url: "/Inventario/guardarFacturaController",
+            url: "/Facturacion/guardarFacturaController",
             type: "POST",
             data: {
                 "id_factura": id_factura,
@@ -115,7 +115,7 @@ function eliminarFactura() {
     var id_factura = $('#idFacturaEliminar').val();
     $.ajax(
         {
-            url: "/Mecanico/eliminarFacturaController",
+            url: "/Facturacion/eliminarFacturaController",
             type: "POST",
             data: {
                 "id_factura": id_factura
@@ -134,9 +134,9 @@ function eliminarFactura() {
             }
         })
 }
-function actualizarInventario()
+function actualizarFactura()
 {
-    console.log("test actualizar");
+
     var modal = $('#actualizarFactura');
     var id_factura = modal.find('#txtIDFactura').val();
     var id_usuario = modal.find('#txtIDUsuario').val();
@@ -148,7 +148,7 @@ function actualizarInventario()
     }
     $.ajax(
         {
-            url: "/Mecanico/actualizarFacturaController",
+            url: "/Facturacion/actualizarFacturaController",
             type: "POST",
             data: {
                 "id_factura": id_factura,
@@ -162,6 +162,7 @@ function actualizarInventario()
             dataType: "json",
             success: function (data) {
                 location.reload();
+
             },
             error: function (xhr, status, error) {
                 // Handle errors here

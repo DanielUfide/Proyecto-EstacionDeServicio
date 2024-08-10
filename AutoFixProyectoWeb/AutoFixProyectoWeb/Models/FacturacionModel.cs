@@ -41,7 +41,7 @@ namespace AutoFixProyectoWeb.Models
                                      where x.ID_FACTURA == factura.id_factura
                                      select x).FirstOrDefault();
 
-                FacturaEnt Factura = new FacturaEnt
+                FacturaEnt newFactura = new FacturaEnt
                 {
                     id_factura = facturaDB.ID_FACTURA,
                     id_usuario = facturaDB.ID_USUARIO,
@@ -49,7 +49,7 @@ namespace AutoFixProyectoWeb.Models
                     monto = (float)facturaDB.MONTO
                 };
 
-                return factura;
+                return newFactura;
             }
 
         }
