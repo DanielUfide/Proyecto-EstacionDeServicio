@@ -176,9 +176,6 @@
     <Compile Include="ModelDB\FACTURA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\HISTORIAL_DE_VEHICULO_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelDB\HISTORIAL_ESTADOS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -213,6 +210,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\PROYECTO_PIEZAS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\RESUMEN_USUARIOS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\ROLE_USUARIO.cs">

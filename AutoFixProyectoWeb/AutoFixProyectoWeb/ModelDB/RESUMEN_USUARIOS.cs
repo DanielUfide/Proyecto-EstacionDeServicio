@@ -10,10 +10,17 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class RESUMEN_USUARIOS
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID_USUARIO { get; set; }
+        public string NOMBRE { get; set; }
+        public string CORREO { get; set; }
+        public string CONTRASEÑA { get; set; }
+        public string TELEFONO { get; set; }
+        public Nullable<bool> ESTADO_CONTRASEÑA { get; set; }
+        public int ID_ROLE { get; set; }
+        public string ROLE { get; set; }
     }
 }

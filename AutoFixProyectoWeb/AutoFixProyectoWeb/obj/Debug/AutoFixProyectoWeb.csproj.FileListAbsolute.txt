@@ -574,3 +574,7 @@ C:\Users\maric\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\A
 C:\Users\maric\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\roslyn\System.Memory.dll
 C:\Users\maric\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\roslyn\System.Numerics.Vectors.dll
 C:\Users\maric\Documents\GitHub\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.dll
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.pdb

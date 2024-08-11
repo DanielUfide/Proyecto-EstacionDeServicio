@@ -64,8 +64,7 @@
     <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
     <Property Name="MONTO" Type="float" Nullable="false" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" />
-    <Property Name="CANCELADO" Type="bit" />
+    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
     <Key>
@@ -165,6 +164,27 @@
     <Property Name="CHASIS" Type="varchar" MaxLength="100" />
     <Property Name="ESTADO" Type="bit" Nullable="false" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RESUMEN_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="CORREO" />
+      <PropertyRef Name="CONTRASEÑA" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="ID_ROLE" />
+      <PropertyRef Name="ROLE" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTRASEÑA" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ESTADO_CONTRASEÑA" Type="bit" />
+    <Property Name="ID_ROLE" Type="int" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <Association Name="FK_CATEGORIA_INVENTARIO">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -400,9 +420,6 @@
   <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
-  <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PLACA" Type="varchar" Mode="In" />
-  </Function>
   <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
   </Function>
@@ -431,6 +448,18 @@
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 
+    [RESUMEN_USUARIOS].[NOMBRE] AS [NOMBRE], 
+    [RESUMEN_USUARIOS].[CORREO] AS [CORREO], 
+    [RESUMEN_USUARIOS].[CONTRASEÑA] AS [CONTRASEÑA], 
+    [RESUMEN_USUARIOS].[TELEFONO] AS [TELEFONO], 
+    [RESUMEN_USUARIOS].[ESTADO_CONTRASEÑA] AS [ESTADO_CONTRASEÑA], 
+    [RESUMEN_USUARIOS].[ID_ROLE] AS [ID_ROLE], 
+    [RESUMEN_USUARIOS].[ROLE] AS [ROLE]
+    FROM [dbo].[RESUMEN_USUARIOS] AS [RESUMEN_USUARIOS]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />

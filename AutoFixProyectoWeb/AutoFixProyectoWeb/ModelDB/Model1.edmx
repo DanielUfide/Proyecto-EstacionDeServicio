@@ -69,8 +69,7 @@
           <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="MONTO" Type="float" Nullable="false" />
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-          <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" />
-          <Property Name="CANCELADO" Type="bit" />
+          <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="HISTORIAL_ESTADOS">
           <Key>
@@ -170,6 +169,27 @@
           <Property Name="CHASIS" Type="varchar" MaxLength="100" />
           <Property Name="ESTADO" Type="bit" Nullable="false" />
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="RESUMEN_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="NOMBRE" />
+            <PropertyRef Name="CORREO" />
+            <PropertyRef Name="CONTRASEÑA" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="ID_ROLE" />
+            <PropertyRef Name="ROLE" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CORREO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ESTADO_CONTRASEÑA" Type="bit" />
+          <Property Name="ID_ROLE" Type="int" Nullable="false" />
+          <Property Name="ROLE" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <Association Name="FK_CATEGORIA_INVENTARIO">
           <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -405,9 +425,6 @@
         <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
         </Function>
-        <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PLACA" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
         </Function>
@@ -436,6 +453,18 @@
           <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 
+    [RESUMEN_USUARIOS].[NOMBRE] AS [NOMBRE], 
+    [RESUMEN_USUARIOS].[CORREO] AS [CORREO], 
+    [RESUMEN_USUARIOS].[CONTRASEÑA] AS [CONTRASEÑA], 
+    [RESUMEN_USUARIOS].[TELEFONO] AS [TELEFONO], 
+    [RESUMEN_USUARIOS].[ESTADO_CONTRASEÑA] AS [ESTADO_CONTRASEÑA], 
+    [RESUMEN_USUARIOS].[ID_ROLE] AS [ID_ROLE], 
+    [RESUMEN_USUARIOS].[ROLE] AS [ROLE]
+    FROM [dbo].[RESUMEN_USUARIOS] AS [RESUMEN_USUARIOS]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="INVENTARIO" EntitySet="INVENTARIO" />
@@ -593,8 +622,7 @@
           <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MONTO" Type="Double" Nullable="false" />
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
-          <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="CANCELADO" Type="Boolean" />
+          <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_FACTURA_USER" FromRole="FACTURA" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="HISTORIAL_ESTADOS">
@@ -721,6 +749,25 @@
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="RESUMEN_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="NOMBRE" />
+            <PropertyRef Name="CORREO" />
+            <PropertyRef Name="CONTRASEÑA" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="ID_ROLE" />
+            <PropertyRef Name="ROLE" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CORREO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
+          <Property Name="ID_ROLE" Type="Int32" Nullable="false" />
+          <Property Name="ROLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <Association Name="FK_CATEGORIA_INVENTARIO">
           <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -969,6 +1016,7 @@
           <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
           <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" />
+          <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" />
           <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="INVENTARIO" EntitySet="INVENTARIO" />
@@ -1051,9 +1099,6 @@
           <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
             <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
-            <Parameter Name="PLACA" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
             <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
           </FunctionImport>
@@ -1074,14 +1119,6 @@
         <ComplexType Name="ESTADOS_PROYECTO_DE_CLIENTE_Result">
           <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="100" />
           <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
-          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
-          <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="PRECIO" Nullable="false" />
-          <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
         </ComplexType>
         <ComplexType Name="PROYECTOS_DE_CLIENTE_Result">
           <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
@@ -1188,7 +1225,6 @@
                 <ScalarProperty Name="MONTO" ColumnName="MONTO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
                 <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
-                <ScalarProperty Name="CANCELADO" ColumnName="CANCELADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1301,6 +1337,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RESUMEN_USUARIOS">
+            <EntityTypeMapping TypeName="EL_CRUCEModel.RESUMEN_USUARIOS">
+              <MappingFragment StoreEntitySet="RESUMEN_USUARIOS">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="ESTADO_CONTRASEÑA" ColumnName="ESTADO_CONTRASEÑA" />
+                <ScalarProperty Name="ID_ROLE" ColumnName="ID_ROLE" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="COMENTARIOS_DE_PROYECTO" FunctionName="EL_CRUCEModel.Store.COMENTARIOS_DE_PROYECTO">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result">
@@ -1317,18 +1367,6 @@
               <ComplexTypeMapping TypeName="EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result">
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
                 <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="HISTORIAL_DE_VEHICULO" FunctionName="EL_CRUCEModel.Store.HISTORIAL_DE_VEHICULO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result">
-                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-                <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
-                <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-                <ScalarProperty Name="MECANICO" ColumnName="MECANICO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1389,7 +1427,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
