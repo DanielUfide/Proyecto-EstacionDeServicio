@@ -36,6 +36,32 @@ namespace AutoFixProyectoWeb.Controllers
             return View();
         }
 
+        public ActionResult administrarUsuarios()
+        {
+            var usuarios = usuariosModel.listaUsuarios();
+            var roles = usuariosModel.listaRoles();
+
+            UserRolesEnt listaUsuariosRoles = new UserRolesEnt
+            {
+                Users = usuarios,
+                Roles = roles
+            };
+
+            return View(listaUsuariosRoles);
+        }
+
+        [HttpGet]
+        public JsonResult optenerUsuario(int idUsuario)
+        {
+            UsuarioEnt usuario = new UsuarioEnt
+            {
+                id_usuario = idUsuario,
+            };
+
+            usuario = usuariosModel.optenerUsuario(usuario);
+            return Json(usuario, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         public JsonResult validarUsuarioController(string correo, string contraseña)
         {
@@ -82,6 +108,26 @@ namespace AutoFixProyectoWeb.Controllers
             var result  = usuariosModel.restaurarContraseña(usuario);
 
             return Json(result);
+        }
+
+        [HttpPost]
+        public JsonResult editarUsuario(int idUsuario, int roleUsuario, string nombre, string correo, string telefono)
+        {
+            UsuarioEnt usuarioEditar = new UsuarioEnt
+            {
+                id_usuario = idUsuario,
+                nombre = nombre,
+                correo = correo,
+                telefono = telefono,
+                role = new RoleUsuarioEnt
+                {
+                    id_role = roleUsuario,
+                }
+            };
+
+            return Json(usuariosModel.editarUsuario(usuarioEditar));
+
+
         }
 
         [HttpGet]

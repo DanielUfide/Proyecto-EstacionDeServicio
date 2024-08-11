@@ -1,0 +1,185 @@
+﻿@model AutoFixProyectoWeb.Entities.UserRolesEnt
+
+@{
+    ViewBag.Title = "Administrar Usuarios";
+    Layout = "~/Views/Shared/_LayoutMenus.cshtml";
+}
+
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Usuarios</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Usuarios</h6>
+            </nav>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <h6 class="mb-0">Usuarios</h6>
+                            </div>
+                            <div class="col-6 text-end">
+                                <a class="btn bg-gradient-dark mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fas fa-plus"></i>&nbsp;&nbsp;Agregar Usuario
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2 mt-3">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Correo</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Role
+                                        </th>
+                                        <th class="text-secondary opacity-7"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var usuario in Model.Users)
+                                    {
+
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">@usuario.nombre</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs text-secondary mb-0">@usuario.correo</p>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="badge badge-sm bg-gradient-success">@usuario.role.role</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a class="text-secondary font-weight-bold text-xs" onclick="openEditUserModal(@usuario.id_usuario)">
+                                                    Edit
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal  Crear Usuario-->
+        <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="CreateUserForm">
+                            <label for="txtName">Nombre de Usuario</label>
+                            <input type="text" name="txtName" id="txtName" class="form-control"
+                                   placeholder="Indique el Nombre de Usuario" required>
+                            <label for="txtCorreo">Correo</label>
+                            <input type="email" name="txtCorreo" id="txtCorreo" class="form-control"
+                                   placeholder="Indique el Correo del Usuario" required>
+                            <label for="txtTelefono">Telefono</label>
+                            <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="telefono-addon" id="txtTelefono" required pattern="\d{4}-\d{4}">
+                            <label for="txtRole">Role</label>
+                            <select name="txtRole" id="txtRole" aria-placeholder="Indique el role del usuario" class="form-control" required>
+                                @foreach (var role in Model.Roles)
+                                {
+                                    <option value="@role.id_role">@role.role</option>
+
+                                }
+                            </select>
+
+                            <div class="row mt-xl-3 justify-content-center text-center">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Guardar Usuario" class="btn bg-gradient-dark">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal  Editar Usuario-->
+        <div class="modal modal-lg fade" id="editarUsuario" tabindex="-1" aria-labelledby="editarUsuarioLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarUsuarioLabel">Editar Usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="editarUsuario">
+                            <input type="text" class="form-control" id="inputParam" name="param" readonly>
+                            <label for="txtNameEdit">Nombre de Usuario</label>
+                            <input type="text" name="txtNameEdit" id="txtNameEdit" class="form-control"
+                                   placeholder="Indique el Nombre de Usuario" value="Cristopher Morales">
+                            <label for="txtCorreoEdit">Correo</label>
+                            <input type="email" name="txtCorreoEdit" id="txtCorreoEdit" class="form-control"
+                                   placeholder="Indique el Correo del Usuario" required value="cmoralesf@cruce.com">
+                            <label for="txtTelefonoEdit">Telefono</label>
+                            <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="telefono-addon" id="txtTelefonoEdit" required pattern="\d{4}-\d{4}">
+                            <label for="txtRoleEdit">Role</label>
+                            <select name="txtRoleEdit" id="txtRoleEdit" aria-placeholder="Indique el role del usuario" class="form-control" required>
+                                <option value="1">Administrador</option>
+                                <option value="2">Mecánico</option>
+                                <option value="3">Cliente</option>
+                            </select>
+
+                            <div class="row mt-xl-3 justify-content-center text-center">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Guardar Cambios" class="btn bg-gradient-dark">
+                                    <button class="btn btn-danger">Eliminar Usuario</button>
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</main>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- AJAX Code -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="~/Content/assets/js/custom/administrarUsuarios.js"></script>
