@@ -91,5 +91,14 @@ namespace AutoFixProyectoWeb.ModelDB
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VEHICULOS_DE_CLIENTE_Result>("VEHICULOS_DE_CLIENTE", iD_USUARIOParameter);
         }
+    
+        public virtual ObjectResult<HISTORIAL_DE_VEHICULO_Result> HISTORIAL_DE_VEHICULO(string pLACA)
+        {
+            var pLACAParameter = pLACA != null ?
+                new ObjectParameter("PLACA", pLACA) :
+                new ObjectParameter("PLACA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HISTORIAL_DE_VEHICULO_Result>("HISTORIAL_DE_VEHICULO", pLACAParameter);
+        }
     }
 }

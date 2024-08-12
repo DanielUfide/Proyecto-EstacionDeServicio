@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CATEGORIA">
           <Key>
             <PropertyRef Name="ID_CATEGORIA" />
@@ -425,6 +425,9 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
         <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
         </Function>
+        <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PLACA" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
         </Function>
@@ -542,8 +545,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EL_CRUCEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1094,19 +1096,22 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
           <FunctionImport Name="COMENTARIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result)">
-            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
-            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
-            <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
+          <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_MECANICO" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result)">
-            <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
-            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
+            <Parameter Name="PLACA" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
@@ -1147,6 +1152,14 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <Property Type="String" Name="CHASIS" Nullable="true" MaxLength="100" />
           <Property Type="Boolean" Name="ESTADO" Nullable="false" />
           <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
+          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+          <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="PRECIO" Nullable="false" />
+          <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1407,6 +1420,18 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
                 <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HISTORIAL_DE_VEHICULO" FunctionName="EL_CRUCEModel.Store.HISTORIAL_DE_VEHICULO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result">
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+                <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+                <ScalarProperty Name="MECANICO" ColumnName="MECANICO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

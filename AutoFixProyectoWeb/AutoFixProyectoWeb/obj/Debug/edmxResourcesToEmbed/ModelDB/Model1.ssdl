@@ -420,6 +420,9 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
   <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
+  <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PLACA" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
   </Function>

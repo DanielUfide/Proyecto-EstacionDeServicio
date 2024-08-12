@@ -561,6 +561,9 @@
     <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
       <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
+      <Parameter Name="PLACA" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -600,5 +603,13 @@
     <Property Type="String" Name="CHASIS" Nullable="true" MaxLength="100" />
     <Property Type="Boolean" Name="ESTADO" Nullable="false" />
     <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
+    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="PRECIO" Nullable="false" />
+    <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
   </ComplexType>
 </Schema>

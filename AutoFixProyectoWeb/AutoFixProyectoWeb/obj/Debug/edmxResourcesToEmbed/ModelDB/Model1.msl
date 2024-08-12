@@ -257,5 +257,17 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HISTORIAL_DE_VEHICULO" FunctionName="EL_CRUCEModel.Store.HISTORIAL_DE_VEHICULO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result">
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_MECANICO" ColumnName="ID_MECANICO" />
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="MECANICO" ColumnName="MECANICO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
