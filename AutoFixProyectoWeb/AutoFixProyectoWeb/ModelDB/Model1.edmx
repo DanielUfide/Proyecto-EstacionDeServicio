@@ -171,6 +171,24 @@
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="INFORMACION_FACTURAS">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="DETALLE" />
+            <PropertyRef Name="MONTO" />
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="NOMBRE" />
+            <PropertyRef Name="TELEFONO" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+          <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="MONTO" Type="float" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="RESUMEN_USUARIOS">
           <Key>
@@ -456,6 +474,16 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [INFORMACION_FACTURAS].[ID_FACTURA] AS [ID_FACTURA], 
+    [INFORMACION_FACTURAS].[DETALLE] AS [DETALLE], 
+    [INFORMACION_FACTURAS].[MONTO] AS [MONTO], 
+    [INFORMACION_FACTURAS].[ID_USUARIO] AS [ID_USUARIO], 
+    [INFORMACION_FACTURAS].[NOMBRE] AS [NOMBRE], 
+    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO]
+    FROM [dbo].[INFORMACION_FACTURAS] AS [INFORMACION_FACTURAS]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 
@@ -1111,8 +1139,9 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
-            <Parameter Name="PLACA" Mode="In" Type="String" />
+          <Parameter Name="PLACA" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="INFORMACION_FACTURAS" EntityType="EL_CRUCEModel.INFORMACION_FACTURAS" />
         </EntityContainer>
         <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
           <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -1161,6 +1190,22 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <Property Type="Double" Name="PRECIO" Nullable="false" />
           <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
         </ComplexType>
+        <EntityType Name="INFORMACION_FACTURAS">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="DETALLE" />
+            <PropertyRef Name="MONTO" />
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="NOMBRE" />
+            <PropertyRef Name="TELEFONO" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+          <Property Name="DETALLE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MONTO" Type="Double" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1435,6 +1480,18 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="INFORMACION_FACTURAS">
+            <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS">
+              <MappingFragment StoreEntitySet="INFORMACION_FACTURAS">
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

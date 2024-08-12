@@ -4,13 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading.Tasks;
 
 namespace AutoFixProyectoWeb.Models
 {
     public class FacturacionModel
 
     {
-        public FacturaEnt addFacturacionModel (FacturaEnt factura)
+        public FacturaEnt addFacturacionModel(FacturaEnt factura)
         {
             using (var conexion = new El_Cruce_Entities())
             {
@@ -31,9 +32,8 @@ namespace AutoFixProyectoWeb.Models
 
 
         }
-
         public FacturaEnt getFacturaPorIDModel(FacturaEnt factura)
-        { 
+        {
             using (var conexion = new El_Cruce_Entities())
             {
 
@@ -81,14 +81,38 @@ namespace AutoFixProyectoWeb.Models
 
         }
 
+        public List<DetalleFacturas> getDetalleFacturasModel()
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                var datos = (from x in conexion.INFORMACION_FACTURAS select x).ToList();
+                List<DetalleFacturas> facturasList = new List<DetalleFacturas>();
+
+                foreach(var factura in datos)
+                {
+                    facturasList.Add(new DetalleFacturas
+                    {
+                        id_factura = factura.ID_FACTURA,
+                        detalle = factura.DETALLE,
+                        monto = factura.MONTO,
+                        id_usuario = factura.ID_USUARIO,
+                        nombre = factura.NOMBRE,
+                        telefono = factura.TELEFONO
+                    }); 
+                }
+
+                return facturasList;
+            }
+        }
+
         public FacturaEnt actualizarFacturacionModel(FacturaEnt factura)
         {
             using (var conexion = new El_Cruce_Entities())
             {
 
                 FACTURA facturaDB = (from x in conexion.FACTURA
-                                           where x.ID_FACTURA == factura.id_factura
-                                           select x).FirstOrDefault();
+                                     where x.ID_FACTURA == factura.id_factura
+                                     select x).FirstOrDefault();
 
                 if (facturaDB != null)
                 {
@@ -104,25 +128,43 @@ namespace AutoFixProyectoWeb.Models
             }
 
         }
+
+        public int actualizarFacturaAdminModel(FacturaEnt factura)
+        {
+            using(var conexion = new El_Cruce_Entities())
+            {
+                FACTURA facturaDB = (from x in conexion.FACTURA where x.ID_FACTURA == factura.id_factura select x).FirstOrDefault();
+
+                if(facturaDB != null)
+                {
+                    facturaDB.METODO_PAGO = factura.metodo_pago;
+                    return conexion.SaveChanges(); 
+                } else
+                {
+                    return 0;
+                }
+
+            }
+        }
+
         public bool eliminarFacturacionModel(int id_factura)
         {
             using (var conexion = new El_Cruce_Entities())
             {
                 FACTURA facturaDB = (from x in conexion.FACTURA
-                                           where x.ID_FACTURA == id_factura
+                                     where x.ID_FACTURA == id_factura
                                      select x).FirstOrDefault();
 
                 if (facturaDB != null)
                 {
-                    conexion.FACTURA.Remove(facturaDB); 
-                    conexion.SaveChanges(); 
+                    conexion.FACTURA.Remove(facturaDB);
+                    conexion.SaveChanges();
                 }
 
                 return true;
             }
 
         }
-
         public List<FACTURA> getFactura()
         {
             using (var coneccion = new El_Cruce_Entities())

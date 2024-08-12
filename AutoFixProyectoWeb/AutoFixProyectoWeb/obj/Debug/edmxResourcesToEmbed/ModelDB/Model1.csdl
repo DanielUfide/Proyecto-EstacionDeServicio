@@ -564,6 +564,7 @@
     <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
       <Parameter Name="PLACA" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="INFORMACION_FACTURAS" EntityType="EL_CRUCEModel.INFORMACION_FACTURAS" />
   </EntityContainer>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -612,4 +613,20 @@
     <Property Type="Double" Name="PRECIO" Nullable="false" />
     <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
   </ComplexType>
+  <EntityType Name="INFORMACION_FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

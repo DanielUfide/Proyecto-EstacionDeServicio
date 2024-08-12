@@ -166,6 +166,24 @@
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INFORMACION_FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MONTO" Type="float" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
@@ -451,6 +469,16 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [INFORMACION_FACTURAS].[ID_FACTURA] AS [ID_FACTURA], 
+    [INFORMACION_FACTURAS].[DETALLE] AS [DETALLE], 
+    [INFORMACION_FACTURAS].[MONTO] AS [MONTO], 
+    [INFORMACION_FACTURAS].[ID_USUARIO] AS [ID_USUARIO], 
+    [INFORMACION_FACTURAS].[NOMBRE] AS [NOMBRE], 
+    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO]
+    FROM [dbo].[INFORMACION_FACTURAS] AS [INFORMACION_FACTURAS]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 

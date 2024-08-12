@@ -43,6 +43,7 @@
         <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_USUARIO_ROLE" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_VEHICULO_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.INFORMACION_FACTURAS" Width="3.25" PointX="11.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

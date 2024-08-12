@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("alertText").innerHTML = "Accept terms and conditions";
             document.getElementById("errorAlert").style.display = "block"; // Changed to "block" to display the alert
         } else if (passwordUsuario != passwordConfirmacion) {
-            document.getElementById("alertText").innerHTML = "Passwords are not matching"; 
-            document.getElementById("errorAlert").style.display = "block"; 
+            document.getElementById("alertText").innerHTML = "Passwords are not matching";
+            document.getElementById("errorAlert").style.display = "block";
         } else {
 
-            document.getElementById("errorAlert").style.display = "none"; 
+            document.getElementById("errorAlert").style.display = "none";
 
 
             //Execute the call to the controller to create the user
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     url: "/Usuarios/crearUsuarioController",
                     type: "POST",
                     data: {
-                        "roleUsuario":3,
+                        "roleUsuario": 3,
                         "nombre": nombreUsuario,
                         "correo": emailUsuario,
                         "contraseña": passwordUsuario,
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//Function to restart the password
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('formRestablecerContraseña');
 
