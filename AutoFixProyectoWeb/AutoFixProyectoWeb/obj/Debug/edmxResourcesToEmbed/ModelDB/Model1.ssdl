@@ -64,7 +64,8 @@
     <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
     <Property Name="MONTO" Type="float" Nullable="false" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" />
+    <Property Name="CANCELADO" Type="bit" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
     <Key>
@@ -165,8 +166,8 @@
     <Property Name="ESTADO" Type="bit" Nullable="false" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EL_CRUCE.dbo.INFORMACION_FACTURAS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="INFORMACION_FACTURAS">
     <Key>
       <PropertyRef Name="ID_FACTURA" />
@@ -183,8 +184,8 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene 
     <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EL_CRUCE.dbo.RESUMEN_USUARIOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
       <PropertyRef Name="ID_USUARIO" />

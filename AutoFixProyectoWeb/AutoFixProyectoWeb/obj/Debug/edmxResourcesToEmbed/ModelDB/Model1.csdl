@@ -75,7 +75,8 @@
     <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MONTO" Type="Double" Nullable="false" />
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
-    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CANCELADO" Type="Boolean" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_FACTURA_USER" FromRole="FACTURA" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
@@ -202,6 +203,22 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="INFORMACION_FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
@@ -469,6 +486,7 @@
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" />
+    <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" />
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" />
     <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
@@ -552,6 +570,9 @@
     <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
       <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
+      <Parameter Name="PLACA" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
       <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
     </FunctionImport>
@@ -561,10 +582,6 @@
     <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
       <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
-      <Parameter Name="PLACA" Mode="In" Type="String" />
-    </FunctionImport>
-    <EntitySet Name="INFORMACION_FACTURAS" EntityType="EL_CRUCEModel.INFORMACION_FACTURAS" />
   </EntityContainer>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -576,6 +593,14 @@
   <ComplexType Name="ESTADOS_PROYECTO_DE_CLIENTE_Result">
     <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="100" />
     <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
+    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
+    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="PRECIO" Nullable="false" />
+    <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
   </ComplexType>
   <ComplexType Name="PROYECTOS_DE_CLIENTE_Result">
     <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
@@ -605,28 +630,4 @@
     <Property Type="Boolean" Name="ESTADO" Nullable="false" />
     <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
   </ComplexType>
-  <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
-    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
-    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
-    <Property Type="Double" Name="PRECIO" Nullable="false" />
-    <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <EntityType Name="INFORMACION_FACTURAS">
-    <Key>
-      <PropertyRef Name="ID_FACTURA" />
-      <PropertyRef Name="DETALLE" />
-      <PropertyRef Name="MONTO" />
-      <PropertyRef Name="ID_USUARIO" />
-      <PropertyRef Name="NOMBRE" />
-      <PropertyRef Name="TELEFONO" />
-    </Key>
-    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
-    <Property Name="DETALLE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="MONTO" Type="Double" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="TELEFONO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>
