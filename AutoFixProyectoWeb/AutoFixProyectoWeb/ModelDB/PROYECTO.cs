@@ -20,14 +20,16 @@ namespace AutoFixProyectoWeb.ModelDB
             this.COMENTARIOS_PROYECTO = new HashSet<COMENTARIOS_PROYECTO>();
             this.HISTORIAL_ESTADOS = new HashSet<HISTORIAL_ESTADOS>();
             this.PROYECTO_PIEZAS = new HashSet<PROYECTO_PIEZAS>();
+            this.SERVICIO_PROYECTO = new HashSet<SERVICIO_PROYECTO>();
+            this.FACTURA_CABECERA = new HashSet<FACTURA_CABECERA>();
         }
     
         public int ID_PROYECTO { get; set; }
         public string ID_VEHICULO { get; set; }
         public int ID_ESTADO_PROYECTO { get; set; }
-        public int ID_SERVICIO { get; set; }
         public int ID_MECANICO { get; set; }
-        public Nullable<System.DateTime> FECHA { get; set; }
+        public System.DateTime FECHA { get; set; }
+        public int ESTADO_FACTURA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMENTARIOS_PROYECTO> COMENTARIOS_PROYECTO { get; set; }
@@ -38,6 +40,9 @@ namespace AutoFixProyectoWeb.ModelDB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROYECTO_PIEZAS> PROYECTO_PIEZAS { get; set; }
         public virtual VEHICULO VEHICULO { get; set; }
-        public virtual SERVICIO SERVICIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SERVICIO_PROYECTO> SERVICIO_PROYECTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FACTURA_CABECERA> FACTURA_CABECERA { get; set; }
     }
 }

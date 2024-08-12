@@ -1,0 +1,65 @@
+﻿@model AutoFixProyectoWeb.ViewModels.Mecanico.MecanicoDetalleCitaVM
+
+@{
+    Layout = "~/Views/Mecanico/_Layout.cshtml";
+}
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Detalle de cita</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Detalle de cita</h6>
+            </nav>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Servicios del Proyecto</h4>
+            <button data-bs-toggle="modal" data-bs-target="#agregarServicio" class="btn btn-primary">
+                <i class="fa fa-plus text-secondary mb-3"></i>
+                Agregar servicio
+            </button>
+
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var servicio in Model.servicios)
+                    {
+                        <tr>
+                            <td>@servicio.ID_SERVICIO_PROYECTO</td>
+                            <td>@servicio.SERVICIO</td>
+                            <td>@servicio.DESCRIPCION</td>
+                            <td>@servicio.FECHA</td>
+                            <td>@servicio.PRECIO.ToString("C")</td>
+                            <td>@servicio.ID_ESTADO</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (Model.servicios.Count == 0)
+            {
+                <p class="font-italic text-secondary text-center">El vehiculo no cuenta con servicios realizados.</p>
+            }
+        </div>
+    </div>
+</div>
+@Html.Partial("Partials/ServicioCreate_partial", Model.addServiceModel);

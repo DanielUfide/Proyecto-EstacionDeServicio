@@ -56,6 +56,32 @@
     <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ESTADO" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="FACTURA_CABECERA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA_CABECERA" />
+    </Key>
+    <Property Name="ID_FACTURA_CABECERA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="ID_CLIENTE" Type="int" />
+    <Property Name="NOMBRE_CLIENTE" Type="varchar" MaxLength="100" />
+    <Property Name="NOMBRE_MECANICO" Type="varchar" MaxLength="100" />
+    <Property Name="TOTAL" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ID_PROYECTO" Type="int" />
+    <Property Name="APROBADO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FACTURA_DETALLE">
+    <Key>
+      <PropertyRef Name="ID_FACTURA_DETALLE" />
+    </Key>
+    <Property Name="ID_FACTURA_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERVICIO" Type="varchar" MaxLength="1000" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="PRECIO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_FACTURA_CABECERA" Type="int" />
+  </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
     <Key>
       <PropertyRef Name="ID_HISTORIAL_ESTADO" />
@@ -74,7 +100,7 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
-    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -93,9 +119,9 @@
     <Property Name="ID_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_VEHICULO" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ID_ESTADO_PROYECTO" Type="int" Nullable="false" />
-    <Property Name="ID_SERVICIO" Type="int" Nullable="false" />
     <Property Name="ID_MECANICO" Type="int" Nullable="false" />
-    <Property Name="FECHA" Type="datetime" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="ESTADO_FACTURA" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PROYECTO_PIEZAS">
     <Key>
@@ -124,6 +150,15 @@
     <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="PRECIO" Type="float" Nullable="false" />
     <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SERVICIO_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_SERVICIO_PROYECTO" />
+    </Key>
+    <Property Name="ID_SERVICIO_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SERVICIO" Type="int" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
   </EntityType>
   <EntityType Name="TIPO_COSTO">
     <Key>
@@ -212,6 +247,30 @@
       </Principal>
       <Dependent Role="PROYECTO">
         <PropertyRef Name="ID_ESTADO_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_CABECERA_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="0..1" />
+    <End Role="FACTURA_CABECERA" Type="Self.FACTURA_CABECERA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+    <End Role="FACTURA_CABECERA" Type="Self.FACTURA_CABECERA" Multiplicity="0..1" />
+    <End Role="FACTURA_DETALLE" Type="Self.FACTURA_DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
+      </Principal>
+      <Dependent Role="FACTURA_DETALLE">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,14 +370,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SERVICIO_PROYECTO">
-    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="1" />
-    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+  <Association Name="FK_SERVICIO_PROYECTO_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="SERVICIO_PROYECTO" Type="Self.SERVICIO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="SERVICIO_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_SERVICIO">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="SERVICIO_PROYECTO" Type="Self.SERVICIO_PROYECTO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SERVICIO">
         <PropertyRef Name="ID_SERVICIO" />
       </Principal>
-      <Dependent Role="PROYECTO">
+      <Dependent Role="SERVICIO_PROYECTO">
         <PropertyRef Name="ID_SERVICIO" />
       </Dependent>
     </ReferentialConstraint>
@@ -381,10 +452,13 @@
     <Parameter Name="PLACA" Type="varchar" Mode="In" />
   </Function>
   <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
+    <Parameter Name="ID_CLIENTE" Type="int" Mode="In" />
   </Function>
   <Function Name="PROYECTOS_DE_MECANICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_MECANICO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SERVICIOS_DE_PROYECTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
   <Function Name="VEHICULOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
@@ -397,6 +471,8 @@
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA_CABECERA" EntityType="Self.FACTURA_CABECERA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
@@ -404,6 +480,7 @@
     <EntitySet Name="PROYECTO_PIEZAS" EntityType="Self.PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROLE_USUARIO" EntityType="Self.ROLE_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICIO_PROYECTO" EntityType="Self.SERVICIO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
@@ -426,6 +503,14 @@
     <AssociationSet Name="FK_ESTADO_PROYECTO" Association="Self.FK_ESTADO_PROYECTO">
       <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_CABECERA_ID_PROYECTO" Association="Self.FK_FACTURA_CABECERA_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" Association="Self.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+      <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
     </AssociationSet>
     <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />
@@ -459,9 +544,13 @@
       <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />
       <End Role="SERVICIO" EntitySet="SERVICIO" />
     </AssociationSet>
-    <AssociationSet Name="FK_SERVICIO_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO">
-      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO_ID_PROYECTO">
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_SERVICIO" Association="Self.FK_SERVICIO_PROYECTO_ID_SERVICIO">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
     </AssociationSet>
     <AssociationSet Name="FK_TIPO_COSTO" Association="Self.FK_TIPO_COSTO">
       <End Role="TIPO_COSTO" EntitySet="TIPO_COSTO" />

@@ -1,4 +1,5 @@
 ﻿using AutoFixProyectoWeb.ModelDB;
+using AutoFixProyectoWeb.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace AutoFixProyectoWeb.ViewModels.AdminView
     public class AdminHistoryVM
     {
         public bool notFound { get; set; }
-        public List<HISTORIAL_DE_VEHICULO_Result> historial { get; set; }
+        public List<Historial_Vehiculo> historial { get; set; }
     }
 }

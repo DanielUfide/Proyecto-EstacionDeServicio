@@ -27,15 +27,7 @@
                         }
 
                     </select>
-                    <label class="mt-xl-4">Agregar Tipo de Servicio</label>
-                    <select name="idServicio" class="form-control" required>
-                        <option selected hidden value="">Seleccione el Servicio</option>
-                        @foreach (var servicio in @Model.servicios)
-                        {
-                            <option value="@servicio.ID_SERVICIO">@servicio.SERVICIO1</option>
-
-                        }
-                    </select>
+                  
                     <label class="mt-xl-4">Seleccione el Mecanico</label>
                     <select name="idMecanico" class="form-control" required>
                         <option selected hidden value="">Seleccione Vehiculo</option>

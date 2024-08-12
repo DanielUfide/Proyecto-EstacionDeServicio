@@ -1,4 +1,4 @@
-﻿@model List<AutoFixProyectoWeb.ModelDB.HISTORIAL_DE_VEHICULO_Result>
+﻿@model List<AutoFixProyectoWeb.Models.Response.Historial_Vehiculo>
 
 
 <div class="table-responsive p-0">
@@ -7,7 +7,7 @@
             <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Servicio</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Precio</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Precio total de servicios</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                     Mecanico
@@ -17,27 +17,35 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var hist in Model)
+            @foreach (var historial in Model)
             {
                 <tr>
                     <td>
                         <div class="d-flex px-2 py-1">
                             <div class="d-flex flex-column justify-content-center">
-                                <h6 class="mb-0 text-sm">@hist.SERVICIO</h6>
+                                <h6 class="mb-0 text-sm">
+                                    @(historial.SERVICIOS != null && historial.SERVICIOS.Any()
+                                    ? String.Join(", ", historial.SERVICIOS.Select(s => s.SERVICIO))
+                                    : "____")
+                                </h6>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <p class="text-xs text-secondary mb-0">@hist.DESCRIPCION</p>
+                        <p class="text-xs text-secondary mb-0">
+                            @(historial.SERVICIOS != null && historial.SERVICIOS.Any()
+                            ? String.Join(", ", historial.SERVICIOS.Select(s => s.DESCRIPCION))
+                            : "____")
+                        </p>
                     </td>
                     <td>
-                        <p class="text-xs text-secondary mb-0">@hist.PRECIO</p>
+                        <p class="text-xs text-center text-secondary mb-0">$ @historial.SERVICIOS.Sum(s => s.PRECIO)</p>
                     </td>
                     <td>
-                        <p class="text-xs text-secondary mb-0">@hist.FECHA</p>
+                        <p class="text-xs text-secondary mb-0">@historial.HISTORIAL.FECHA</p>
                     </td>
                     <td>
-                        <p class="text-xs text-secondary mb-0">@hist.MECANICO</p>
+                        <p class="text-xs text-secondary mb-0">@historial.HISTORIAL.MECANICO</p>
                     </td>
                 </tr>
             }

@@ -87,7 +87,7 @@
     <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="Double" />
     <Property Name="PRECIO_VENTA" Type="Double" />
-    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
   </EntityType>
@@ -109,16 +109,17 @@
     <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_VEHICULO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ID_ESTADO_PROYECTO" Type="Int32" Nullable="false" />
-    <Property Name="ID_SERVICIO" Type="Int32" Nullable="false" />
     <Property Name="ID_MECANICO" Type="Int32" Nullable="false" />
-    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="COMENTARIOS_PROYECTO" Relationship="Self.FK_PROYECTO_COMENTARIOS" FromRole="PROYECTO" ToRole="COMENTARIOS_PROYECTO" />
     <NavigationProperty Name="ESTADO_PROYECTO" Relationship="Self.FK_ESTADO_PROYECTO" FromRole="PROYECTO" ToRole="ESTADO_PROYECTO" />
     <NavigationProperty Name="HISTORIAL_ESTADOS" Relationship="Self.FK_PROYECTO_HISTORIAL_ESTADO" FromRole="PROYECTO" ToRole="HISTORIAL_ESTADOS" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="PROYECTO" ToRole="USUARIO" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_PROYECTO_PIEZAS" FromRole="PROYECTO" ToRole="PROYECTO_PIEZAS" />
     <NavigationProperty Name="VEHICULO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="PROYECTO" ToRole="VEHICULO" />
-    <NavigationProperty Name="SERVICIO" Relationship="Self.FK_SERVICIO_PROYECTO" FromRole="PROYECTO" ToRole="SERVICIO" />
+    <NavigationProperty Name="SERVICIO_PROYECTO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_PROYECTO" FromRole="PROYECTO" ToRole="SERVICIO_PROYECTO" />
+    <Property Name="ESTADO_FACTURA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FACTURA_CABECERA" Relationship="EL_CRUCEModel.FK_FACTURA_CABECERA_ID_PROYECTO" FromRole="PROYECTO" ToRole="FACTURA_CABECERA" />
   </EntityType>
   <EntityType Name="PROYECTO_PIEZAS">
     <Key>
@@ -152,7 +153,7 @@
     <Property Name="PRECIO" Type="Double" Nullable="false" />
     <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ESTADO_SERVICIO" Relationship="Self.FK_SERVICIO_ESTADO" FromRole="SERVICIO" ToRole="ESTADO_SERVICIO" />
-    <NavigationProperty Name="PROYECTO" Relationship="Self.FK_SERVICIO_PROYECTO" FromRole="SERVICIO" ToRole="PROYECTO" />
+    <NavigationProperty Name="SERVICIO_PROYECTO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_SERVICIO" FromRole="SERVICIO" ToRole="SERVICIO_PROYECTO" />
   </EntityType>
   <EntityType Name="TIPO_COSTO">
     <Key>
@@ -371,18 +372,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SERVICIO_PROYECTO">
-    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="1" />
-    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SERVICIO">
-        <PropertyRef Name="ID_SERVICIO" />
-      </Principal>
-      <Dependent Role="PROYECTO">
-        <PropertyRef Name="ID_SERVICIO" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_USUARIO_ROLE">
     <End Role="ROLE_USUARIO" Type="Self.ROLE_USUARIO" Multiplicity="1" />
     <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -485,10 +474,6 @@
       <End Role="VEHICULO" EntitySet="VEHICULO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
     </AssociationSet>
-    <AssociationSet Name="FK_SERVICIO_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO">
-      <End Role="SERVICIO" EntitySet="SERVICIO" />
-      <End Role="PROYECTO" EntitySet="PROYECTO" />
-    </AssociationSet>
     <AssociationSet Name="FK_USUARIO_ROLE" Association="Self.FK_USUARIO_ROLE">
       <End Role="ROLE_USUARIO" EntitySet="ROLE_USUARIO" />
       <End Role="USUARIO" EntitySet="USUARIO" />
@@ -507,7 +492,7 @@
       <Parameter Name="PLACA" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
-      <Parameter Name="PLACAS_VEHICULOS" Mode="In" Type="String" />
+      <Parameter Name="ID_CLIENTE" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="PROYECTOS_DE_MECANICO" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result)">
       <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
@@ -515,6 +500,28 @@
     <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
       <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="SERVICIO_PROYECTO" EntityType="EL_CRUCEModel.SERVICIO_PROYECTO" />
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_PROYECTO" Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_SERVICIO" Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_SERVICIO">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
+    </AssociationSet>
+    <FunctionImport Name="SERVICIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.SERVICIOS_DE_PROYECTO_Result)">
+      <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="FACTURA_CABECERA" EntityType="EL_CRUCEModel.FACTURA_CABECERA" />
+    <EntitySet Name="FACTURA_DETALLE" EntityType="EL_CRUCEModel.FACTURA_DETALLE" />
+    <AssociationSet Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" Association="EL_CRUCEModel.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+      <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_CABECERA_ID_PROYECTO" Association="EL_CRUCEModel.FK_FACTURA_CABECERA_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -530,30 +537,24 @@
   <ComplexType Name="HISTORIAL_DE_VEHICULO_Result">
     <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
     <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
-    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
-    <Property Type="Double" Name="PRECIO" Nullable="false" />
     <Property Type="String" Name="MECANICO" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
   </ComplexType>
   <ComplexType Name="PROYECTOS_DE_CLIENTE_Result">
     <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
     <Property Type="String" Name="ID_VEHICULO" Nullable="false" MaxLength="10" />
     <Property Type="Int32" Name="ID_ESTADO_PROYECTO" Nullable="false" />
-    <Property Type="Int32" Name="ID_SERVICIO" Nullable="false" />
     <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
     <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
-    <Property Type="String" Name="DESCRIPCION_SERVICIO" Nullable="false" MaxLength="100" />
   </ComplexType>
   <ComplexType Name="PROYECTOS_DE_MECANICO_Result">
     <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
     <Property Type="String" Name="ID_VEHICULO" Nullable="false" MaxLength="10" />
     <Property Type="Int32" Name="ID_ESTADO_PROYECTO" Nullable="false" />
-    <Property Type="Int32" Name="ID_SERVICIO" Nullable="false" />
     <Property Type="Int32" Name="ID_MECANICO" Nullable="false" />
     <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
-    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ESTADO_FACTURA" Nullable="false" />
   </ComplexType>
   <ComplexType Name="VEHICULOS_DE_CLIENTE_Result">
     <Property Type="String" Name="PLACA" Nullable="false" MaxLength="10" />
@@ -563,4 +564,102 @@
     <Property Type="Boolean" Name="ESTADO" Nullable="false" />
     <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
   </ComplexType>
+  <EntityType Name="SERVICIO_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_SERVICIO_PROYECTO" />
+    </Key>
+    <Property Name="ID_SERVICIO_PROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SERVICIO" Type="Int32" />
+    <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PROYECTO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_PROYECTO" FromRole="SERVICIO_PROYECTO" ToRole="PROYECTO" />
+    <NavigationProperty Name="SERVICIO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_SERVICIO" FromRole="SERVICIO_PROYECTO" ToRole="SERVICIO" />
+  </EntityType>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_PROYECTO">
+    <End Type="EL_CRUCEModel.PROYECTO" Role="PROYECTO" Multiplicity="1" />
+    <End Type="EL_CRUCEModel.SERVICIO_PROYECTO" Role="SERVICIO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="SERVICIO_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_SERVICIO">
+    <End Type="EL_CRUCEModel.SERVICIO" Role="SERVICIO" Multiplicity="0..1" />
+    <End Type="EL_CRUCEModel.SERVICIO_PROYECTO" Role="SERVICIO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Principal>
+      <Dependent Role="SERVICIO_PROYECTO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SERVICIOS_DE_PROYECTO_Result">
+    <Property Type="Int32" Name="ID_SERVICIO_PROYECTO" Nullable="false" />
+    <Property Type="Int32" Name="ID_SERVICIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="PRECIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ESTADO" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="FACTURA_CABECERA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA_CABECERA" />
+    </Key>
+    <Property Name="ID_FACTURA_CABECERA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NUMERO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="NOMBRE_CLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="FACTURA_DETALLE" Relationship="EL_CRUCEModel.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" FromRole="FACTURA_CABECERA" ToRole="FACTURA_DETALLE" />
+    <Property Name="NOMBRE_MECANICO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PROYECTO" Type="Int32" />
+    <NavigationProperty Name="PROYECTO" Relationship="EL_CRUCEModel.FK_FACTURA_CABECERA_ID_PROYECTO" FromRole="FACTURA_CABECERA" ToRole="PROYECTO" />
+    <Property Name="APROBADO" Type="Boolean" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FACTURA_DETALLE">
+    <Key>
+      <PropertyRef Name="ID_FACTURA_DETALLE" />
+    </Key>
+    <Property Name="ID_FACTURA_DETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SERVICIO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ID_FACTURA_CABECERA" Type="Int32" />
+    <NavigationProperty Name="FACTURA_CABECERA" Relationship="EL_CRUCEModel.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" FromRole="FACTURA_DETALLE" ToRole="FACTURA_CABECERA" />
+  </EntityType>
+  <Association Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+    <End Type="EL_CRUCEModel.FACTURA_CABECERA" Role="FACTURA_CABECERA" Multiplicity="0..1" />
+    <End Type="EL_CRUCEModel.FACTURA_DETALLE" Role="FACTURA_DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
+      </Principal>
+      <Dependent Role="FACTURA_DETALLE">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_CABECERA_ID_PROYECTO">
+    <End Type="EL_CRUCEModel.PROYECTO" Role="PROYECTO" Multiplicity="0..1" />
+    <End Type="EL_CRUCEModel.FACTURA_CABECERA" Role="FACTURA_CABECERA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -52,18 +52,47 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=7.2.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.2.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms" />
@@ -129,6 +158,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FacturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\MecanicoController.cs" />
@@ -169,6 +199,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\FACTURA_CABECERA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\FACTURA_DETALLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_DE_VEHICULO_Result.cs">
@@ -216,6 +252,12 @@
     <Compile Include="ModelDB\SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\SERVICIOS_DE_PROYECTO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\SERVICIO_PROYECTO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB\TIPO_COSTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -230,19 +272,27 @@
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\FacturaModel.cs" />
     <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\MecanicoModel.cs" />
     <Compile Include="Models\ProyectoModel.cs" />
+    <Compile Include="Models\Request\Servicio_Proyecto.cs" />
+    <Compile Include="Models\Response\Historial_Vehiculo.cs" />
+    <Compile Include="Models\Response\Proyecto_Cliente.cs" />
+    <Compile Include="Models\Response\Proyecto_Mecanico.cs" />
     <Compile Include="Models\ServicioModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\VehiculoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CustomAuthorizeAttribute .cs" />
+    <Compile Include="Utils\GenerationCode.cs" />
     <Compile Include="Utils\GlobalAccess.cs" />
     <Compile Include="ViewModels\AdminView\AdminHistoryVM.cs" />
     <Compile Include="ViewModels\ClienteView\ClienteProfileVM.cs" />
     <Compile Include="ViewModels\ClienteView\MecanicoVM.cs" />
     <Compile Include="ViewModels\ClienteView\ProyectoCreateVM.cs" />
+    <Compile Include="ViewModels\Mecanico\MecanicoDetalleCitaVM.cs" />
+    <Compile Include="ViewModels\Mecanico\MecanicoFacturacionVM.cs" />
     <Compile Include="ViewModels\ProyectoView\ProyectoClienteVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -570,6 +620,9 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Plantillas\plantilla_factura.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -619,9 +672,23 @@
     <Content Include="Views\Mecanico\Partials\ProyectoCreate_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectoEdit_partial.cshtml" />
     <Content Include="Views\Mecanico\Partials\ProyectosList_partial.cshtml" />
+    <Content Include="Views\Mecanico\Partials\Sidebar_partial.cshtml" />
+    <Content Include="Views\Mecanico\Citas.cshtml" />
+    <Content Include="Views\Mecanico\_Layout.cshtml" />
+    <Content Include="Views\Mecanico\DetalleCita.cshtml" />
+    <Content Include="Views\Mecanico\Partials\ServicioCreate_partial.cshtml" />
+    <Content Include="Views\Mecanico\Facturacion.cshtml" />
+    <Content Include="Views\Cliente\Partials\Sidebar_partial.cshtml" />
+    <Content Include="Views\Cliente\_Layout.cshtml" />
+    <Content Include="Views\Cliente\MisFacturas.cshtml" />
+    <Content Include="Views\Admin\Partials\Sidebar_partial.cshtml" />
+    <Content Include="Views\Admin\_Layout.cshtml" />
+    <Content Include="Views\Admin\SolicitudesFacturas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Factura\" />
+    <Folder Include="Views\Servicio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

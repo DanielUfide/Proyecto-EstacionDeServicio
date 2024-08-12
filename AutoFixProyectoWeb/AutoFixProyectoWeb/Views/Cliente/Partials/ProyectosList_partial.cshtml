@@ -1,4 +1,4 @@
-﻿@model  List<AutoFixProyectoWeb.ModelDB.PROYECTOS_DE_CLIENTE_Result>
+﻿@model  List<AutoFixProyectoWeb.Models.Response.Proyecto_Cliente>
 
 
 @{
@@ -27,17 +27,25 @@
                                 </a>
                             </div>
                             <div class="card-body px-1 pb-0">
-                                <p class="text-gradient text-dark mb-2 text-sm">Project #@proyecto.ID_PROYECTO </p>
+                                <p class="text-gradient text-dark mb-2 text-sm">Project #@proyecto.PROYECTO.ID_PROYECTO </p>
                                 <a href="javascript:;">
                                     <h5>
-                                        @proyecto.ID_VEHICULO
+                                        @proyecto.PROYECTO.ID_VEHICULO
                                     </h5>
                                 </a>
                                 <p class="mb-4 text-sm">
-                                    @proyecto.DESCRIPCION_SERVICIO
+                                    @if (proyecto.SERVICIOS.Count == 0)
+                                    {                                        
+                                         <p class="font-italic text-secondary text-center">Sin servicios.</p>
+                                    }
+                                    else
+                                    {
+                                         @String.Join(", ", proyecto.SERVICIOS.Select(s => s.SERVICIO))
+                                    }
+
                                 </p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <a class="btn btn-outline-primary btn-sm mb-0" href="/Proyecto/proyectocliente?idProyecto=@proyecto.ID_PROYECTO">View Project</a>
+                                    <a class="btn btn-outline-primary btn-sm mb-0" href="/Proyecto/proyectocliente?idProyecto=@proyecto.PROYECTO.ID_PROYECTO">View Project</a>
                                     <div class="avatar-group mt-2">
                                         <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
                                            data-bs-placement="bottom" title="Elena Morison">

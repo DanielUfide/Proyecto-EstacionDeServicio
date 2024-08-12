@@ -1,0 +1,82 @@
+﻿@model AutoFixProyectoWeb.ViewModels.Mecanico.MecanicoFacturacionVM
+
+@{
+    Layout = "~/Views/Mecanico/_Layout.cshtml";
+}
+
+<div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Detalle de cita</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Facturacion</h6>
+            </nav>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid">
+        <div>
+            <h4 class="card-title">Vehiculos en reparaciones</h4>     
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Vehiculo</th>
+                        <th>Servicios</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Estado cita</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var proyecto in Model.proyectos)
+                    {
+                        <tr>
+                            <td>@proyecto.PROYECTO.ID_PROYECTO</td>
+                            <td>@proyecto.PROYECTO.ID_VEHICULO</td>
+                            <td>@String.Join(", ", proyecto.SERVICIOS.Select(s => s.SERVICIO))</td>
+                            <td>@proyecto.PROYECTO.NOMBRE_CLIENTE</td>
+                            <td>@proyecto.PROYECTO.FECHA</td>
+                            <td>@Enum.GetName(typeof(AutoFixProyectoWeb.Utils.GlobalAccess.EstadoProyecto), proyecto.PROYECTO.ID_ESTADO_PROYECTO)</td>
+
+                            @if (proyecto.PROYECTO.ESTADO_FACTURA == 0)
+                            {
+                                <td>
+                                    <a href="@Url.Action("GenerarFactura", "Factura", new { idProyecto = proyecto.PROYECTO.ID_PROYECTO })" class="btn btn-sm btn-primary">Generar factura</a>
+                                </td>
+                            }
+                            @if (proyecto.PROYECTO.ESTADO_FACTURA == 1)
+                            {
+                                <td class="text-warning">
+                                    Pendiente de aprobacion
+                                </td>
+                            }
+                            @if (proyecto.PROYECTO.ESTADO_FACTURA == 2)
+                            {
+                                <td>
+                                    Factura aprobada
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (Model.proyectos.Count == 0)
+            {
+                <p class="font-italic text-secondary text-center">Aun no se estan realizando servicios en vehiculos para generar facturas.</p>
+            }
+        </div>
+    </div>
+</div>
+
+@*Html.Partial("Partials/ServicioCreate_partial", Model.addServiceModel);*@

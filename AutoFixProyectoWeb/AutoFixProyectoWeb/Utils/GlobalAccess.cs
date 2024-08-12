@@ -17,5 +17,19 @@ namespace AutoFixProyectoWeb.Utils
             ListoParaEntrega,
             Entregado
         }
+
+        public static class FacturacionData
+        {
+            public const string Nombre = "El Cruce";
+            public const string Direccion = "Av Puerto Rico";
+        }
+
+        public enum EstadoFactura
+        {
+            NoFacturada,
+            Pendiente,
+            Aprobada,
+             
+        }
     }
 }

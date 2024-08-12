@@ -37,9 +37,15 @@
         <AssociationConnector Association="EL_CRUCEModel.FK_MECANICO_PROYECTO" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_PIEZAS" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_PROYECTO_VEHICULO" ManuallyRouted="false" />
-        <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_USUARIO_ROLE" ManuallyRouted="false" />
         <AssociationConnector Association="EL_CRUCEModel.FK_VEHICULO_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.SERVICIO_PROYECTO" Width="1.5" PointX="11.25" PointY="2.125" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_PROYECTO" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_SERVICIO" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.FACTURA_CABECERA" Width="1.5" PointX="11.375" PointY="9" />
+        <EntityTypeShape EntityType="EL_CRUCEModel.FACTURA_DETALLE" Width="1.5" PointX="13.625" PointY="9.125" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" />
+        <AssociationConnector Association="EL_CRUCEModel.FK_FACTURA_CABECERA_ID_PROYECTO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

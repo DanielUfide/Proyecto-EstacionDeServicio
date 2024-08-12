@@ -1,6 +1,7 @@
 ﻿using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models;
+using AutoFixProyectoWeb.Models.Response;
 using AutoFixProyectoWeb.Utils;
 using AutoFixProyectoWeb.ViewModels;
 using AutoFixProyectoWeb.ViewModels.ClienteView;
@@ -18,6 +19,7 @@ namespace AutoFixProyectoWeb.Controllers
         ClienteModel clienteModel = new ClienteModel();
         ServicioModel servicioModel = new ServicioModel();
         MecanicoModel mecanicoModel = new MecanicoModel();
+        FacturaModel facturaModel = new FacturaModel();
 
         // GET: Main
         public ActionResult Index()
@@ -27,7 +29,8 @@ namespace AutoFixProyectoWeb.Controllers
             List<VEHICULOS_DE_CLIENTE_Result> vehiculosCliente = clienteModel.getVehiculosCliente(usuarioActual.id_usuario);
 
             string placaVehiculos = string.Join(",", vehiculosCliente.Select(v => v.PLACA));
-            List<PROYECTOS_DE_CLIENTE_Result> proyectosCliente = clienteModel.getProyectosCliente(placaVehiculos);
+            List<Proyecto_Cliente> proyectosCliente = clienteModel.getProyectosCliente(usuarioActual.id_usuario);
+
             List<PROYECTO_PIEZAS> solicitudesPendientes = mecanicoModel.getProyectoPiezasUsuarioPendientes(usuarioActual.id_usuario);
             List<SERVICIO> servicios = servicioModel.getServicios();
             List<USUARIO> mecanicos = mecanicoModel.getMecanicos();
@@ -47,6 +50,17 @@ namespace AutoFixProyectoWeb.Controllers
             };
 
             return View(vm);
+        }
+
+        public ActionResult MisFacturas()
+        {
+            UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
+       
+            var facturas = facturaModel.ObtenerFacturasDeCliente(usuarioActual.id_usuario);
+
+            facturas = facturas.Where(f => f.APROBADO).ToList();
+
+            return View(facturas);
         }
     }
 }

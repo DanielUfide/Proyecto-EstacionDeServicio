@@ -1,5 +1,6 @@
 ﻿using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
+using AutoFixProyectoWeb.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,27 @@ namespace AutoFixProyectoWeb.Models
             }
         }
 
-        public List<PROYECTOS_DE_MECANICO_Result> getProyectosMecanico(int idMecanico)
+        public List<Proyecto_Mecanico> getProyectosMecanico(int idMecanico)
         {
+            List<Proyecto_Mecanico> proyecto_mecanicos = new List<Proyecto_Mecanico>();
+
             using (var coneccion = new El_Cruce_Entities())
             {
+
                 List<PROYECTOS_DE_MECANICO_Result> proyectos = coneccion.PROYECTOS_DE_MECANICO(idMecanico).ToList();
 
-                return proyectos;
+                foreach (var proyecto in proyectos)
+                {
+                    var servicios = coneccion.SERVICIOS_DE_PROYECTO(proyecto.ID_PROYECTO).ToList();
+
+                    Proyecto_Mecanico proyecto_mecanico = new Proyecto_Mecanico();
+                    proyecto_mecanico.PROYECTO = proyecto;
+                    proyecto_mecanico.SERVICIOS = servicios;
+
+                    proyecto_mecanicos.Add(proyecto_mecanico);
+                }
+
+                return proyecto_mecanicos;
             }
         }
 

@@ -16,9 +16,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public int ID_PROYECTO { get; set; }
         public string ID_VEHICULO { get; set; }
         public int ID_ESTADO_PROYECTO { get; set; }
-        public int ID_SERVICIO { get; set; }
         public int ID_MECANICO { get; set; }
         public Nullable<System.DateTime> FECHA { get; set; }
-        public string DESCRIPCION_SERVICIO { get; set; }
     }
 }

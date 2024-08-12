@@ -44,6 +44,9 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<TIPO_COSTO> TIPO_COSTO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<VEHICULO> VEHICULO { get; set; }
+        public virtual DbSet<SERVICIO_PROYECTO> SERVICIO_PROYECTO { get; set; }
+        public virtual DbSet<FACTURA_CABECERA> FACTURA_CABECERA { get; set; }
+        public virtual DbSet<FACTURA_DETALLE> FACTURA_DETALLE { get; set; }
     
         public virtual ObjectResult<COMENTARIOS_DE_PROYECTO_Result> COMENTARIOS_DE_PROYECTO(Nullable<int> iD_PROYECTO)
         {
@@ -72,13 +75,13 @@ namespace AutoFixProyectoWeb.ModelDB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HISTORIAL_DE_VEHICULO_Result>("HISTORIAL_DE_VEHICULO", pLACAParameter);
         }
     
-        public virtual ObjectResult<PROYECTOS_DE_CLIENTE_Result> PROYECTOS_DE_CLIENTE(string pLACAS_VEHICULOS)
+        public virtual ObjectResult<PROYECTOS_DE_CLIENTE_Result> PROYECTOS_DE_CLIENTE(Nullable<int> iD_CLIENTE)
         {
-            var pLACAS_VEHICULOSParameter = pLACAS_VEHICULOS != null ?
-                new ObjectParameter("PLACAS_VEHICULOS", pLACAS_VEHICULOS) :
-                new ObjectParameter("PLACAS_VEHICULOS", typeof(string));
+            var iD_CLIENTEParameter = iD_CLIENTE.HasValue ?
+                new ObjectParameter("ID_CLIENTE", iD_CLIENTE) :
+                new ObjectParameter("ID_CLIENTE", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PROYECTOS_DE_CLIENTE_Result>("PROYECTOS_DE_CLIENTE", pLACAS_VEHICULOSParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PROYECTOS_DE_CLIENTE_Result>("PROYECTOS_DE_CLIENTE", iD_CLIENTEParameter);
         }
     
         public virtual ObjectResult<PROYECTOS_DE_MECANICO_Result> PROYECTOS_DE_MECANICO(Nullable<int> iD_MECANICO)
@@ -97,6 +100,15 @@ namespace AutoFixProyectoWeb.ModelDB
                 new ObjectParameter("ID_USUARIO", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VEHICULOS_DE_CLIENTE_Result>("VEHICULOS_DE_CLIENTE", iD_USUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SERVICIOS_DE_PROYECTO_Result> SERVICIOS_DE_PROYECTO(Nullable<int> iD_PROYECTO)
+        {
+            var iD_PROYECTOParameter = iD_PROYECTO.HasValue ?
+                new ObjectParameter("ID_PROYECTO", iD_PROYECTO) :
+                new ObjectParameter("ID_PROYECTO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SERVICIOS_DE_PROYECTO_Result>("SERVICIOS_DE_PROYECTO", iD_PROYECTOParameter);
         }
     }
 }

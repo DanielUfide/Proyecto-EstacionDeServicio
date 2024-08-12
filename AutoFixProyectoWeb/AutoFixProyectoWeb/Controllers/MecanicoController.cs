@@ -1,7 +1,10 @@
 ﻿using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models;
+using AutoFixProyectoWeb.Models.Request;
+using AutoFixProyectoWeb.Models.Response;
 using AutoFixProyectoWeb.ViewModels;
+using AutoFixProyectoWeb.ViewModels.Mecanico;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
@@ -41,15 +44,15 @@ namespace AutoFixProyectoWeb.Controllers
 
             var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
 
-            proyectos = proyectos.Where(p => p.FECHA.HasValue).ToList();
+            proyectos = proyectos.Where(p => p.PROYECTO.FECHA.HasValue).ToList();
 
+            
             var events = proyectos.Select(p => new 
             {
-                title=p.SERVICIO, 
-                start = DateTime.Parse(p.FECHA.ToString()).ToString("yyyy-MM-ddTHH:mm:ss"),
-                vehicle =p.ID_VEHICULO,
-                description = p.DESCRIPCION,
-                client = p.NOMBRE_CLIENTE
+                title = p.PROYECTO.ID_VEHICULO,
+                start = DateTime.Parse(p.PROYECTO.FECHA.ToString()).ToString("yyyy-MM-ddTHH:mm:ss"),
+                description = p.SERVICIOS.Any() ?  String.Join(", ", p.SERVICIOS.Select(s => s.DESCRIPCION)) : "Sin servicios",
+                client = p.PROYECTO.NOMBRE_CLIENTE
 
             }).ToList();
 
@@ -77,7 +80,7 @@ namespace AutoFixProyectoWeb.Controllers
             List<VEHICULOS_DE_CLIENTE_Result> vehiculosCliente = clienteModel.getVehiculosCliente(usuarioActual.id_usuario);
 
             string placaVehiculos = string.Join(",", vehiculosCliente.Select(v => v.PLACA));
-            List<PROYECTOS_DE_CLIENTE_Result> proyectosCliente = clienteModel.getProyectosCliente(placaVehiculos);
+            List<Proyecto_Cliente> proyectosCliente = clienteModel.getProyectosCliente(usuarioActual.id_usuario);
             List<PROYECTO_PIEZAS> proyectos = mecanicoModel.getProyectoPiezas();
 
             List<PROYECTO_PIEZAS> solicitudesAprobadas = mecanicoModel.getProyectoPiezasUsuarioAprobadasM(usuarioActual.id_usuario);
@@ -93,9 +96,14 @@ namespace AutoFixProyectoWeb.Controllers
             {
                 for (int j = 0; j < servicios.Count; j++)
                 {
-                    if (proyecto[i].ID_SERVICIO == servicios[j].ID_SERVICIO)
+                    //Version actualizada por Esteban
+                    var serviciosDelProyecto = servicioModel.getServiciosDeProyecto(proyecto[i].ID_PROYECTO);
+                    proyecto[i].ID_VEHICULO = proyecto[i].ID_VEHICULO + "-" + String.Join(", ", serviciosDelProyecto.Select(s => s.SERVICIO));                    
 
-                        proyecto[i].ID_VEHICULO = proyecto[i].ID_VEHICULO + " - " + servicios[j].DESCRIPCION;
+                    //Esto funcionaba cuando la relacion era 1 a 1 entre proyecto y servicio, pero ahora es muchos servicios para 1 proyecto
+                    //if (proyecto[i].ID_SERVICIO == servicios[j].ID_SERVICIO)
+
+                    //    proyecto[i].ID_VEHICULO = proyecto[i].ID_VEHICULO + " - " + servicios[j].DESCRIPCION;
                 }
             }
 
@@ -119,6 +127,72 @@ namespace AutoFixProyectoWeb.Controllers
                     inventario = inventario,
                     proyectos = proyecto
                 }*/
+            };
+
+            return View(vm);
+        }
+
+        public ActionResult Citas()
+        {
+            UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
+
+            var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
+
+            proyectos = proyectos.Where(p => p.PROYECTO.FECHA.HasValue && p.PROYECTO.FECHA.Value.Date == DateTime.Today).ToList();
+
+            return View(proyectos);
+        }
+
+        public ActionResult DetalleCita(int idProyecto)
+        {
+            var servicios = servicioModel.getServiciosDeProyecto(idProyecto);
+
+            var vm = new MecanicoDetalleCitaVM
+            {
+                servicios = servicios,
+                addServiceModel = new Servicio_Proyecto()
+                {
+                    idProyecto = idProyecto
+                }
+
+            };
+
+            return View(vm);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AddServiceToProject(Servicio_Proyecto servicio_proyecto)
+        {
+
+            SERVICIO servicio = new SERVICIO
+            {
+                SERVICIO1 = servicio_proyecto.SERVICIO,
+                DESCRIPCION = servicio_proyecto.DESCRIPCION,
+                PRECIO = servicio_proyecto.PRECIO,
+                ID_ESTADO = 1                
+            };
+            SERVICIO newService = servicioModel.guardarServicio(servicio);
+
+            servicioModel.addServicioAProyecto(newService.ID_SERVICIO, servicio_proyecto.idProyecto);
+
+
+            return RedirectToAction("DetalleCita", "Mecanico", new { idProyecto = servicio_proyecto.idProyecto });
+        }
+
+        public ActionResult Facturacion()
+        {
+
+            UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
+
+            var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
+
+            proyectos = proyectos.Where(p => p.SERVICIOS.Count > 0).ToList();
+
+            var vm = new MecanicoFacturacionVM
+            {
+                proyectos = proyectos,
             };
 
             return View(vm);

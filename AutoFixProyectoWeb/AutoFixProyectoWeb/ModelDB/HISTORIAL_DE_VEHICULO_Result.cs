@@ -15,9 +15,7 @@ namespace AutoFixProyectoWeb.ModelDB
     {
         public Nullable<System.DateTime> FECHA { get; set; }
         public int ID_MECANICO { get; set; }
-        public string SERVICIO { get; set; }
-        public string DESCRIPCION { get; set; }
-        public double PRECIO { get; set; }
         public string MECANICO { get; set; }
+        public int ID_PROYECTO { get; set; }
     }
 }

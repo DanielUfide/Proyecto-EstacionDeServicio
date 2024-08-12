@@ -1,5 +1,7 @@
-﻿using AutoFixProyectoWeb.Entities;
+﻿using AutoFixProyectoWeb.Controllers;
+using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
+using AutoFixProyectoWeb.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +21,27 @@ namespace AutoFixProyectoWeb.Models
             }
 
         }
-        public List<PROYECTOS_DE_CLIENTE_Result> getProyectosCliente(string vehiculosCliente)
+        public List<Proyecto_Cliente> getProyectosCliente(int id_cliente)
         {
+            List<Proyecto_Cliente> proyecto_clientes = new List<Proyecto_Cliente>();
+
             using (var conexion = new El_Cruce_Entities())
             {
-                List<PROYECTOS_DE_CLIENTE_Result> proyectos = conexion.PROYECTOS_DE_CLIENTE(vehiculosCliente).ToList();
 
-                return proyectos;
+                List<PROYECTOS_DE_CLIENTE_Result> proyectos = conexion.PROYECTOS_DE_CLIENTE(id_cliente).ToList();
+                
+                foreach (var proyecto in proyectos)
+                {
+                    var servicios = conexion.SERVICIOS_DE_PROYECTO(proyecto.ID_PROYECTO).ToList();
+
+                    Proyecto_Cliente proyecto_cliente = new Proyecto_Cliente();
+                    proyecto_cliente.PROYECTO = proyecto;
+                    proyecto_cliente.SERVICIOS = servicios;
+
+                    proyecto_clientes.Add(proyecto_cliente);
+                }
+
+                return proyecto_clientes;
             }
         }
     }

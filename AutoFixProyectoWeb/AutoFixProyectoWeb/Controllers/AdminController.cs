@@ -1,4 +1,5 @@
-﻿using AutoFixProyectoWeb.Models;
+﻿using AutoFixProyectoWeb.ModelDB;
+using AutoFixProyectoWeb.Models;
 using AutoFixProyectoWeb.ViewModels.AdminView;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace AutoFixProyectoWeb.Controllers
     {
         AdminModel adminModel = new AdminModel();
         VehiculoModel vehiculoModel = new VehiculoModel();
+        FacturaModel facturaModel = new FacturaModel();
 
         // GET: Admin
 
@@ -43,6 +45,15 @@ namespace AutoFixProyectoWeb.Controllers
 
             return View("Historial", vm);
         }
+        [HttpGet]
+
+        public ActionResult SolicitudesFacturas()
+        {
+
+            var facturasPendientes = facturaModel.ObtenerFacturasPendienes();
+
+            return View(facturasPendientes);
+        }       
 
     }
 }

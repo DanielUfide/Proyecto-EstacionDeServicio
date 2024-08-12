@@ -23,7 +23,6 @@ namespace AutoFixProyectoWeb.Models
                 {
                     ID_VEHICULO = proyectoEnt.idVehiculo,
                     ID_ESTADO_PROYECTO = idEstadoProyecto,
-                    ID_SERVICIO = proyectoEnt.idServicio,
                     ID_MECANICO = proyectoEnt.idMecanico,
                     FECHA = proyectoEnt.fecha
 
@@ -152,6 +151,30 @@ namespace AutoFixProyectoWeb.Models
             }
 
         }
+        public USUARIO getClienteDeProyecto(int idProyecto)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
 
+                var proyecto = conexion.PROYECTO.Where(p => p.ID_PROYECTO == idProyecto).FirstOrDefault();
+                var vehiculo = conexion.VEHICULO.Where(v => v.PLACA == proyecto.ID_VEHICULO).FirstOrDefault();
+                var cliente = conexion.USUARIO.Where(u => u.ID_USUARIO == vehiculo.ID_USUARIO).FirstOrDefault();
+
+                return cliente;
+            }
+
+        }
+        public USUARIO getMecanicoDeProyecto(int idProyecto)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+
+                var proyecto = conexion.PROYECTO.Where(p => p.ID_PROYECTO == idProyecto).FirstOrDefault();
+                var mecanico = conexion.USUARIO.Where(u => u.ID_USUARIO == proyecto.ID_MECANICO).FirstOrDefault();
+
+                return mecanico;
+            }
+
+        }
     }
 }

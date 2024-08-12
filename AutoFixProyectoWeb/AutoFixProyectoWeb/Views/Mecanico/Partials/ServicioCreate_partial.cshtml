@@ -1,0 +1,42 @@
+﻿@model AutoFixProyectoWeb.Models.Request.Servicio_Proyecto
+
+@{
+    ViewBag.Title = "ProyectoCreate_partial";
+}
+
+<!-- Modal Crear Servicio -->
+<div class="modal modal-lg fade" id="agregarServicio" tabindex="-1" aria-labelledby="agregarServicio"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarProyectoLabel">Agregar Servicio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("addServiceToProject", "mecanico", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    <label class="mt-xl-4">Servicio</label>
+                    <input class="form-control" type="text" name="SERVICIO" required />
+
+                    <label class="mt-xl-4">Descripcion del servicio</label>
+                    <input class="form-control" type="text" name="DESCRIPCION" required />
+
+                    <label class="mt-xl-4">Precio</label>
+                    <input class="form-control" type="number" name="PRECIO" required />
+                    <input class="form-control" value="@Model.idProyecto" type="number" hidden name="idProyecto" required />
+
+
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" value="Agregar Servicio" class="btn bg-gradient-dark">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
