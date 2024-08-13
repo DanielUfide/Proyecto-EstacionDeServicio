@@ -220,6 +220,24 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="INFORMACION_FACTURAS_PENDIENTES">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
@@ -476,6 +494,7 @@
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" />
     <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" />
+    <EntitySet Name="INFORMACION_FACTURAS_PENDIENTES" EntityType="Self.INFORMACION_FACTURAS_PENDIENTES" />
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" />
     <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />

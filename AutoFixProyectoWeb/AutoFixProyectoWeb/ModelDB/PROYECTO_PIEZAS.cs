@@ -27,5 +27,4 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual INVENTARIO INVENTARIO { get; set; }
         public virtual PROYECTO PROYECTO { get; set; }
     }
-
 }

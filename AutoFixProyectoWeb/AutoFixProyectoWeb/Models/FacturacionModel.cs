@@ -20,7 +20,8 @@ namespace AutoFixProyectoWeb.Models
                     ID_FACTURA = factura.id_factura,
                     ID_USUARIO = factura.id_usuario,
                     DETALLE = factura.detalle,
-                    MONTO = factura.monto
+                    MONTO = factura.monto,
+                    METODO_PAGO = factura.metodo_pago
                 };
 
                 conexion.FACTURA.Add(newFACTURA);
@@ -81,11 +82,40 @@ namespace AutoFixProyectoWeb.Models
 
         }
 
-        public List<DetalleFacturas> getDetalleFacturasModel()
+        public List<FacturaEnt> getFacturacionUsuarioModel(int id)
         {
             using (var conexion = new El_Cruce_Entities())
             {
-                var datos = (from x in conexion.INFORMACION_FACTURAS select x).ToList();
+
+                var datos = (from x in conexion.FACTURA
+                             where x.ID_USUARIO==id
+                             select x);
+
+                List<FacturaEnt> facturaList = new List<FacturaEnt>();
+
+                foreach (var facturaDB in datos)
+                {
+                    FacturaEnt FACTURA = new FacturaEnt
+                    {
+                        id_factura = facturaDB.ID_FACTURA,
+                        id_usuario = facturaDB.ID_USUARIO,
+                        detalle = facturaDB.DETALLE,
+                        monto = (float)facturaDB.MONTO,
+                        metodo_pago = facturaDB.METODO_PAGO
+                    };
+
+                    facturaList.Add(FACTURA);
+                }
+
+                return facturaList;
+            }
+
+        }
+        public List<DetalleFacturas> getDetalleFacturasPendientesModel()
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                var datos = (from x in conexion.INFORMACION_FACTURAS_PENDIENTES select x).ToList();
                 List<DetalleFacturas> facturasList = new List<DetalleFacturas>();
 
                 foreach(var factura in datos)
@@ -97,8 +127,33 @@ namespace AutoFixProyectoWeb.Models
                         monto = factura.MONTO,
                         id_usuario = factura.ID_USUARIO,
                         nombre = factura.NOMBRE,
-                        telefono = factura.TELEFONO
+                        telefono = factura.TELEFONO,
+                        metodo_pago = factura.METODO_PAGO
                     }); 
+                }
+
+                return facturasList;
+            }
+        }
+        public List<DetalleFacturas> getDetalleFacturasModel()
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                var datos = (from x in conexion.INFORMACION_FACTURAS select x).ToList();
+                List<DetalleFacturas> facturasList = new List<DetalleFacturas>();
+
+                foreach (var factura in datos)
+                {
+                    facturasList.Add(new DetalleFacturas
+                    {
+                        id_factura = factura.ID_FACTURA,
+                        detalle = factura.DETALLE,
+                        monto = factura.MONTO,
+                        id_usuario = factura.ID_USUARIO,
+                        nombre = factura.NOMBRE,
+                        telefono = factura.TELEFONO,
+                        metodo_pago = factura.METODO_PAGO
+                    });
                 }
 
                 return facturasList;

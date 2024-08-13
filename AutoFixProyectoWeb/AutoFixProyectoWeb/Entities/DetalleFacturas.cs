@@ -13,6 +13,7 @@ namespace AutoFixProyectoWeb.Entities
         public int id_usuario { get; set; }
         public string nombre { get; set; }
         public string telefono { get; set; }
+        public string metodo_pago { get; set; }
 
     }
 }

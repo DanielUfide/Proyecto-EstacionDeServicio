@@ -13,5 +13,7 @@ namespace AutoFixProyectoWeb.Entities
         public string detalle { get; set; }
         public float monto { get; set; }
         public string metodo_pago { get; set; }
+        public bool cancelado { get; set; }
+
     }
 }
