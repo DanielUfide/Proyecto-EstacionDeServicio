@@ -55,6 +55,77 @@ namespace AutoFixProyectoWeb.Models
             }
         }
 
+        public List<UsuarioEnt> listaUsuarios()
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                List<UsuarioEnt> listaUsuarios = new List<UsuarioEnt>();
+
+                foreach (var usuario in conexion.RESUMEN_USUARIOS.ToList())
+                {
+                    listaUsuarios.Add(new UsuarioEnt
+                    {
+                        id_usuario = usuario.ID_USUARIO,
+                        nombre = usuario.NOMBRE,
+                        correo = usuario.CORREO,
+                        role = new RoleUsuarioEnt
+                        {
+                            id_role = usuario.ID_ROLE,
+                            role = usuario.ROLE,
+                        }
+                    });
+                }
+
+                return listaUsuarios;
+            }
+        }
+
+        public List<RoleUsuarioEnt> listaRoles()
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+
+                List<RoleUsuarioEnt> listaRoles = new List<RoleUsuarioEnt>();
+
+                foreach (var role in conexion.ROLE_USUARIO.ToList())
+                {
+                    listaRoles.Add(new RoleUsuarioEnt
+                    {
+                        id_role = role.ID_ROLE,
+                        role = role.ROLE,
+                    });
+                }
+
+
+                return listaRoles;
+
+            }
+        }
+
+        public UsuarioEnt optenerUsuario(UsuarioEnt usuario)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+                RESUMEN_USUARIOS usuarioDB = (from x in conexion.RESUMEN_USUARIOS where x.ID_USUARIO == usuario.id_usuario select x).FirstOrDefault();
+
+                UsuarioEnt Resultado = new UsuarioEnt
+                {
+                    id_usuario = usuarioDB.ID_USUARIO,
+                    role = new RoleUsuarioEnt
+                    {
+                        id_role = usuarioDB.ID_ROLE,
+                        role = usuarioDB.ROLE,
+                    },
+                    nombre = usuarioDB.NOMBRE,
+                    correo = usuarioDB.CORREO,
+                    telefono = usuarioDB.TELEFONO
+                };
+
+                return Resultado;
+
+            }
+        }
+
         public UsuarioEnt crearUsuario (UsuarioEnt usuario)
         {
             using(var conexion = new El_Cruce_Entities())
@@ -128,6 +199,32 @@ namespace AutoFixProyectoWeb.Models
             client.DeliveryMethod = SmtpDeliveryMethod.Network; 
             client.EnableSsl= true;
             client.Send(msg);
+
+        }
+
+        public int editarUsuario(UsuarioEnt usuario)
+        {
+
+            using (var conexion = new El_Cruce_Entities())
+            {
+                USUARIO usuarioModificar = (from x in conexion.USUARIO where x.ID_USUARIO == usuario.id_usuario select x).FirstOrDefault();
+
+                if (usuarioModificar == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    usuarioModificar.NOMBRE = usuario.nombre;
+                    usuarioModificar.CORREO = usuario.correo;
+                    usuarioModificar.TELEFONO = usuario.telefono;
+                    usuarioModificar.ID_ROLE = usuario.role.id_role;
+
+                    return conexion.SaveChanges();
+
+                }
+
+            }
 
         }
 
