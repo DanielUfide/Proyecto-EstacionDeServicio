@@ -29,5 +29,4 @@ namespace AutoFixProyectoWeb.ModelDB
 
         public string ESTADO_DESCRIPCION { get; internal set; }
     }
-
 }

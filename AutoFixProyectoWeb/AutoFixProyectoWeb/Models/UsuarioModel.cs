@@ -43,7 +43,7 @@ namespace AutoFixProyectoWeb.Models
                     HttpContext.Current.Session["UserName"] = UsuarioFinal.nombre;
                     HttpContext.Current.Session["UserRole"] = UsuarioFinal.role.id_role;
                     HttpContext.Current.Session["correo"] = UsuarioFinal.correo;
-
+                    HttpContext.Current.Session["UserId"] = UsuarioFinal.id_usuario;
                     HttpContext.Current.Session["UsuarioActual"] = UsuarioFinal;
 
                     return UsuarioFinal;

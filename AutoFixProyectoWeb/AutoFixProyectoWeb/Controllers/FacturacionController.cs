@@ -23,9 +23,26 @@ namespace AutoFixProyectoWeb.Controllers
         }
 
         [HttpGet]
-        public ActionResult ConsultarFacturaAdmin()
+        
+        public ActionResult ConsultaFacturaUsuario(int id)
         {
-            var result = facturaModel.getDetalleFacturasModel(); 
+            var result = facturaModel.getFacturacionUsuarioModel(id);
+            return View(result);
+        }
+        [HttpGet]
+        public ActionResult ConsultarFacturaAdmin(bool pendientes)
+        {
+            var result = new List<DetalleFacturas>();
+            if (pendientes) {
+                result = facturaModel.getDetalleFacturasPendientesModel();
+                ViewBag.ActiveSection = "Facturas Pendientes";
+            }
+            else
+            {
+                result = facturaModel.getDetalleFacturasModel();
+                ViewBag.ActiveSection = "Historial Facturas";
+            }
+            
             return View(result);
         }
 
@@ -37,7 +54,8 @@ namespace AutoFixProyectoWeb.Controllers
                 id_factura = id_factura,
                 id_usuario = id_usuario,
                 detalle = detalle,
-                monto = (float)monto
+                monto = (float)monto,
+                metodo_pago = "PENDIENTE"
             };
 
             var result = facturaModel.addFacturacionModel(factura);

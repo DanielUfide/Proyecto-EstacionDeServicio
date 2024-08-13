@@ -194,6 +194,20 @@
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFORMACION_FACTURAS_PENDIENTES">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS_PENDIENTES">
+        <MappingFragment StoreEntitySet="INFORMACION_FACTURAS_PENDIENTES">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

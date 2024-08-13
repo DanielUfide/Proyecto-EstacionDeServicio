@@ -73,7 +73,7 @@ function guardarFactura() {
     var id_usuario = document.getElementById('txtIDUsuario').value;
     var detalle = document.getElementById('txtDetalle').value;
     var monto = document.getElementById('txtMonto').value;
-    var id_usuario = 1;
+    
 
     if (id_factura === '' || id_usuario === '' || detalle === '' || monto === '') {
         alert('Por favor complete todos los campos.');
@@ -154,9 +154,8 @@ function actualizarFactura()
                 "id_factura": id_factura,
                 "id_usuario": id_usuario,
                 "detalle": detalle,
-                "monto": monto,
-                "id_usuario": 1 //Este id tiene que cargarse de la sesion de usuario o cookie o del modelo
-
+                "monto": monto
+               
             },
 
             dataType: "json",

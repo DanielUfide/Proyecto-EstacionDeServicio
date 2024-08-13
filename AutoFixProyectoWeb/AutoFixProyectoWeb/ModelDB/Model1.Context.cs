@@ -46,6 +46,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<VEHICULO> VEHICULO { get; set; }
         public virtual DbSet<INFORMACION_FACTURAS> INFORMACION_FACTURAS { get; set; }
+        public virtual DbSet<INFORMACION_FACTURAS_PENDIENTES> INFORMACION_FACTURAS_PENDIENTES { get; set; }
         public virtual DbSet<RESUMEN_USUARIOS> RESUMEN_USUARIOS { get; set; }
     
         public virtual ObjectResult<COMENTARIOS_DE_PROYECTO_Result> COMENTARIOS_DE_PROYECTO(Nullable<int> iD_PROYECTO)

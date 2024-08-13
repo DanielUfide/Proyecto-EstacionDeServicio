@@ -12,7 +12,7 @@ namespace AutoFixProyectoWeb.ModelDB
     using System;
     using System.Collections.Generic;
     
-    public partial class INFORMACION_FACTURAS
+    public partial class INFORMACION_FACTURAS_PENDIENTES
     {
         public int ID_FACTURA { get; set; }
         public string DETALLE { get; set; }

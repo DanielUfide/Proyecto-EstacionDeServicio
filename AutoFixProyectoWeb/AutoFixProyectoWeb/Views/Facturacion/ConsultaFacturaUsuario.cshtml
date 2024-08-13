@@ -2,8 +2,10 @@
 
 @{
     ViewBag.Title = "Facturas";
-    Layout = "~/Views/Shared/_LayoutMenusMecanico.cshtml";
+    Layout = "~/Views/Shared/_LayoutMenusCliente.cshtml";
+    ViewBag.user_id = HttpContext.Current.Session["UserId"];
 }
+
 
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
@@ -239,11 +241,6 @@
                     <div class="col-8 d-flex align-items-center">
                         <h6 class="mb-0">Facturas</h6>
                     </div>
-                    <div class="col-md-4 text-end">
-                        <a data-bs-toggle="modal" data-bs-target="#agregarFactura">
-                            <i class="fa fa-plus text-secondary mb-3"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2 mt-3">
@@ -255,7 +252,7 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Usuario</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Detalle</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Monto</th>
-                                <th class="text-secondary opacity-7"></th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Método de Pago</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -279,20 +276,11 @@
                                     <td>
                                         <p class="text-xs text-secondary mb-0">@item.monto</p>
                                     </td>
-                                    <td class="align-middle seccion-editar">
-                                        <h6 class="idFactura" hidden>@item.id_factura</h6>
-                                        <a class=" font-weight-bold text-xs btn-editar btn-link" data-toggle="tooltip"
-                                           data-original-title="Editar" data-bs-toggle="modal" data-bs-target="#actualizarFactura" style="color: #cb0c9f">
-                                            Editar
-                                        </a>
+                                    <td>
+                                        <p class="text-xs text-secondary mb-0">@item.metodo_pago</p>
+
                                     </td>
-                                    <td class="align-middle seccion-eliminar">
-                                        <h6 class="idFactura" hidden>@item.id_factura</h6>
-                                        <a class=" font-weight-bold text-xs btn-eliminar btn-eliminar btn-link" data-toggle="tooltip"
-                                           data-id-factura="@item.id_factura" data-original-title="Eliminar" data-bs-toggle="modal" data-bs-target="#eliminarFactura" style="color: #cb0c9f">
-                                            Eliminar
-                                        </a>
-                                    </td>
+
                                 </tr>
                             }
                         </tbody>
@@ -428,7 +416,6 @@
         </div>
     </div>
 </main>
-
 
 @section Scripts {
     <script src="~/Content/assets/js/custom/factura.js"></script>
