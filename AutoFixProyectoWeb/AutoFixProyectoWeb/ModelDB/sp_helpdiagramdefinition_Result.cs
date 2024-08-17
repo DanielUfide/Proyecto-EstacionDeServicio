@@ -10,16 +10,10 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SERVICIO_PROYECTO
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int ID_SERVICIO_PROYECTO { get; set; }
-        public Nullable<int> ID_SERVICIO { get; set; }
-        public int ID_PROYECTO { get; set; }
-        public Nullable<System.DateTime> FECHA { get; set; }
-    
-        public virtual PROYECTO PROYECTO { get; set; }
-        public virtual SERVICIO SERVICIO { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

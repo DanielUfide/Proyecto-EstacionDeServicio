@@ -169,6 +169,7 @@
     <Compile Include="Entities\InventarioEnt.cs" />
     <Compile Include="Entities\ProyectoEnt.cs" />
     <Compile Include="Entities\RoleUsuarioEnt.cs" />
+    <Compile Include="Entities\UserRolesEnt.cs" />
     <Compile Include="Entities\UsuarioEnt.cs" />
     <Compile Include="Entities\VehiculoEnt.cs" />
     <Compile Include="Global.asax.cs">
@@ -201,16 +202,16 @@
     <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\FACTURA_CABECERA.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDB\FACTURA_DETALLE.cs">
+    <Compile Include="ModelDB\FACTURA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_DE_VEHICULO_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_ESTADOS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\INFORMACION_FACTURAS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\INVENTARIO.cs">
@@ -246,16 +247,22 @@
     <Compile Include="ModelDB\PROYECTO_PIEZAS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDB\RESUMEN_USUARIOS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB\ROLE_USUARIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\SERVICIOS_DE_PROYECTO_Result.cs">
+    <Compile Include="ModelDB\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\SERVICIO_PROYECTO.cs">
+    <Compile Include="ModelDB\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\TIPO_COSTO.cs">
@@ -418,16 +425,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ModelDB\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelDB\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\assets\css\soft-ui-dashboard.css.map" />
     <Content Include="Content\assets\fonts\nucleo-icons.eot" />
     <Content Include="Content\assets\fonts\nucleo-icons.ttf" />
@@ -607,12 +604,15 @@
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities-extend.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_utilities.scss" />
     <Content Include="Content\assets\scss\soft-ui-dashboard\_variables.scss" />
-    <EntityDeploy Include="ModelDB\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModelDB\Model1.edmx.diagram">
+    <Content Include="ModelDB\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDB\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -622,6 +622,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Plantillas\plantilla_factura.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="ModelDB\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelDB\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />

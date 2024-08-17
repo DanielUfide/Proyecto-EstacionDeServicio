@@ -703,3 +703,7 @@ H:\Freelance\Projects\Esteban 2024\06-08-2024\Proyecto-EstacionDeServicio\AutoFi
 H:\Freelance\Projects\Esteban 2024\06-08-2024\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\System.Memory.xml
 H:\Freelance\Projects\Esteban 2024\06-08-2024\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\System.Numerics.Vectors.xml
 H:\Freelance\Projects\Esteban 2024\06-08-2024\Proyecto-EstacionDeServicio\AutoFixProyectoWeb\AutoFixProyectoWeb\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.dll
+C:\Users\Admin\Documents\GitHub\Proyecto-EstacionDeServicioV2\AutoFixProyectoWeb\AutoFixProyectoWeb\obj\Debug\AutoFixProyectoWeb.pdb

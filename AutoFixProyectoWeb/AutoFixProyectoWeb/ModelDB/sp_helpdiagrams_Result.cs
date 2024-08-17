@@ -10,16 +10,13 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class FACTURA_DETALLE
+    public partial class sp_helpdiagrams_Result
     {
-        public int ID_FACTURA_DETALLE { get; set; }
-        public string SERVICIO { get; set; }
-        public string DESCRIPCION { get; set; }
-        public decimal PRECIO { get; set; }
-        public Nullable<int> ID_FACTURA_CABECERA { get; set; }
-    
-        public virtual FACTURA_CABECERA FACTURA_CABECERA { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }
