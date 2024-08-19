@@ -1,6 +1,7 @@
 ﻿ using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models;
+using AutoFixProyectoWeb.ViewModels.AdminView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,14 @@ namespace AutoFixProyectoWeb.Controllers
     {
 
         InventarioModel inventarioModel = new InventarioModel();
-
+        CategoriaModel categoriaModel = new CategoriaModel();
         public ActionResult ConsultaInventario()
         {
-            var result = inventarioModel.getInventarioModel();
+            var result = new InventarioVM { 
+              categorias = categoriaModel.getCategoriaModel(),
+              inventario = inventarioModel.getInventarioModel()
+            };
+          //  var result = inventarioModel.getInventarioModel();
             return View(result);
         }
 
