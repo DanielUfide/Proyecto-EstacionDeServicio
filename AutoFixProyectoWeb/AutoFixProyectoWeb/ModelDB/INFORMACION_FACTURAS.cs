@@ -20,5 +20,6 @@ namespace AutoFixProyectoWeb.ModelDB
         public int ID_USUARIO { get; set; }
         public string NOMBRE { get; set; }
         public string TELEFONO { get; set; }
+        public string METODO_PAGO { get; set; }
     }
 }

@@ -238,6 +238,7 @@
     <EntitySetMapping Name="INFORMACION_FACTURAS">
       <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS">
         <MappingFragment StoreEntitySet="INFORMACION_FACTURAS">
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
           <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
           <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
           <ScalarProperty Name="MONTO" ColumnName="MONTO" />

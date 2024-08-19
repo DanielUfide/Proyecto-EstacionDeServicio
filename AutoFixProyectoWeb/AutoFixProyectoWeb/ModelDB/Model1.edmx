@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EL_CRUCEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CATEGORIA">
           <Key>
             <PropertyRef Name="ID_CATEGORIA" />
@@ -227,6 +227,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene 
             <PropertyRef Name="ID_USUARIO" />
             <PropertyRef Name="NOMBRE" />
             <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="METODO_PAGO" />
           </Key>
           <Property Name="ID_FACTURA" Type="int" Nullable="false" />
           <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
@@ -234,6 +235,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene 
           <Property Name="ID_USUARIO" Type="int" Nullable="false" />
           <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS_PENDIENTES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -615,7 +617,8 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     [INFORMACION_FACTURAS].[MONTO] AS [MONTO], 
     [INFORMACION_FACTURAS].[ID_USUARIO] AS [ID_USUARIO], 
     [INFORMACION_FACTURAS].[NOMBRE] AS [NOMBRE], 
-    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO]
+    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO], 
+    [INFORMACION_FACTURAS].[METODO_PAGO] AS [METODO_PAGO]
     FROM [dbo].[INFORMACION_FACTURAS] AS [INFORMACION_FACTURAS]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="INFORMACION_FACTURAS_PENDIENTES" EntityType="Self.INFORMACION_FACTURAS_PENDIENTES" store:Type="Views" store:Schema="dbo">
@@ -738,8 +741,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EL_CRUCEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1011,6 +1013,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
             <PropertyRef Name="ID_USUARIO" />
             <PropertyRef Name="NOMBRE" />
             <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="METODO_PAGO" />
           </Key>
           <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
           <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1018,6 +1021,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
           <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="INFORMACION_FACTURAS_PENDIENTES">
           <Key>
@@ -1467,25 +1471,25 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
           <FunctionImport Name="COMENTARIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.COMENTARIOS_DE_PROYECTO_Result)">
-            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ESTADOS_PROYECTO_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.ESTADOS_PROYECTO_DE_CLIENTE_Result)">
-            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="HISTORIAL_DE_VEHICULO" ReturnType="Collection(EL_CRUCEModel.HISTORIAL_DE_VEHICULO_Result)">
-            <Parameter Name="PLACA" Mode="In" Type="String" />
+          <Parameter Name="PLACA" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_CLIENTE_Result)">
-            <Parameter Name="ID_CLIENTE" Mode="In" Type="Int32" />
+          <Parameter Name="ID_CLIENTE" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROYECTOS_DE_MECANICO" ReturnType="Collection(EL_CRUCEModel.PROYECTOS_DE_MECANICO_Result)">
-            <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_MECANICO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SERVICIOS_DE_PROYECTO" ReturnType="Collection(EL_CRUCEModel.SERVICIOS_DE_PROYECTO_Result)">
-            <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_PROYECTO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
-            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
@@ -1784,6 +1788,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
           <EntitySetMapping Name="INFORMACION_FACTURAS">
             <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS">
               <MappingFragment StoreEntitySet="INFORMACION_FACTURAS">
+                <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
                 <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
                 <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
                 <ScalarProperty Name="MONTO" ColumnName="MONTO" />

@@ -268,6 +268,7 @@
       <PropertyRef Name="ID_USUARIO" />
       <PropertyRef Name="NOMBRE" />
       <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="METODO_PAGO" />
     </Key>
     <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
     <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
@@ -275,6 +276,7 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="INFORMACION_FACTURAS_PENDIENTES">
     <Key>

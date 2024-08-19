@@ -165,6 +165,9 @@
     <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
+    <Compile Include="Entities\CategoriaEnt.cs" />
+    <Compile Include="Entities\DetalleFacturas.cs" />
+    <Compile Include="Entities\FacturaEnt.cs" />
     <Compile Include="Entities\Proyecto_PiezasEnt.cs" />
     <Compile Include="Entities\InventarioEnt.cs" />
     <Compile Include="Entities\ProyectoEnt.cs" />
@@ -287,7 +290,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\FacturacionModel.cs" />
     <Compile Include="Models\FacturaModel.cs" />
     <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\MecanicoModel.cs" />
@@ -305,6 +310,7 @@
     <Compile Include="Utils\GenerationCode.cs" />
     <Compile Include="Utils\GlobalAccess.cs" />
     <Compile Include="ViewModels\AdminView\AdminHistoryVM.cs" />
+    <Compile Include="ViewModels\AdminView\InventarioVM.cs" />
     <Compile Include="ViewModels\ClienteView\ClienteProfileVM.cs" />
     <Compile Include="ViewModels\ClienteView\MecanicoVM.cs" />
     <Compile Include="ViewModels\ClienteView\ProyectoCreateVM.cs" />
