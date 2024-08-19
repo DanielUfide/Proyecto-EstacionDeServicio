@@ -64,6 +64,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FACTURA">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+          <ScalarProperty Name="CANCELADO" ColumnName="CANCELADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="FACTURA_CABECERA">
       <EntityTypeMapping TypeName="EL_CRUCEModel.FACTURA_CABECERA">
         <MappingFragment StoreEntitySet="FACTURA_CABECERA">
@@ -84,10 +96,10 @@
     <EntitySetMapping Name="FACTURA_DETALLE">
       <EntityTypeMapping TypeName="EL_CRUCEModel.FACTURA_DETALLE">
         <MappingFragment StoreEntitySet="FACTURA_DETALLE">
-          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
-          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
           <ScalarProperty Name="ID_FACTURA_DETALLE" ColumnName="ID_FACTURA_DETALLE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
           <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
           <ScalarProperty Name="ID_FACTURA_CABECERA" ColumnName="ID_FACTURA_CABECERA" />
         </MappingFragment>
@@ -112,6 +124,17 @@
           <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
           <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO_PROYECTO">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.PRODUCTO_PROYECTO">
+        <MappingFragment StoreEntitySet="PRODUCTO_PROYECTO">
+          <ScalarProperty Name="ID_PRODUCTO_PROYECTO" ColumnName="ID_PRODUCTO_PROYECTO" />
+          <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
+          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -212,6 +235,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="INFORMACION_FACTURAS">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS">
+        <MappingFragment StoreEntitySet="INFORMACION_FACTURAS">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFORMACION_FACTURAS_PENDIENTES">
+      <EntityTypeMapping TypeName="EL_CRUCEModel.INFORMACION_FACTURAS_PENDIENTES">
+        <MappingFragment StoreEntitySet="INFORMACION_FACTURAS_PENDIENTES">
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="RESUMEN_USUARIOS">
       <EntityTypeMapping TypeName="EL_CRUCEModel.RESUMEN_USUARIOS">
         <MappingFragment StoreEntitySet="RESUMEN_USUARIOS">
@@ -287,6 +335,7 @@
           <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
           <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
           <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_SERVICIO1" ColumnName="ID_SERVICIO1" />
           <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
           <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
@@ -306,16 +355,5 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="PRODUCTO_PROYECTO">
-      <EntityTypeMapping TypeName="EL_CRUCEModel.PRODUCTO_PROYECTO">
-        <MappingFragment StoreEntitySet="PRODUCTO_PROYECTO">
-          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
-          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
-          <ScalarProperty Name="ID_INVENTARIO" ColumnName="ID_INVENTARIO" />
-          <ScalarProperty Name="ID_PRODUCTO_PROYECTO" ColumnName="ID_PRODUCTO_PROYECTO" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -18,6 +18,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public USUARIO()
         {
             this.COMENTARIOS_PROYECTO = new HashSet<COMENTARIOS_PROYECTO>();
+            this.FACTURA = new HashSet<FACTURA>();
             this.PROYECTO = new HashSet<PROYECTO>();
             this.VEHICULO = new HashSet<VEHICULO>();
         }
@@ -32,6 +33,8 @@ namespace AutoFixProyectoWeb.ModelDB
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMENTARIOS_PROYECTO> COMENTARIOS_PROYECTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FACTURA> FACTURA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROYECTO> PROYECTO { get; set; }
         public virtual ROLE_USUARIO ROLE_USUARIO { get; set; }

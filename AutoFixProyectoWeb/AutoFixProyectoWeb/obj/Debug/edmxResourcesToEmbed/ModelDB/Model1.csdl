@@ -67,6 +67,18 @@
     <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="SERVICIO" Relationship="Self.FK_SERVICIO_ESTADO" FromRole="ESTADO_SERVICIO" ToRole="SERVICIO" />
   </EntityType>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CANCELADO" Type="Boolean" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_FACTURA_USER" FromRole="FACTURA" ToRole="USUARIO" />
+  </EntityType>
   <EntityType Name="FACTURA_CABECERA">
     <Key>
       <PropertyRef Name="ID_FACTURA_CABECERA" />
@@ -90,12 +102,12 @@
       <PropertyRef Name="ID_FACTURA_DETALLE" />
     </Key>
     <Property Name="ID_FACTURA_DETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
     <Property Name="PRECIO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ID_FACTURA_CABECERA" Type="Int32" />
     <NavigationProperty Name="FACTURA_CABECERA" Relationship="Self.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" FromRole="FACTURA_DETALLE" ToRole="FACTURA_CABECERA" />
-    <Property Name="TIPO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
     <Key>
@@ -120,7 +132,19 @@
     <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_CATEGORIA_INVENTARIO" FromRole="INVENTARIO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_INVENTARIO_PIEZAS" FromRole="INVENTARIO" ToRole="PROYECTO_PIEZAS" />
-    <NavigationProperty Name="PRODUCTO_PROYECTO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_INVENTARIO" FromRole="INVENTARIO" ToRole="PRODUCTO_PROYECTO" />
+    <NavigationProperty Name="PRODUCTO_PROYECTO" Relationship="Self.FK_SERVICIO_PROYECTO_ID_INVENTARIO" FromRole="INVENTARIO" ToRole="PRODUCTO_PROYECTO" />
+  </EntityType>
+  <EntityType Name="PRODUCTO_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO_PROYECTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO_PROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_INVENTARIO" Type="Int32" />
+    <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="INVENTARIO" Relationship="Self.FK_SERVICIO_PROYECTO_ID_INVENTARIO" FromRole="PRODUCTO_PROYECTO" ToRole="INVENTARIO" />
+    <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PRODUCTO_PROYECTO_ID_PROYECTO" FromRole="PRODUCTO_PROYECTO" ToRole="PROYECTO" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -147,11 +171,11 @@
     <NavigationProperty Name="ESTADO_PROYECTO" Relationship="Self.FK_ESTADO_PROYECTO" FromRole="PROYECTO" ToRole="ESTADO_PROYECTO" />
     <NavigationProperty Name="FACTURA_CABECERA" Relationship="Self.FK_FACTURA_CABECERA_ID_PROYECTO" FromRole="PROYECTO" ToRole="FACTURA_CABECERA" />
     <NavigationProperty Name="HISTORIAL_ESTADOS" Relationship="Self.FK_PROYECTO_HISTORIAL_ESTADO" FromRole="PROYECTO" ToRole="HISTORIAL_ESTADOS" />
+    <NavigationProperty Name="PRODUCTO_PROYECTO" Relationship="Self.FK_PRODUCTO_PROYECTO_ID_PROYECTO" FromRole="PROYECTO" ToRole="PRODUCTO_PROYECTO" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="PROYECTO" ToRole="USUARIO" />
     <NavigationProperty Name="PROYECTO_PIEZAS" Relationship="Self.FK_PROYECTO_PIEZAS" FromRole="PROYECTO" ToRole="PROYECTO_PIEZAS" />
     <NavigationProperty Name="VEHICULO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="PROYECTO" ToRole="VEHICULO" />
     <NavigationProperty Name="SERVICIO_PROYECTO" Relationship="Self.FK_SERVICIO_PROYECTO_ID_PROYECTO" FromRole="PROYECTO" ToRole="SERVICIO_PROYECTO" />
-    <NavigationProperty Name="PRODUCTO_PROYECTO" Relationship="EL_CRUCEModel.FK_PRODUCTO_PROYECTO_ID_PROYECTO" FromRole="PROYECTO" ToRole="PRODUCTO_PROYECTO" />
   </EntityType>
   <EntityType Name="PROYECTO_PIEZAS">
     <Key>
@@ -218,6 +242,7 @@
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ESTADO_CONTRASEÑA" Type="Boolean" />
     <NavigationProperty Name="COMENTARIOS_PROYECTO" Relationship="Self.FK_USUARIO_COMENTARIOS" FromRole="USUARIO" ToRole="COMENTARIOS_PROYECTO" />
+    <NavigationProperty Name="FACTURA" Relationship="Self.FK_FACTURA_USER" FromRole="USUARIO" ToRole="FACTURA" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_MECANICO_PROYECTO" FromRole="USUARIO" ToRole="PROYECTO" />
     <NavigationProperty Name="ROLE_USUARIO" Relationship="Self.FK_USUARIO_ROLE" FromRole="USUARIO" ToRole="ROLE_USUARIO" />
     <NavigationProperty Name="VEHICULO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="USUARIO" ToRole="VEHICULO" />
@@ -234,6 +259,40 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PROYECTO" Relationship="Self.FK_PROYECTO_VEHICULO" FromRole="VEHICULO" ToRole="PROYECTO" />
     <NavigationProperty Name="USUARIO" Relationship="Self.FK_VEHICULO_USUARIO" FromRole="VEHICULO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="INFORMACION_FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INFORMACION_FACTURAS_PENDIENTES">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="METODO_PAGO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Double" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
@@ -374,6 +433,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_FACTURA_USER">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_FACTURA_CABECERA_ID_PROYECTO">
     <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="0..1" />
     <End Role="FACTURA_CABECERA" Type="Self.FACTURA_CABECERA" Multiplicity="*" />
@@ -419,6 +490,30 @@
       </Principal>
       <Dependent Role="PROYECTO_PIEZAS">
         <PropertyRef Name="ID_INVENTARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO">
+    <End Role="INVENTARIO" Type="Self.INVENTARIO" Multiplicity="0..1" />
+    <End Role="PRODUCTO_PROYECTO" Type="Self.PRODUCTO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVENTARIO">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Principal>
+      <Dependent Role="PRODUCTO_PROYECTO">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="PRODUCTO_PROYECTO" Type="Self.PRODUCTO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="PRODUCTO_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -514,10 +609,12 @@
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" />
     <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" />
+    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
     <EntitySet Name="FACTURA_CABECERA" EntityType="Self.FACTURA_CABECERA" />
     <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" />
+    <EntitySet Name="PRODUCTO_PROYECTO" EntityType="Self.PRODUCTO_PROYECTO" />
     <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
     <EntitySet Name="PROYECTO" EntityType="Self.PROYECTO" />
     <EntitySet Name="PROYECTO_PIEZAS" EntityType="Self.PROYECTO_PIEZAS" />
@@ -527,6 +624,8 @@
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" />
+    <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" />
+    <EntitySet Name="INFORMACION_FACTURAS_PENDIENTES" EntityType="Self.INFORMACION_FACTURAS_PENDIENTES" />
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" />
     <AssociationSet Name="FK_CATEGORIA_INVENTARIO" Association="Self.FK_CATEGORIA_INVENTARIO">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
@@ -568,6 +667,10 @@
       <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />
       <End Role="SERVICIO" EntitySet="SERVICIO" />
     </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_USER" Association="Self.FK_FACTURA_USER">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
     <AssociationSet Name="FK_FACTURA_CABECERA_ID_PROYECTO" Association="Self.FK_FACTURA_CABECERA_ID_PROYECTO">
       <End Role="PROYECTO" EntitySet="PROYECTO" />
       <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
@@ -583,6 +686,14 @@
     <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />
       <End Role="PROYECTO_PIEZAS" EntitySet="PROYECTO_PIEZAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO" Association="Self.FK_SERVICIO_PROYECTO_ID_INVENTARIO">
+      <End Role="INVENTARIO" EntitySet="INVENTARIO" />
+      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO" Association="Self.FK_PRODUCTO_PROYECTO_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
     </AssociationSet>
     <AssociationSet Name="FK_MECANICO_PROYECTO" Association="Self.FK_MECANICO_PROYECTO">
       <End Role="USUARIO" EntitySet="USUARIO" />
@@ -633,15 +744,6 @@
     <FunctionImport Name="VEHICULOS_DE_CLIENTE" ReturnType="Collection(EL_CRUCEModel.VEHICULOS_DE_CLIENTE_Result)">
       <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
     </FunctionImport>
-    <EntitySet Name="PRODUCTO_PROYECTO" EntityType="EL_CRUCEModel.PRODUCTO_PROYECTO" />
-    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO" Association="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_INVENTARIO">
-      <End Role="INVENTARIO" EntitySet="INVENTARIO" />
-      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO" Association="EL_CRUCEModel.FK_PRODUCTO_PROYECTO_ID_PROYECTO">
-      <End Role="PROYECTO" EntitySet="PROYECTO" />
-      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
-    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="COMENTARIOS_DE_PROYECTO_Result">
     <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="100" />
@@ -682,6 +784,7 @@
     <Property Type="Int32" Name="ID_SERVICIO" Nullable="true" />
     <Property Type="Int32" Name="ID_PROYECTO" Nullable="false" />
     <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ID_SERVICIO1" Nullable="false" />
     <Property Type="String" Name="SERVICIO" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="100" />
     <Property Type="Double" Name="PRECIO" Nullable="false" />
@@ -695,40 +798,4 @@
     <Property Type="Boolean" Name="ESTADO" Nullable="false" />
     <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
   </ComplexType>
-  <EntityType Name="PRODUCTO_PROYECTO">
-    <Key>
-      <PropertyRef Name="ID_PRODUCTO_PROYECTO" />
-    </Key>
-    <Property Name="ID_PRODUCTO_PROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_INVENTARIO" Type="Int32" />
-    <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
-    <Property Name="CANTIDAD" Type="Int32" />
-    <Property Name="FECHA" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="INVENTARIO" Relationship="EL_CRUCEModel.FK_SERVICIO_PROYECTO_ID_INVENTARIO" FromRole="PRODUCTO_PROYECTO" ToRole="INVENTARIO" />
-    <NavigationProperty Name="PROYECTO" Relationship="EL_CRUCEModel.FK_PRODUCTO_PROYECTO_ID_PROYECTO" FromRole="PRODUCTO_PROYECTO" ToRole="PROYECTO" />
-  </EntityType>
-  <Association Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO">
-    <End Type="EL_CRUCEModel.INVENTARIO" Role="INVENTARIO" Multiplicity="0..1" />
-    <End Type="EL_CRUCEModel.PRODUCTO_PROYECTO" Role="PRODUCTO_PROYECTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="INVENTARIO">
-        <PropertyRef Name="ID_INVENTARIO" />
-      </Principal>
-      <Dependent Role="PRODUCTO_PROYECTO">
-        <PropertyRef Name="ID_INVENTARIO" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO">
-    <End Type="EL_CRUCEModel.PROYECTO" Role="PROYECTO" Multiplicity="1" />
-    <End Type="EL_CRUCEModel.PRODUCTO_PROYECTO" Role="PRODUCTO_PROYECTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROYECTO">
-        <PropertyRef Name="ID_PROYECTO" />
-      </Principal>
-      <Dependent Role="PRODUCTO_PROYECTO">
-        <PropertyRef Name="ID_PROYECTO" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

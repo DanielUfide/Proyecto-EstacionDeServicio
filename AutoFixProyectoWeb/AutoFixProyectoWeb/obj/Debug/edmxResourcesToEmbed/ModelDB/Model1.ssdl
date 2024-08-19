@@ -56,6 +56,17 @@
     <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ESTADO" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MONTO" Type="float" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CANCELADO" Type="bit" />
+  </EntityType>
   <EntityType Name="FACTURA_CABECERA">
     <Key>
       <PropertyRef Name="ID_FACTURA_CABECERA" />
@@ -202,6 +213,44 @@
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INFORMACION_FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MONTO" Type="float" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS_PENDIENTES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INFORMACION_FACTURAS_PENDIENTES">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="DETALLE" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="METODO_PAGO" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MONTO" Type="float" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="RESUMEN_USUARIOS">
     <Key>
@@ -303,6 +352,18 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       </Principal>
       <Dependent Role="FACTURA_DETALLE">
         <PropertyRef Name="ID_FACTURA_CABECERA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_USER">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_USUARIO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -527,6 +588,7 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FACTURA_CABECERA" EntityType="Self.FACTURA_CABECERA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
@@ -541,6 +603,27 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [INFORMACION_FACTURAS].[ID_FACTURA] AS [ID_FACTURA], 
+    [INFORMACION_FACTURAS].[DETALLE] AS [DETALLE], 
+    [INFORMACION_FACTURAS].[MONTO] AS [MONTO], 
+    [INFORMACION_FACTURAS].[ID_USUARIO] AS [ID_USUARIO], 
+    [INFORMACION_FACTURAS].[NOMBRE] AS [NOMBRE], 
+    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO]
+    FROM [dbo].[INFORMACION_FACTURAS] AS [INFORMACION_FACTURAS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="INFORMACION_FACTURAS_PENDIENTES" EntityType="Self.INFORMACION_FACTURAS_PENDIENTES" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [INFORMACION_FACTURAS_PENDIENTES].[ID_FACTURA] AS [ID_FACTURA], 
+    [INFORMACION_FACTURAS_PENDIENTES].[DETALLE] AS [DETALLE], 
+    [INFORMACION_FACTURAS_PENDIENTES].[MONTO] AS [MONTO], 
+    [INFORMACION_FACTURAS_PENDIENTES].[ID_USUARIO] AS [ID_USUARIO], 
+    [INFORMACION_FACTURAS_PENDIENTES].[NOMBRE] AS [NOMBRE], 
+    [INFORMACION_FACTURAS_PENDIENTES].[TELEFONO] AS [TELEFONO], 
+    [INFORMACION_FACTURAS_PENDIENTES].[METODO_PAGO] AS [METODO_PAGO]
+    FROM [dbo].[INFORMACION_FACTURAS_PENDIENTES] AS [INFORMACION_FACTURAS_PENDIENTES]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 
@@ -580,6 +663,10 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <AssociationSet Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" Association="Self.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
       <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
       <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_USER" Association="Self.FK_FACTURA_USER">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
     </AssociationSet>
     <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />

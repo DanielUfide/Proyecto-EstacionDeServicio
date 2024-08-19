@@ -34,10 +34,12 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<ESTADO_PROYECTO> ESTADO_PROYECTO { get; set; }
         public virtual DbSet<ESTADO_PROYECTO_PIEZAS> ESTADO_PROYECTO_PIEZAS { get; set; }
         public virtual DbSet<ESTADO_SERVICIO> ESTADO_SERVICIO { get; set; }
+        public virtual DbSet<FACTURA> FACTURA { get; set; }
         public virtual DbSet<FACTURA_CABECERA> FACTURA_CABECERA { get; set; }
         public virtual DbSet<FACTURA_DETALLE> FACTURA_DETALLE { get; set; }
         public virtual DbSet<HISTORIAL_ESTADOS> HISTORIAL_ESTADOS { get; set; }
         public virtual DbSet<INVENTARIO> INVENTARIO { get; set; }
+        public virtual DbSet<PRODUCTO_PROYECTO> PRODUCTO_PROYECTO { get; set; }
         public virtual DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public virtual DbSet<PROYECTO> PROYECTO { get; set; }
         public virtual DbSet<PROYECTO_PIEZAS> PROYECTO_PIEZAS { get; set; }
@@ -47,8 +49,9 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual DbSet<TIPO_COSTO> TIPO_COSTO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<VEHICULO> VEHICULO { get; set; }
+        public virtual DbSet<INFORMACION_FACTURAS> INFORMACION_FACTURAS { get; set; }
+        public virtual DbSet<INFORMACION_FACTURAS_PENDIENTES> INFORMACION_FACTURAS_PENDIENTES { get; set; }
         public virtual DbSet<RESUMEN_USUARIOS> RESUMEN_USUARIOS { get; set; }
-        public virtual DbSet<PRODUCTO_PROYECTO> PRODUCTO_PROYECTO { get; set; }
     
         public virtual ObjectResult<COMENTARIOS_DE_PROYECTO_Result> COMENTARIOS_DE_PROYECTO(Nullable<int> iD_PROYECTO)
         {

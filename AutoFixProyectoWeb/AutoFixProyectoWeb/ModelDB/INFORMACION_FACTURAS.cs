@@ -10,17 +10,15 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class SERVICIOS_DE_PROYECTO_Result
+    public partial class INFORMACION_FACTURAS
     {
-        public int ID_SERVICIO_PROYECTO { get; set; }
-        public Nullable<int> ID_SERVICIO { get; set; }
-        public int ID_PROYECTO { get; set; }
-        public Nullable<System.DateTime> FECHA { get; set; }
-        public int ID_SERVICIO1 { get; set; }
-        public string SERVICIO { get; set; }
-        public string DESCRIPCION { get; set; }
-        public double PRECIO { get; set; }
-        public int ID_ESTADO { get; set; }
+        public int ID_FACTURA { get; set; }
+        public string DETALLE { get; set; }
+        public double MONTO { get; set; }
+        public int ID_USUARIO { get; set; }
+        public string NOMBRE { get; set; }
+        public string TELEFONO { get; set; }
     }
 }
