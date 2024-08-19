@@ -40,11 +40,11 @@ function consultarPorID(event)
             success: function (data) {
 
                 var modal = $('#actualizarInventario');
-                modal.modal('show');
+              
 
                 console.log(data);
                 modal.find('#txtIDInventario').val(data.id_inventario);
-                modal.find('#txtCategoria').val(data.id_categoria);
+                modal.find('#selectCategoria').val(data.id_categoria);
                 modal.find('#txtNombre').val(data.nombre);
                 modal.find('#txtCantidad').val(data.cantidad);
                 modal.find('#txtPrecioCompra').val(data.precio_compra);
@@ -72,12 +72,12 @@ function cargarLista(inventario)
 function guardarInventario() {
 
     var id_inventario = document.getElementById('txtIDInventario').value;
-    var id_categoria = document.getElementById('txtCategoria').value;
+    var id_categoria = document.getElementById('selectCategoria').value;
     var nombre = document.getElementById('txtNombre').value;
     var cantidad = document.getElementById('txtCantidad').value;
     var precio_compra = document.getElementById('txtPrecioCompra').value;
     var precio_venta = document.getElementById('txtPrecioVenta').value;
-    var id_usuario = 1;
+ 
 
     if (id_inventario === '' || id_categoria === '' || nombre === '' || cantidad === '' || precio_compra === '' || precio_venta === '') {
         alert('Por favor complete todos los campos.');
@@ -94,8 +94,6 @@ function guardarInventario() {
                 "cantidad": cantidad,
                 "precio_compra": precio_compra,
                 "precio_venta": precio_venta,
-                "id_usuario": id_usuario, //Este id tiene que cargarse de la sesion de usuario o cookie o del modelo
-                "estado": true
             },
 
             dataType: "json",
@@ -143,10 +141,10 @@ function eliminarInventario() {
 }
 function actualizarInventario()
 {
-    console.log("test actualizar");
+  
     var modal = $('#actualizarInventario');
     var id_inventario = modal.find('#txtIDInventario').val();
-    var id_categoria = modal.find('#txtCategoria').val();
+    var id_categoria = modal.find('#selectCategoria').val();
     var nombre = modal.find('#txtNombre').val();
     var cantidad = modal.find('#txtCantidad').val();
     var precio_compra = modal.find('#txtPrecioCompra').val();
@@ -166,8 +164,6 @@ function actualizarInventario()
                 "cantidad": cantidad,
                 "precio_compra": precio_compra,
                 "precio_venta": precio_venta,
-                "id_usuario": 1 //Este id tiene que cargarse de la sesion de usuario o cookie o del modelo
-
             },
 
             dataType: "json",
