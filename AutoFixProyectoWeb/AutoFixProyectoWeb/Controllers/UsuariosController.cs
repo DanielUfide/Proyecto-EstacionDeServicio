@@ -1,4 +1,5 @@
-﻿using AutoFixProyectoWeb.Entities;
+﻿using AutoFixProyectoWeb.App_Start;
+using AutoFixProyectoWeb.Entities;
 using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models; 
 using System;
@@ -27,6 +28,7 @@ namespace AutoFixProyectoWeb.Controllers
             return View(); 
         }
 
+        [SessionFilter]
         public ActionResult perfil() {
             return View();
         }
@@ -36,6 +38,7 @@ namespace AutoFixProyectoWeb.Controllers
             return View();
         }
 
+        [SessionFilter]
         public ActionResult administrarUsuarios()
         {
             var usuarios = usuariosModel.listaUsuarios();
