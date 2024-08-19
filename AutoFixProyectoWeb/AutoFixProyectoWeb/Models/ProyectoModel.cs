@@ -4,6 +4,7 @@ using AutoFixProyectoWeb.Utils;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Web;
@@ -173,6 +174,30 @@ namespace AutoFixProyectoWeb.Models
                 var mecanico = conexion.USUARIO.Where(u => u.ID_USUARIO == proyecto.ID_MECANICO).FirstOrDefault();
 
                 return mecanico;
+            }
+
+        }
+
+        public void addProductToProject(PRODUCTO_PROYECTO producto_proyecto)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+
+                conexion.PRODUCTO_PROYECTO.Add(producto_proyecto);
+
+                conexion.SaveChanges();
+            }
+
+        }
+
+        public List<PRODUCTO_PROYECTO> productosDeProyecto(int idProyecto)
+        {
+            using (var conexion = new El_Cruce_Entities())
+            {
+
+                return conexion.PRODUCTO_PROYECTO
+                    .Include(p => p.INVENTARIO)
+                    .Where(p => p.ID_PROYECTO == idProyecto).ToList();
             }
 
         }

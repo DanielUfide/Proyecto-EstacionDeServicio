@@ -1,0 +1,274 @@
+﻿@model List<AutoFixProyectoWeb.Entities.InventarioEnt>
+@{
+    ViewBag.Title = "Inventario";
+    Layout = "~/Views/Admin/_Layout.cshtml";
+}
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Principal</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Inventario</li>
+                </ol>
+
+            </nav>
+        </div>
+    </nav>
+
+    <div class="col-12" id="seccionInventario">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <div class="row">
+                    <div class="col-8 d-flex align-items-center">
+                        <h6 class="mb-0">Inventario</h6>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <a data-bs-toggle="modal" data-bs-target="#agregarInventario">
+                            <i class="fa fa-plus text-secondary mb-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2 mt-3">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre Producto</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Cantidad</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Precio Compra</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Precio Venta</th>
+                                <th class="text-secondary opacity-7"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">@item.nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs text-secondary mb-0">@item.cantidad</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs text-secondary mb-0">@item.precio_compra</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs text-secondary mb-0">@item.precio_venta</p>
+                                    </td>
+                                    <td class="align-middle seccion-editar">
+                                        <h6 class="idInventario" hidden>@item.id_inventario</h6>
+                                        <a class=" font-weight-bold text-xs btn-editar btn-link" data-toggle="tooltip"
+                                           data-original-title="Editar" data-bs-toggle="modal" data-bs-target="#actualizarInventario" style="color: #cb0c9f">
+                                            Editar
+                                        </a>
+                                    </td>
+                                    <td class="align-middle seccion-eliminar">
+                                        <h6 class="idInventario" hidden>@item.id_inventario</h6>
+                                        <a class=" font-weight-bold text-xs btn-eliminar btn-eliminar btn-link" data-toggle="tooltip"
+                                           data-id-inventario="@item.id_inventario" data-original-title="Eliminar" data-bs-toggle="modal" data-bs-target="#eliminarInventario" style="color: #cb0c9f">
+                                            Eliminar
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- Modal Agregar Proveedor-->
+    <div class="modal modal-lg fade" id="agregarProveedor" tabindex="-1" aria-labelledby="agregarProveedor"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarProveedor">Agregar Proveedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+
+                        <label for="txtNombreProveedor">Nombre Proveedor</label>
+                        <input type="text" name="txtNombreProveedor" id="txtNombreProveedor" class="form-control">
+
+                        <label for="txtDireccionProveedor" class="mt-xl-3">Dirección Proveedor</label>
+                        <input type="text" name="txtDireccionProveedor" id="txtDireccionProveedor" class="form-control">
+
+                        <label for="txtCorreoProveedor" class="mt-xl-3">Indique el Correo del Proveedor</label>
+                        <input type="text" name="txtCorreoProveedor" id="txtCorreoProveedor"
+                               class="txtCorreoProveedor form-control">
+
+                        <label for="txtNumeroProveedor" class="mt-xl-3">Indique el Número de Contacto del Proveedor</label>
+                        <input type="text" name="txtNumeroProveedor" id="txtNumeroProveedor" class="form-control">
+
+                        <div class="row mt-xl-3 justify-content-center text-center">
+                            <div class="col-md-12">
+                                <input type="submit" value="Guardar Proveedor" class="btn bg-gradient-dark">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Agregar Categoría
+    <div class="modal modal-lg fade" id="agregarCategoria" tabindex="-1" aria-labelledby="agregarCategoria"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarCategoria">Agregar Categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+
+                        <label for="txtProveedorCategoria">Indique el Proveedor</label>
+                        <select name="txtProveedorCategoria" id="txtProveedorCategoria" class="form-control">
+                            <option value="0">Indique un Proveedor</option>
+                            <option value="1">Piezas Mecanicas S.A</option>
+                        </select>
+
+                        <label for="txtNombreCategoria" class="mt-xl-4">Indique el Nombre</label>
+                        <input type="text" name="txtNombreCategoria" id="txtNombreCategoria" class="form-control"
+                               placeholder="Indique la categoría">
+
+                        <label for="txtDescripcion" class="mt-xl-4">Descripción de la categoria</label>
+                        <textarea name="txtDescripcion" id="txtDescripcion" cols="30" rows="3" class="form-control"></textarea>
+
+                        <div class="row mt-xl-3 justify-content-center text-center">
+                            <div class="col-md-12">
+                                <input type="submit" value="Guardar Categoría" class="btn bg-gradient-dark">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        -->
+    </div><!-- Modal Agregar Inventario -->
+    <div class="modal modal-lg fade" id="agregarInventario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Inventario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAgregarInventario">
+                        <label for="txtIDInventario">ID Producto</label>
+                        <input type="text" name="txtIDInventario" id="txtIDInventario" class="form-control" placeholder="Indique el ID del producto" required>
+                        <label for="txtCategoria">Categoría</label>
+                        <input type="text" name="txtCategoria" id="txtCategoria" class="form-control" placeholder="Indique la categoría del producto" required>
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Indique el nombre del producto" required>
+                        <label for="txtCantidad">Cantidad</label>
+                        <input type="text" name="txtCantidad" id="txtCantidad" class="form-control" placeholder="Indique la cantidad" required>
+                        <label for="txtPrecioCompra">Precio Compra</label>
+                        <input type="text" name="txtPrecioCompra" id="txtPrecioCompra" class="form-control" placeholder="Indique el precio de compra" required>
+                        <label for="txtPrecioVenta">Precio Venta</label>
+                        <input type="text" name="txtPrecioVenta" id="txtPrecioVenta" class="form-control" placeholder="Indique el precio de venta" required>
+
+                        <div class="row mt-xl-3 justify-content-center text-center">
+                            <div class="col-md-12">
+                                <input type="button" onclick="guardarInventario()" value="Guardar Inventario" class="btn bg-gradient-dark">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal  editar Inventario-->
+    <div class="modal modal-lg fade" id="actualizarInventario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Actualizar Inventario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label for="txtIDInventario">ID Producto</label>
+                        <input type="text" name="txtIDInventario" id="txtIDInventario" class="form-control"
+                               placeholder="Indique el ID del producto" required readonly>
+                        <label for="txtCategoria">Categoria</label>
+                        <input type="text" name="txtCategoria" id="txtCategoria" class="form-control"
+                               placeholder="Indique la categoria del producto" required>
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control"
+                               placeholder="Indique el nombre del producto" required>
+                        <label for="txtCantidad">Cantidad</label>
+                        <input type="text" name="txtCantidad" id="txtCantidad" class="form-control"
+                               placeholder="Indique la cantidad" required>
+                        <label for="txtPrecioCompra">Precio Compra</label>
+                        <input type="text" name="txtPrecioCompra" id="txtPrecioCompra" class="form-control"
+                               placeholder="Indique el precio de compra" required>
+                        <label for="txtPrecioVenta">Precio Venta</label>
+                        <input type="text" name="txtPrecioVenta" id="txtPrecioVenta" class="form-control"
+                               placeholder="Indique el precio de venta" required>
+
+                        <div class="row mt-xl-3 justify-content-center text-center">
+                            <div class="col-md-12">
+                                <input type="submit" onclick="actualizarInventario()" value="Actualizar Inventario" class="btn bg-gradient-dark">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Modal eliminar Inventario -->
+    <div class="modal modal-lg fade" id="eliminarInventario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Inventario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro que desea eliminar este producto?</p>
+                    <input type="hidden" id="idInventarioEliminar" />
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" onclick="eliminarInventario()" value="Eliminar Inventario" class="btn bg-gradient-dark">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+@section Scripts {
+    <script src="~/Content/assets/js/custom/inventario.js"></script>
+}

@@ -202,16 +202,16 @@
     <Compile Include="ModelDB\ESTADO_SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\FACTURA.cs">
+    <Compile Include="ModelDB\FACTURA_CABECERA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\FACTURA_DETALLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_DE_VEHICULO_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\HISTORIAL_ESTADOS.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDB\INFORMACION_FACTURAS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\INVENTARIO.cs">
@@ -231,6 +231,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB\PRODUCTO_PROYECTO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\PROVEEDOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -256,13 +259,10 @@
     <Compile Include="ModelDB\SERVICIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\sp_helpdiagramdefinition_Result.cs">
+    <Compile Include="ModelDB\SERVICIOS_DE_PROYECTO_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDB\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDB\sysdiagrams.cs">
+    <Compile Include="ModelDB\SERVICIO_PROYECTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\TIPO_COSTO.cs">
@@ -283,6 +283,7 @@
     <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\MecanicoModel.cs" />
     <Compile Include="Models\ProyectoModel.cs" />
+    <Compile Include="Models\Request\Producto_Proyecto.cs" />
     <Compile Include="Models\Request\Servicio_Proyecto.cs" />
     <Compile Include="Models\Response\Historial_Vehiculo.cs" />
     <Compile Include="Models\Response\Proyecto_Cliente.cs" />
@@ -298,6 +299,7 @@
     <Compile Include="ViewModels\ClienteView\ClienteProfileVM.cs" />
     <Compile Include="ViewModels\ClienteView\MecanicoVM.cs" />
     <Compile Include="ViewModels\ClienteView\ProyectoCreateVM.cs" />
+    <Compile Include="ViewModels\ClienteView\VehiculoCreateMV.cs" />
     <Compile Include="ViewModels\Mecanico\MecanicoDetalleCitaVM.cs" />
     <Compile Include="ViewModels\Mecanico\MecanicoFacturacionVM.cs" />
     <Compile Include="ViewModels\ProyectoView\ProyectoClienteVM.cs" />
@@ -691,6 +693,13 @@
     <Content Include="Views\Admin\Partials\Sidebar_partial.cshtml" />
     <Content Include="Views\Admin\_Layout.cshtml" />
     <Content Include="Views\Admin\SolicitudesFacturas.cshtml" />
+    <Content Include="Views\Admin\ConsultaInventario.cshtml" />
+    <Content Include="Views\Admin\AdministrarUsuarios.cshtml" />
+    <Content Include="Views\Cliente\MisVehiculos.cshtml" />
+    <Content Include="Views\Cliente\Partials\VehiculoCreate_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\VehiculoUpdate_partial.cshtml" />
+    <Content Include="Views\Cliente\Partials\VehiculoDelete_partial.cshtml" />
+    <Content Include="Views\Mecanico\Partials\AddProduct_partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

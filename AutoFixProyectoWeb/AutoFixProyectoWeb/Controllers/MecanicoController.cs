@@ -3,6 +3,7 @@ using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models;
 using AutoFixProyectoWeb.Models.Request;
 using AutoFixProyectoWeb.Models.Response;
+using AutoFixProyectoWeb.Utils;
 using AutoFixProyectoWeb.ViewModels;
 using AutoFixProyectoWeb.ViewModels.Mecanico;
 using Microsoft.Ajax.Utilities;
@@ -15,6 +16,7 @@ using System.Web.Mvc;
 
 namespace AutoFixProyectoWeb.Controllers
 {
+    [CustomAuthorize]
     public class MecanicoController : Controller
     {
         MecanicoModel mecanicoModel = new MecanicoModel();
@@ -44,7 +46,7 @@ namespace AutoFixProyectoWeb.Controllers
 
             var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
 
-            proyectos = proyectos.Where(p => p.PROYECTO.FECHA.HasValue).ToList();
+            proyectos = proyectos.Where(p => p.PROYECTO.FECHA.Date != null).ToList();
 
             
             var events = proyectos.Select(p => new 
@@ -138,7 +140,7 @@ namespace AutoFixProyectoWeb.Controllers
 
             var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
 
-            proyectos = proyectos.Where(p => p.PROYECTO.FECHA.HasValue && p.PROYECTO.FECHA.Value.Date == DateTime.Today).ToList();
+            proyectos = proyectos.Where(p => p.PROYECTO.FECHA != null && p.PROYECTO.FECHA.Date == DateTime.Today).ToList();
 
             return View(proyectos);
         }
@@ -146,14 +148,23 @@ namespace AutoFixProyectoWeb.Controllers
         public ActionResult DetalleCita(int idProyecto)
         {
             var servicios = servicioModel.getServiciosDeProyecto(idProyecto);
+            var productos = proyectoModel.productosDeProyecto(idProyecto);
+            var inventario = inventarioModel.getInventarioModel();
 
             var vm = new MecanicoDetalleCitaVM
             {
                 servicios = servicios,
+                productos = productos,
                 addServiceModel = new Servicio_Proyecto()
                 {
                     idProyecto = idProyecto
-                }
+                },
+                
+                addProductModal = new Producto_Proyecto()
+                {
+                    inventarios = inventario,
+                    ID_PROYECTO = idProyecto
+                },
 
             };
 
@@ -188,7 +199,7 @@ namespace AutoFixProyectoWeb.Controllers
 
             var proyectos = mecanicoModel.getProyectosMecanico(usuarioActual.id_usuario);
 
-            proyectos = proyectos.Where(p => p.SERVICIOS.Count > 0).ToList();
+            proyectos = proyectos.Where(p => p.SERVICIOS.Count > 0 || p.PRODUCTOS.Count > 0).ToList();
 
             var vm = new MecanicoFacturacionVM
             {
@@ -196,6 +207,25 @@ namespace AutoFixProyectoWeb.Controllers
             };
 
             return View(vm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddProductToProject(Producto_Proyecto producto_proyecto)
+        {
+
+            PRODUCTO_PROYECTO new_producto_proyecto = new PRODUCTO_PROYECTO
+            {
+                ID_INVENTARIO = producto_proyecto.ID_INVENTARIO,
+                ID_PROYECTO =  producto_proyecto.ID_PROYECTO,
+                CANTIDAD = producto_proyecto.CANTIDAD,
+                FECHA = DateTime.Now,
+            };
+
+            proyectoModel.addProductToProject(new_producto_proyecto);
+
+
+            return RedirectToAction("DetalleCita", "Mecanico", new { idProyecto = producto_proyecto.ID_PROYECTO });
         }
     }
 }

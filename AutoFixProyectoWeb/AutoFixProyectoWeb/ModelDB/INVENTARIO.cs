@@ -18,6 +18,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public INVENTARIO()
         {
             this.PROYECTO_PIEZAS = new HashSet<PROYECTO_PIEZAS>();
+            this.PRODUCTO_PROYECTO = new HashSet<PRODUCTO_PROYECTO>();
         }
     
         public int ID_INVENTARIO { get; set; }
@@ -30,5 +31,7 @@ namespace AutoFixProyectoWeb.ModelDB
         public virtual CATEGORIA CATEGORIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROYECTO_PIEZAS> PROYECTO_PIEZAS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRODUCTO_PROYECTO> PRODUCTO_PROYECTO { get; set; }
     }
 }

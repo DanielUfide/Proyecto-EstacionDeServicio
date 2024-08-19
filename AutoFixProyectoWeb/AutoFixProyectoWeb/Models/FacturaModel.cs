@@ -12,7 +12,7 @@ namespace AutoFixProyectoWeb.Models
 {
     public class FacturaModel
     {
-        public void CrearFactura(List<SERVICIOS_DE_PROYECTO_Result> servicios, USUARIO cliente, USUARIO mecanico, int idProyecto)
+        public void CrearFactura(List<SERVICIOS_DE_PROYECTO_Result> servicios, List<PRODUCTO_PROYECTO> productos, USUARIO cliente, USUARIO mecanico, int idProyecto)
         {
             using (var conexion = new El_Cruce_Entities())
             {
@@ -33,15 +33,34 @@ namespace AutoFixProyectoWeb.Models
 
                 foreach (var servicio in servicios)
                 {
-                    conexion.FACTURA_DETALLE.Add(new FACTURA_DETALLE
+                    var fact_detalle_servicio = new FACTURA_DETALLE
                     {
-                        SERVICIO =  servicio.SERVICIO,
+                        TIPO = "Servicio",
                         DESCRIPCION = servicio.DESCRIPCION,
-                        PRECIO = (decimal) servicio.PRECIO,
+                        CANTIDAD = 1,
+                        PRECIO = (decimal)servicio.PRECIO * 1,
                         ID_FACTURA_CABECERA = newFactura.ID_FACTURA_CABECERA
-                    });
+                    };
 
-                    total += (decimal)servicio.PRECIO;
+                    conexion.FACTURA_DETALLE.Add(fact_detalle_servicio);
+
+                    total += (decimal)fact_detalle_servicio.PRECIO;
+                }
+
+                foreach (var producto in productos)
+                {
+                    var fact_detalle_producto = new FACTURA_DETALLE
+                    {
+                        TIPO = "Producto / Pieza",
+                        DESCRIPCION = producto.INVENTARIO.NOMBRE,
+                        CANTIDAD = (int) producto.CANTIDAD,
+                        PRECIO = (decimal) producto.INVENTARIO.PRECIO_VENTA * (int) producto.CANTIDAD,
+                        ID_FACTURA_CABECERA = newFactura.ID_FACTURA_CABECERA
+                    };
+
+                    conexion.FACTURA_DETALLE.Add(fact_detalle_producto);
+
+                    total += (decimal)fact_detalle_producto.PRECIO;
                 }
 
                 newFactura.TOTAL = total;
@@ -107,8 +126,9 @@ namespace AutoFixProyectoWeb.Models
                 int row = 12;
                 foreach (var det in detalle)
                 {
-                    worksheet.Cells["C" + row].Value = det.SERVICIO.ToString();
+                    worksheet.Cells["C" + row].Value = det.TIPO.ToString();
                     worksheet.Cells["D" + row].Value = det.DESCRIPCION.ToString();
+                    worksheet.Cells["E" + row].Value = det.CANTIDAD.ToString();
                     worksheet.Cells["F" + row].Value = "S./ " + det.PRECIO.ToString();
 
                     row++;

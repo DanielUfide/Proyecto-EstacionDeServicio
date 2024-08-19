@@ -10,14 +10,16 @@
 namespace AutoFixProyectoWeb.ModelDB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class SERVICIOS_DE_PROYECTO_Result
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID_SERVICIO_PROYECTO { get; set; }
+        public Nullable<int> ID_SERVICIO { get; set; }
+        public int ID_PROYECTO { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
+        public string SERVICIO { get; set; }
+        public string DESCRIPCION { get; set; }
+        public double PRECIO { get; set; }
+        public int ID_ESTADO { get; set; }
     }
 }

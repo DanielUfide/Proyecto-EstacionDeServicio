@@ -1,9 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "_Layout";
-   
+
     Layout = "~/Views/Shared/_Layout.cshtml"; // Usa el layout principal como base
-  
+    var currentPage = ViewContext.RouteData.Values["action"].ToString();
 }
 
 <!--
@@ -43,7 +43,7 @@
     <link id="pagestyle" href="~/Content/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+    @*<script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>*@
 
     @*FullCalendar*@
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
@@ -55,12 +55,19 @@
             margin: 0 auto;
         }
     </style>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
+    <a href="/Usuarios/cerrarSession" class="fixed-top text-end nav-link font-weight-bold px-0 @(currentPage != "Piezas" ? "text-dark" : "text-white")" style="right: 0; top: 0; margin-right: 70px; margin-top: 38px">
+        <i class="fa fa-user me-sm-1"></i>
+        <span class="d-sm-inline d-none">Cerrar Sesión</span>
+    </a>
+
     @Html.Partial("Partials/Sidebar_partial")
     @RenderBody()
     <!--   Core JS Files   -->

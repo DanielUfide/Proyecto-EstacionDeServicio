@@ -12,13 +12,15 @@ namespace AutoFixProyectoWeb.ModelDB
     using System;
     using System.Collections.Generic;
     
-    public partial class INFORMACION_FACTURAS
+    public partial class PRODUCTO_PROYECTO
     {
-        public int ID_FACTURA { get; set; }
-        public string DETALLE { get; set; }
-        public double MONTO { get; set; }
-        public int ID_USUARIO { get; set; }
-        public string NOMBRE { get; set; }
-        public string TELEFONO { get; set; }
+        public int ID_PRODUCTO_PROYECTO { get; set; }
+        public Nullable<int> ID_INVENTARIO { get; set; }
+        public int ID_PROYECTO { get; set; }
+        public Nullable<int> CANTIDAD { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
+    
+        public virtual INVENTARIO INVENTARIO { get; set; }
+        public virtual PROYECTO PROYECTO { get; set; }
     }
 }

@@ -1,150 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\",
+  "WorkspaceRootPath": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\utils\\globalaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\utils\\globalaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\detallecita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\detallecita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\mecanico\\partials\\serviciocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\serviciocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\mecanico\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\proyectocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\modeldb\\proyecto_piezas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\modeldb\\proyecto_piezas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\clienteview\\mecanicovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\clienteview\\mecanicovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\piezas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\mecanicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\mecanicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\inventariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\facturamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\facturamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\06-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\models\\vehiculomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\vehiculomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\misfacturas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\misfacturas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\cliente\\partials\\vehiculoupdate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculoupdate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\cliente\\partials\\vehiculodelete_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculodelete_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\cliente\\misvehiculos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\misvehiculos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\views\\cliente\\partials\\vehiculocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculocreate_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|h:\\freelance\\projects\\esteban 2024\\17-08-2024\\proyecto-estaciondeservicio\\autofixproyectoweb\\autofixproyectoweb\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\mecanicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\mecanicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\admin\\solicitudesfacturas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\admin\\solicitudesfacturas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\admin\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\admin\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\adminmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\adminmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\citas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\citas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\sidebar_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\admin\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\admin\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\admin\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\admin\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\admin\\partials\\historiallist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\admin\\partials\\historiallist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\mecanico\\mecanicofacturacionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\mecanico\\mecanicofacturacionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\adminview\\adminhistoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\adminview\\adminhistoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\mecanico\\mecanicodetallecitavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\mecanico\\mecanicodetallecitavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\viewmodels\\clienteview\\proyectocreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\viewmodels\\clienteview\\proyectocreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\models\\response\\proyecto_mecanico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\models\\response\\proyecto_mecanico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\proyectoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\mecanico\\calendario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\autofixproyectoweb\\views\\cliente\\partials\\vehiculoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55619D76-D4E8-47E4-85C2-958BBF410466}|AutoFixProyectoWeb\\AutoFixProyectoWeb.csproj|solutionrelative:autofixproyectoweb\\views\\cliente\\partials\\vehiculoslist_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,74 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MecanicoFacturacionVM.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoFacturacionVM.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoFacturacionVM.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoFacturacionVM.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoFacturacionVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T22:02:43.87Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MecanicoController.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\MecanicoController.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAmwFgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T22:34:11.999Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MecanicoModel.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\MecanicoModel.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAmwHIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T22:48:33.553Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdminModel.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\AdminModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\AdminModel.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\AdminModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\AdminModel.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBsAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:22:37.598Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GlobalAccess.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Utils\\GlobalAccess.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Utils\\GlobalAccess.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Utils\\GlobalAccess.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Utils\\GlobalAccess.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T20:33:13.463Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -232,385 +50,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServicioCreate_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ServicioCreate_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ServicioCreate_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ServicioCreate_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ServicioCreate_partial.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB0AAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T20:26:14.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProyectoCreate_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\ProyectoCreate_partial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T20:26:13.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PROYECTO_PIEZAS.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ModelDB\\PROYECTO_PIEZAS.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAEwBYAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T20:21:51.597Z",
+              "Title": "MisVehiculos.cshtml",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\MisVehiculos.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\MisVehiculos.cshtml",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\MisVehiculos.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\MisVehiculos.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-18T20:36:53.23Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProyectoController.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\ProyectoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T01:46:38.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FacturaController.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAswCwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T22:32:12.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FacturaModel.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\FacturaModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\FacturaModel.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\FacturaModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\FacturaModel.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAAAG8AAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T01:54:34.983Z",
+              "DocumentIndex": 5,
+              "Title": "VehiculoCreate_partial.cshtml",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoCreate_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoCreate_partial.cshtml",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoCreate_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoCreate_partial.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAWwBEAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-18T20:35:51.338Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DetalleCita.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\DetalleCita.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\DetalleCita.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\DetalleCita.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\DetalleCita.cshtml",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADEAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T01:28:22.209Z",
+              "Title": "VehiculoModel.cs",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\VehiculoModel.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAACsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T20:59:42.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MisFacturas.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\MisFacturas.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\MisFacturas.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\MisFacturas.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\MisFacturas.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAcwCsAAAAiAAAA",
+              "DocumentIndex": 3,
+              "Title": "VehiculoDelete_partial.cshtml",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoDelete_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoDelete_partial.cshtml",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoDelete_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoDelete_partial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:11:01.889Z"
+              "WhenOpened": "2024-08-18T20:45:05.532Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAmwDoAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:10:31.171Z"
+              "DocumentIndex": 2,
+              "Title": "VehiculoUpdate_partial.cshtml",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoUpdate_partial.cshtml",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoUpdate_partial.cshtml",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoUpdate_partial.cshtml",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculoUpdate_partial.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAWwAwAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-18T20:45:04.534Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Piezas.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Piezas.cshtml",
-              "ViewState": "AQIAAG8BAAAAAAAAAAAiwH4BAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T20:06:20.766Z",
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAowIsAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T20:43:16.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Sidebar_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Partials\\Sidebar_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Admin\\Partials\\Sidebar_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Partials\\Sidebar_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Admin\\Partials\\Sidebar_partial.cshtml",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAswJsAAACCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T01:09:49.775Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MecanicoVM.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\MecanicoVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAEwA4AAAAeAAAA",
+              "DocumentIndex": 0,
+              "Title": "FacturaController.cs",
+              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
+              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
+              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\17-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
+              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\FacturaController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAhwBIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:21:32.018Z",
+              "WhenOpened": "2024-08-18T20:39:31.987Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InventarioModel.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\InventarioModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T19:23:56.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SolicitudesFacturas.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\SolicitudesFacturas.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Admin\\SolicitudesFacturas.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\SolicitudesFacturas.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Admin\\SolicitudesFacturas.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAC0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T01:17:05.493Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Sidebar_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\Sidebar_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\Sidebar_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\Sidebar_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\Sidebar_partial.cshtml",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADIAAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T01:14:19.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Controllers\\AdminController.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowDcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:17:45.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Citas.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Citas.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Citas.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Citas.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Citas.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:06:05.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\_Layout.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\_Layout.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:02:58.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Historial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Historial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Admin\\Historial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Historial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Admin\\Historial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:18:32.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\_Layout.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\_Layout.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:05:39.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Sidebar_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\Sidebar_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\Sidebar_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\Sidebar_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Partials\\Sidebar_partial.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAFQAAABxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:02:19.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "HistorialList_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Partials\\HistorialList_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Admin\\Partials\\HistorialList_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\Partials\\HistorialList_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Admin\\Partials\\HistorialList_partial.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACkAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:59:47.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Admin\\_Layout.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Admin\\_Layout.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Admin\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T01:10:53.046Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ProyectoCreateVM.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\ProyectoCreateVM.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\ProyectoCreateVM.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\ClienteView\\ProyectoCreateVM.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\ClienteView\\ProyectoCreateVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:21:34.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "AdminHistoryVM.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\AdminView\\AdminHistoryVM.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\AdminView\\AdminHistoryVM.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\AdminView\\AdminHistoryVM.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\AdminView\\AdminHistoryVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:21:51.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "MecanicoDetalleCitaVM.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoDetalleCitaVM.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoDetalleCitaVM.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoDetalleCitaVM.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\ViewModels\\Mecanico\\MecanicoDetalleCitaVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:21:36.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Proyecto_Mecanico.cs",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\Response\\Proyecto_Mecanico.cs",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Models\\Response\\Proyecto_Mecanico.cs",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Models\\Response\\Proyecto_Mecanico.cs",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Models\\Response\\Proyecto_Mecanico.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T00:20:26.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Calendario.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Mecanico\\Calendario.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:05:59.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:00:59.204Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ProyectosList_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\ProyectosList_partial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:08:36.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "VehiculosList_partial.cshtml",
-              "DocumentMoniker": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
-              "RelativeDocumentMoniker": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
-              "ToolTip": "H:\\Freelance\\Projects\\Esteban 2024\\06-08-2024\\Proyecto-EstacionDeServicio\\AutoFixProyectoWeb\\AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
-              "RelativeToolTip": "AutoFixProyectoWeb\\Views\\Cliente\\Partials\\VehiculosList_partial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-11T00:02:14.151Z"
             }
           ]
         }

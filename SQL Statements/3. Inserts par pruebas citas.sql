@@ -7,6 +7,9 @@ INSERT INTO USUARIO VALUES(2, 'Jhenifer', 'jhenifer@gmail.com', '123', '931-500-
 INSERT INTO VEHICULO VALUES ('PLA-001', 'BMW X5', 'MODELO X', 'CHA 2024', 1, 2);
 INSERT INTO VEHICULO VALUES ('CAA-002', 'DXS B5', 'MODELO X2', 'CHA 2023', 1, 2);
 
+INSERT INTO PROVEEDOR VALUES ('Prove 1', 'dir', 'prove1@gmail.com', '12345')
+INSERT INTO CATEGORIA VALUES (1, 'Amoblado', 'muebles para vehiculos')
+
 INSERT INTO ESTADO_PROYECTO VALUES ('Solicitud a Cliente');
 INSERT INTO ESTADO_PROYECTO VALUES ('Inicio del Proyecto');
 INSERT INTO ESTADO_PROYECTO VALUES ('Evaluación Inicial');

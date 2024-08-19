@@ -1,0 +1,45 @@
+﻿
+@model AutoFixProyectoWeb.Models.Request.Producto_Proyecto
+
+@{
+    ViewBag.Title = "AddProduct_partial";
+}
+
+<!-- Modal Crear Servicio -->
+<div class="modal modal-lg fade" id="agregarProducto" tabindex="-1" aria-labelledby="agregarProducto"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarProyectoLabel">Agregar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("addProductToProject", "mecanico", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <label class="mt-xl-4">Seleccionar pieza</label>
+                    <select class="form-select" name="ID_INVENTARIO" required>
+                        @foreach (var invent in Model.inventarios)
+                        {
+                            <option value="@invent.id_inventario">@invent.nombre</option>
+                        }
+                    </select>
+
+                    <label class="mt-xl-4">Cantidad</label>
+                    <input class="form-control" type="number" name="CANTIDAD" required/>
+
+                    <input class="form-control" value="@Model.ID_PROYECTO" type="number" hidden name="ID_PROYECTO" required />
+
+
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" value="Agregar Producto" class="btn bg-gradient-dark">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

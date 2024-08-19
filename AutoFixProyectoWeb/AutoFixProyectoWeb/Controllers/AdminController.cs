@@ -1,5 +1,7 @@
-﻿using AutoFixProyectoWeb.ModelDB;
+﻿using AutoFixProyectoWeb.Entities;
+using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models;
+using AutoFixProyectoWeb.Utils;
 using AutoFixProyectoWeb.ViewModels.AdminView;
 using System;
 using System.Collections.Generic;
@@ -9,16 +11,39 @@ using System.Web.Mvc;
 
 namespace AutoFixProyectoWeb.Controllers
 {
+    [CustomAuthorize]
     public class AdminController : Controller
     {
         AdminModel adminModel = new AdminModel();
         VehiculoModel vehiculoModel = new VehiculoModel();
         FacturaModel facturaModel = new FacturaModel();
+        InventarioModel inventarioModel = new InventarioModel();
+        UsuarioModel usuariosModel = new UsuarioModel();
+
+        public ActionResult ConsultaInventario()
+        {
+            var result = inventarioModel.getInventarioModel();
+            return View(result);
+        }
+
+        public ActionResult AdministrarUsuarios()
+        {
+            var usuarios = usuariosModel.listaUsuarios();
+            var roles = usuariosModel.listaRoles();
+
+            UserRolesEnt listaUsuariosRoles = new UserRolesEnt
+            {
+                Users = usuarios,
+                Roles = roles
+            };
+
+            return View(listaUsuariosRoles);
+        }
+
+
 
         // GET: Admin
-
         [HttpGet]
-      
         public ActionResult Index()
         {
 

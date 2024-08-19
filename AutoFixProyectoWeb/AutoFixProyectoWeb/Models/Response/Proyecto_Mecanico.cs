@@ -10,5 +10,6 @@ namespace AutoFixProyectoWeb.Models.Response
     {
         public PROYECTOS_DE_MECANICO_Result PROYECTO { get; set; }
         public List<SERVICIOS_DE_PROYECTO_Result> SERVICIOS { get; set; }
+        public List<PRODUCTO_PROYECTO> PRODUCTOS { get; set; }
     }
 }

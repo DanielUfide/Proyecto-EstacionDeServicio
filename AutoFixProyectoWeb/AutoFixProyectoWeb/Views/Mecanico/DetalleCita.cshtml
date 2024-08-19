@@ -21,45 +21,81 @@
     <!-- End Navbar -->
 
     <div class="container-fluid">
+
+
         <div class="d-flex justify-content-between align-items-center">
             <h4 class="card-title">Servicios del Proyecto</h4>
-            <button data-bs-toggle="modal" data-bs-target="#agregarServicio" class="btn btn-primary">
-                <i class="fa fa-plus text-secondary mb-3"></i>
-                Agregar servicio
-            </button>
 
+            <div class="dropdown">
+                <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Agregar
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#agregarServicio" href="#">Agregar servicio</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#agregarProducto" href="#">Agregar producto</a></li>
+                </ul>
+            </div>
         </div>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Servicio</th>
+                        <th>Tipo</th>
                         <th>Descripción</th>
                         <th>Fecha</th>
+                        <th>Cantidad</th>
                         <th>Precio</th>
-                        <th>Estado</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                    @{
+                        int codigo = 1;
+                    }
+
+                    @*SERVICIOS*@
+
                     @foreach (var servicio in Model.servicios)
                     {
                         <tr>
-                            <td>@servicio.ID_SERVICIO_PROYECTO</td>
-                            <td>@servicio.SERVICIO</td>
+                            <td>@codigo</td>
+                            <td>Servicio</td>
                             <td>@servicio.DESCRIPCION</td>
                             <td>@servicio.FECHA</td>
+                            <td>1</td>
                             <td>@servicio.PRECIO.ToString("C")</td>
-                            <td>@servicio.ID_ESTADO</td>
+                            <td>@((servicio.PRECIO * 1).ToString("C"))</td>
                         </tr>
+
+                        codigo++;
+                    }
+
+                    @*PRODUCTOS*@
+
+                    @foreach (var producto in Model.productos)
+                    {
+                        <tr>
+                            <td>@codigo</td>
+                            <td>Producto / Pieza</td>
+                            <td>@producto.INVENTARIO.NOMBRE</td>
+                            <td>@producto.FECHA</td>
+                            <td>@producto.CANTIDAD</td>
+                            <td>@(producto.INVENTARIO.PRECIO_VENTA?.ToString("C"))</td>
+                            <td>@((producto.INVENTARIO.PRECIO_VENTA * producto.CANTIDAD)?.ToString("C"))</td>
+                        </tr>
+                        codigo++;
                     }
                 </tbody>
             </table>
-            @if (Model.servicios.Count == 0)
+            @if (Model.servicios.Count == 0 && Model.productos.Count == 0)
             {
-                <p class="font-italic text-secondary text-center">El vehiculo no cuenta con servicios realizados.</p>
+                <p class="font-italic text-secondary text-center">El vehiculo no cuenta con servicios o productos / piezas realizados.</p>
             }
         </div>
     </div>
 </div>
 @Html.Partial("Partials/ServicioCreate_partial", Model.addServiceModel);
+@Html.Partial("Partials/AddProduct_partial", Model.addProductModal);

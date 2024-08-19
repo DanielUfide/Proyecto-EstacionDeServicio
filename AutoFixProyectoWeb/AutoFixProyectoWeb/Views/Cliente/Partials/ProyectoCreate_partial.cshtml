@@ -17,9 +17,9 @@
                 {
                     @Html.AntiForgeryToken()
 
-                    <label>Seleccione el Automovil</label>
+                    <label>Seleccione el Automóvil</label>
                     <select name="idVehiculo" class="form-control" required>
-                        <option selected hidden value="">Seleccione Vehiculo</option>
+                        <option selected hidden value="">Seleccione Vehículo</option>
                         @foreach (var vehiculo in @Model.vehiculos)
                         {
                             <option value="@vehiculo.PLACA">@vehiculo.PLACA</option>
@@ -28,9 +28,9 @@
 
                     </select>
                   
-                    <label class="mt-xl-4">Seleccione el Mecanico</label>
+                    <label class="mt-xl-4">Seleccione el Mecánico</label>
                     <select name="idMecanico" class="form-control" required>
-                        <option selected hidden value="">Seleccione Vehiculo</option>
+                        <option selected hidden value="">Seleccione Mecánico</option>
                         @foreach (var mecanico in @Model.mecanicos)
                         {
                             <option value="@mecanico.ID_USUARIO">@mecanico.NOMBRE</option>

@@ -49,7 +49,9 @@ namespace AutoFixProyectoWeb.Controllers
                 modelo = modelo,
                 chasis = chasis,
                 marca = marca,
-                id_usuario= id_usuario
+                id_usuario= id_usuario,
+                estado = true
+                
             };
 
             var result = vehiculoModel.actualizarVehiculoModel(vehiculo);

@@ -56,15 +56,32 @@
     <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ESTADO" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <EntityType Name="FACTURA">
+  <EntityType Name="FACTURA_CABECERA">
     <Key>
-      <PropertyRef Name="ID_FACTURA" />
+      <PropertyRef Name="ID_FACTURA_CABECERA" />
     </Key>
-    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
-    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
-    <Property Name="MONTO" Type="float" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-    <Property Name="METODO_PAGO" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="ID_FACTURA_CABECERA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="ID_CLIENTE" Type="int" />
+    <Property Name="NOMBRE_CLIENTE" Type="varchar" MaxLength="100" />
+    <Property Name="NOMBRE_MECANICO" Type="varchar" MaxLength="100" />
+    <Property Name="TOTAL" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ID_PROYECTO" Type="int" />
+    <Property Name="APROBADO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FACTURA_DETALLE">
+    <Key>
+      <PropertyRef Name="ID_FACTURA_DETALLE" />
+    </Key>
+    <Property Name="ID_FACTURA_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="1000" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" Nullable="false" />
+    <Property Name="PRECIO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_FACTURA_CABECERA" Type="int" />
   </EntityType>
   <EntityType Name="HISTORIAL_ESTADOS">
     <Key>
@@ -84,7 +101,17 @@
     <Property Name="CANTIDAD" Type="int" Nullable="false" />
     <Property Name="PRECIO_COMPRA" Type="float" />
     <Property Name="PRECIO_VENTA" Type="float" />
-    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PRODUCTO_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO_PROYECTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_INVENTARIO" Type="int" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" />
+    <Property Name="FECHA" Type="datetime" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -103,9 +130,9 @@
     <Property Name="ID_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_VEHICULO" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ID_ESTADO_PROYECTO" Type="int" Nullable="false" />
-    <Property Name="ID_SERVICIO" Type="int" Nullable="false" />
     <Property Name="ID_MECANICO" Type="int" Nullable="false" />
-    <Property Name="FECHA" Type="datetime" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="ESTADO_FACTURA" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PROYECTO_PIEZAS">
     <Key>
@@ -135,15 +162,14 @@
     <Property Name="PRECIO" Type="float" Nullable="false" />
     <Property Name="ID_ESTADO" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
+  <EntityType Name="SERVICIO_PROYECTO">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="ID_SERVICIO_PROYECTO" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="ID_SERVICIO_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SERVICIO" Type="int" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
   </EntityType>
   <EntityType Name="TIPO_COSTO">
     <Key>
@@ -174,24 +200,6 @@
     <Property Name="CHASIS" Type="varchar" MaxLength="100" />
     <Property Name="ESTADO" Type="bit" Nullable="false" />
     <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-  </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.INFORMACION_FACTURAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-  <EntityType Name="INFORMACION_FACTURAS">
-    <Key>
-      <PropertyRef Name="ID_FACTURA" />
-      <PropertyRef Name="DETALLE" />
-      <PropertyRef Name="MONTO" />
-      <PropertyRef Name="ID_USUARIO" />
-      <PropertyRef Name="NOMBRE" />
-      <PropertyRef Name="TELEFONO" />
-    </Key>
-    <Property Name="ID_FACTURA" Type="int" Nullable="false" />
-    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
-    <Property Name="MONTO" Type="float" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
-    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -274,15 +282,27 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FACTURA_USER">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
-    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+  <Association Name="FK_FACTURA_CABECERA_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="0..1" />
+    <End Role="FACTURA_CABECERA" Type="Self.FACTURA_CABECERA" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="USUARIO">
-        <PropertyRef Name="ID_USUARIO" />
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
       </Principal>
-      <Dependent Role="FACTURA">
-        <PropertyRef Name="ID_USUARIO" />
+      <Dependent Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+    <End Role="FACTURA_CABECERA" Type="Self.FACTURA_CABECERA" Multiplicity="0..1" />
+    <End Role="FACTURA_DETALLE" Type="Self.FACTURA_DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA_CABECERA">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
+      </Principal>
+      <Dependent Role="FACTURA_DETALLE">
+        <PropertyRef Name="ID_FACTURA_CABECERA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -307,6 +327,18 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       </Principal>
       <Dependent Role="PROYECTO">
         <PropertyRef Name="ID_MECANICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="PRODUCTO_PROYECTO" Type="Self.PRODUCTO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="PRODUCTO_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -382,14 +414,38 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SERVICIO_PROYECTO">
-    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="1" />
-    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="*" />
+  <Association Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO">
+    <End Role="INVENTARIO" Type="Self.INVENTARIO" Multiplicity="0..1" />
+    <End Role="PRODUCTO_PROYECTO" Type="Self.PRODUCTO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVENTARIO">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Principal>
+      <Dependent Role="PRODUCTO_PROYECTO">
+        <PropertyRef Name="ID_INVENTARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_PROYECTO">
+    <End Role="PROYECTO" Type="Self.PROYECTO" Multiplicity="1" />
+    <End Role="SERVICIO_PROYECTO" Type="Self.SERVICIO_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="SERVICIO_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICIO_PROYECTO_ID_SERVICIO">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="SERVICIO_PROYECTO" Type="Self.SERVICIO_PROYECTO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SERVICIO">
         <PropertyRef Name="ID_SERVICIO" />
       </Principal>
-      <Dependent Role="PROYECTO">
+      <Dependent Role="SERVICIO_PROYECTO">
         <PropertyRef Name="ID_SERVICIO" />
       </Dependent>
     </ReferentialConstraint>
@@ -448,46 +504,18 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
   <Function Name="ESTADOS_PROYECTO_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="HISTORIAL_DE_VEHICULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PLACA" Type="varchar" Mode="In" />
   </Function>
   <Function Name="PROYECTOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PLACAS_VEHICULOS" Type="varchar(max)" Mode="In" />
+    <Parameter Name="ID_CLIENTE" Type="int" Mode="In" />
   </Function>
   <Function Name="PROYECTOS_DE_MECANICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_MECANICO" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  <Function Name="SERVICIOS_DE_PROYECTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PROYECTO" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="VEHICULOS_DE_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
   </Function>
@@ -499,28 +527,20 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <EntitySet Name="ESTADO_PROYECTO" EntityType="Self.ESTADO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_PROYECTO_PIEZAS" EntityType="Self.ESTADO_PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ESTADO_SERVICIO" EntityType="Self.ESTADO_SERVICIO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA_CABECERA" EntityType="Self.FACTURA_CABECERA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HISTORIAL_ESTADOS" EntityType="Self.HISTORIAL_ESTADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTO_PROYECTO" EntityType="Self.PRODUCTO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROYECTO" EntityType="Self.PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROYECTO_PIEZAS" EntityType="Self.PROYECTO_PIEZAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROLE_USUARIO" EntityType="Self.ROLE_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICIO_PROYECTO" EntityType="Self.SERVICIO_PROYECTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIPO_COSTO" EntityType="Self.TIPO_COSTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="INFORMACION_FACTURAS" EntityType="Self.INFORMACION_FACTURAS" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [INFORMACION_FACTURAS].[ID_FACTURA] AS [ID_FACTURA], 
-    [INFORMACION_FACTURAS].[DETALLE] AS [DETALLE], 
-    [INFORMACION_FACTURAS].[MONTO] AS [MONTO], 
-    [INFORMACION_FACTURAS].[ID_USUARIO] AS [ID_USUARIO], 
-    [INFORMACION_FACTURAS].[NOMBRE] AS [NOMBRE], 
-    [INFORMACION_FACTURAS].[TELEFONO] AS [TELEFONO]
-    FROM [dbo].[INFORMACION_FACTURAS] AS [INFORMACION_FACTURAS]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="RESUMEN_USUARIOS" EntityType="Self.RESUMEN_USUARIOS" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [RESUMEN_USUARIOS].[ID_USUARIO] AS [ID_USUARIO], 
@@ -553,9 +573,13 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       <End Role="ESTADO_PROYECTO" EntitySet="ESTADO_PROYECTO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACTURA_USER" Association="Self.FK_FACTURA_USER">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="FACTURA" EntitySet="FACTURA" />
+    <AssociationSet Name="FK_FACTURA_CABECERA_ID_PROYECTO" Association="Self.FK_FACTURA_CABECERA_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_DETALLE_ID_FACTURA_CABECERA" Association="Self.FK_FACTURA_DETALLE_ID_FACTURA_CABECERA">
+      <End Role="FACTURA_CABECERA" EntitySet="FACTURA_CABECERA" />
+      <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
     </AssociationSet>
     <AssociationSet Name="FK_INVENTARIO_PIEZAS" Association="Self.FK_INVENTARIO_PIEZAS">
       <End Role="INVENTARIO" EntitySet="INVENTARIO" />
@@ -564,6 +588,10 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
     <AssociationSet Name="FK_MECANICO_PROYECTO" Association="Self.FK_MECANICO_PROYECTO">
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCTO_PROYECTO_ID_PROYECTO" Association="Self.FK_PRODUCTO_PROYECTO_ID_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
     </AssociationSet>
     <AssociationSet Name="FK_PROVEEDOR_CATEGORIA" Association="Self.FK_PROVEEDOR_CATEGORIA">
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
@@ -589,9 +617,17 @@ advertencia 6002: La tabla o vista 'EL_CRUCE.dbo.RESUMEN_USUARIOS' no tiene defi
       <End Role="ESTADO_SERVICIO" EntitySet="ESTADO_SERVICIO" />
       <End Role="SERVICIO" EntitySet="SERVICIO" />
     </AssociationSet>
-    <AssociationSet Name="FK_SERVICIO_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO">
-      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_INVENTARIO" Association="Self.FK_SERVICIO_PROYECTO_ID_INVENTARIO">
+      <End Role="INVENTARIO" EntitySet="INVENTARIO" />
+      <End Role="PRODUCTO_PROYECTO" EntitySet="PRODUCTO_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_PROYECTO" Association="Self.FK_SERVICIO_PROYECTO_ID_PROYECTO">
       <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICIO_PROYECTO_ID_SERVICIO" Association="Self.FK_SERVICIO_PROYECTO_ID_SERVICIO">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="SERVICIO_PROYECTO" EntitySet="SERVICIO_PROYECTO" />
     </AssociationSet>
     <AssociationSet Name="FK_TIPO_COSTO" Association="Self.FK_TIPO_COSTO">
       <End Role="TIPO_COSTO" EntitySet="TIPO_COSTO" />

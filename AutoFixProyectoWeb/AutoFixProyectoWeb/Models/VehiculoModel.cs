@@ -20,24 +20,33 @@ namespace AutoFixProyectoWeb.Models
     {
         public VehiculoEnt guardarVehiculoModel(VehiculoEnt vehiculo)
         {
-            using (var conexion = new El_Cruce_Entities())
+            try
             {
-                VEHICULO newVehiculo = new VEHICULO
+                using (var conexion = new El_Cruce_Entities())
                 {
-                    PLACA = vehiculo.placa,
-                    MARCA = vehiculo.marca,
-                    MODELO = vehiculo.modelo,
-                    CHASIS = vehiculo.chasis,
-                    ID_USUARIO = vehiculo.id_usuario,
-                    ESTADO = vehiculo.estado
-                };
+                    VEHICULO newVehiculo = new VEHICULO
+                    {
+                        PLACA = vehiculo.placa,
+                        MARCA = vehiculo.marca,
+                        MODELO = vehiculo.modelo,
+                        CHASIS = vehiculo.chasis,
+                        ID_USUARIO = vehiculo.id_usuario,
+                        ESTADO = vehiculo.estado
+                    };
 
-                conexion.VEHICULO.Add(newVehiculo);
+                    conexion.VEHICULO.Add(newVehiculo);
 
-                conexion.SaveChanges();
+                    conexion.SaveChanges();
 
-                return vehiculo;
+                    return vehiculo;
+                }
             }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+            
         }
 
         public VehiculoEnt getVehiculoPorPlacaModel(VehiculoEnt vehiculo)

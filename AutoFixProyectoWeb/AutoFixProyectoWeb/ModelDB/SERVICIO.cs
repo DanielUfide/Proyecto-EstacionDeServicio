@@ -17,7 +17,7 @@ namespace AutoFixProyectoWeb.ModelDB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SERVICIO()
         {
-            this.PROYECTO = new HashSet<PROYECTO>();
+            this.SERVICIO_PROYECTO = new HashSet<SERVICIO_PROYECTO>();
         }
     
         public int ID_SERVICIO { get; set; }
@@ -28,6 +28,6 @@ namespace AutoFixProyectoWeb.ModelDB
     
         public virtual ESTADO_SERVICIO ESTADO_SERVICIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROYECTO> PROYECTO { get; set; }
+        public virtual ICollection<SERVICIO_PROYECTO> SERVICIO_PROYECTO { get; set; }
     }
 }

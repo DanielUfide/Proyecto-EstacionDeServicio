@@ -1,0 +1,47 @@
+﻿
+
+@model AutoFixProyectoWeb.ModelDB.VEHICULOS_DE_CLIENTE_Result
+
+@{
+    ViewBag.Title = "ProyectoUpdate_partial";
+}
+
+<!-- Modal Crear Servicio -->
+<div class="modal modal-lg fade" id="agregarVehiculo_@Model.PLACA" tabindex="-1" aria-labelledby="agregarServicio"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarProyectoLabel">Actualizar Vehiculo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("actualizarVehiculoController", "Cliente", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <label class="mt-xl-4">Placa</label>
+                    <input class="form-control" type="text" value="@Model.PLACA" name="placa" required readonly/>
+
+                    <label class="mt-xl-4">Marca</label>
+                    <input class="form-control" type="text" value="@Model.MARCA" name="marca" required />
+
+                    <label class="mt-xl-4">Modelo</label>
+                    <input class="form-control" type="text" value="@Model.MODELO" name="modelo" required />
+
+                    <label class="mt-xl-4">Chasis</label>
+                    <input class="form-control" type="text" value="@Model.CHASIS" name="chasis" required />
+
+                    <input class="form-control" type="hidden" value="@Model.ID_USUARIO" name="id_usuario" required />
+
+                    <div class="row mt-xl-3 justify-content-center text-center">
+                        <div class="col-md-12">
+                            <input type="submit" value="Actualizar Vehiculo" class="btn bg-gradient-dark">
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

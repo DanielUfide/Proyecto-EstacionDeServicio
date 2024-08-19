@@ -20,8 +20,9 @@ namespace AutoFixProyectoWeb.Controllers
             var servicios = servicioModel.getServiciosDeProyecto(idProyecto);
             var cliente = proyectoModel.getClienteDeProyecto(idProyecto);
             var mecanico = proyectoModel.getMecanicoDeProyecto(idProyecto);
+            var productos = proyectoModel.productosDeProyecto(idProyecto);
 
-            facturaModel.CrearFactura(servicios, cliente, mecanico, idProyecto);
+            facturaModel.CrearFactura(servicios, productos, cliente, mecanico, idProyecto);
 
             // Lógica para generar la factura
 

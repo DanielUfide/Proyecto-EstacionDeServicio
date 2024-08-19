@@ -21,7 +21,7 @@ namespace AutoFixProyectoWeb.Utils
         public static class FacturacionData
         {
             public const string Nombre = "El Cruce";
-            public const string Direccion = "Av Puerto Rico";
+            public const string Direccion = "San Marcos de Tarrazu";
         }
 
         public enum EstadoFactura

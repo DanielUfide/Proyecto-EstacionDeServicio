@@ -3,6 +3,7 @@ using AutoFixProyectoWeb.ModelDB;
 using AutoFixProyectoWeb.Models.Response;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -32,10 +33,12 @@ namespace AutoFixProyectoWeb.Models
                 foreach (var proyecto in proyectos)
                 {
                     var servicios = coneccion.SERVICIOS_DE_PROYECTO(proyecto.ID_PROYECTO).ToList();
+                    var productos = coneccion.PRODUCTO_PROYECTO.Include(p => p.INVENTARIO).Where(p=> p.ID_PROYECTO == proyecto.ID_PROYECTO).ToList();
 
                     Proyecto_Mecanico proyecto_mecanico = new Proyecto_Mecanico();
                     proyecto_mecanico.PROYECTO = proyecto;
                     proyecto_mecanico.SERVICIOS = servicios;
+                    proyecto_mecanico.PRODUCTOS = productos;
 
                     proyecto_mecanicos.Add(proyecto_mecanico);
                 }

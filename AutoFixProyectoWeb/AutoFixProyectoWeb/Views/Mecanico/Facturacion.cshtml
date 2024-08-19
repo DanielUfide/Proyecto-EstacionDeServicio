@@ -22,7 +22,7 @@
 
     <div class="container-fluid">
         <div>
-            <h4 class="card-title">Vehiculos en reparaciones</h4>     
+            <h4 class="card-title">Vehículos en reparación</h4>     
         </div>
 
         <div class="table-responsive">
@@ -31,20 +31,39 @@
                     <tr>
                         <th>#</th>
                         <th>Vehiculo</th>
-                        <th>Servicios</th>
+                        <th>Servicios - Productos/Piezas</th>
                         <th>Cliente</th>
                         <th>Fecha</th>
-                        <th>Estado cita</th>
-                        <th>Accion</th>
+                        <th>Estado de la cita</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var proyecto in Model.proyectos)
                     {
+                      
+                        // Verifica si hay productos en el proyecto
+                        bool hayServicios = proyecto.SERVICIOS.Any();
+                       
+
                         <tr>
                             <td>@proyecto.PROYECTO.ID_PROYECTO</td>
                             <td>@proyecto.PROYECTO.ID_VEHICULO</td>
-                            <td>@String.Join(", ", proyecto.SERVICIOS.Select(s => s.SERVICIO))</td>
+
+                            <td>
+                                @if (hayServicios)
+                                {
+                                    // Mostrar servicios si no hay productos
+                                    @String.Join(", ", proyecto.SERVICIOS.Select(s => s.SERVICIO))
+                                }
+                                else
+                                {
+                                    // Mostrar nombres de los productos si existen
+                                    @String.Join(", ", proyecto.PRODUCTOS.Select(p => p.INVENTARIO.NOMBRE))
+                                }
+                            </td>
+
+
                             <td>@proyecto.PROYECTO.NOMBRE_CLIENTE</td>
                             <td>@proyecto.PROYECTO.FECHA</td>
                             <td>@Enum.GetName(typeof(AutoFixProyectoWeb.Utils.GlobalAccess.EstadoProyecto), proyecto.PROYECTO.ID_ESTADO_PROYECTO)</td>
@@ -73,7 +92,7 @@
             </table>
             @if (Model.proyectos.Count == 0)
             {
-                <p class="font-italic text-secondary text-center">Aun no se estan realizando servicios en vehiculos para generar facturas.</p>
+                <p class="font-italic text-secondary text-center">Aun no se estan realizando servicios o productos en vehiculos para generar facturas.</p>
             }
         </div>
     </div>

@@ -20,6 +20,7 @@ namespace AutoFixProyectoWeb.Controllers
         ServicioModel servicioModel = new ServicioModel();
         MecanicoModel mecanicoModel = new MecanicoModel();
         FacturaModel facturaModel = new FacturaModel();
+        VehiculoModel vehiculoModel = new VehiculoModel();
 
         // GET: Main
         public ActionResult Index()
@@ -27,6 +28,7 @@ namespace AutoFixProyectoWeb.Controllers
             UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
 
             List<VEHICULOS_DE_CLIENTE_Result> vehiculosCliente = clienteModel.getVehiculosCliente(usuarioActual.id_usuario);
+            vehiculosCliente = vehiculosCliente.Where(v => v.ESTADO).ToList();
 
             string placaVehiculos = string.Join(",", vehiculosCliente.Select(v => v.PLACA));
             List<Proyecto_Cliente> proyectosCliente = clienteModel.getProyectosCliente(usuarioActual.id_usuario);
@@ -61,6 +63,81 @@ namespace AutoFixProyectoWeb.Controllers
             facturas = facturas.Where(f => f.APROBADO).ToList();
 
             return View(facturas);
+        }
+
+        public ActionResult MisVehiculos()
+        {
+            UsuarioEnt usuarioActual = (UsuarioEnt)Session["UsuarioActual"];
+
+            var vehiculos = clienteModel.getVehiculosCliente(usuarioActual.id_usuario);
+
+            //Solo vehiculos activos
+            vehiculos = vehiculos.Where(v => v.ESTADO).ToList();
+
+            var vm = new VehiculoCreateMV
+            {
+                vehiculos = vehiculos,
+                addVehicleModel = new VehiculoEnt
+                {
+                    id_usuario = usuarioActual.id_usuario,
+                    estado = true,
+                }
+
+            };
+
+            return View(vm);
+        }
+
+
+        [HttpPost]
+        public ActionResult guardarVehiculoController_void(string placa, string modelo, string chasis, string marca, int id_usuario, bool estado)
+        {
+            VehiculoEnt vehiculo = new VehiculoEnt
+            {
+                placa = placa,
+                modelo = modelo,
+                chasis = chasis,
+                marca = marca,
+                id_usuario = id_usuario,
+                estado = estado
+            };
+
+            var result = vehiculoModel.guardarVehiculoModel(vehiculo);
+
+            return RedirectToAction("MisVehiculos");
+        }
+
+
+        [HttpPost]
+        public ActionResult actualizarVehiculoController(string placa, string modelo, string chasis, string marca, int id_usuario)
+        {
+            VehiculoEnt vehiculo = new VehiculoEnt
+            {
+                placa = placa,
+                modelo = modelo,
+                chasis = chasis,
+                marca = marca,
+                id_usuario = id_usuario,
+                estado = true
+
+            };
+
+            var result = vehiculoModel.actualizarVehiculoModel(vehiculo);
+
+            return RedirectToAction("MisVehiculos");
+        }
+
+        [HttpPost]
+        public ActionResult actualizarEstadoVehiculoController(string placa, string modelo)
+        {
+            VehiculoEnt vehiculo = new VehiculoEnt
+            {
+                placa = placa,
+                modelo = modelo
+            };
+
+            var result = vehiculoModel.actualizarEstadoVehiculoModel(vehiculo);
+            return RedirectToAction("MisVehiculos");
         }
     }
 }
